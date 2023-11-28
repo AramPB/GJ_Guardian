@@ -49,6 +49,7 @@ public class NightSystem : MonoBehaviour
 
     public static NightSystem Instance { get; private set; }
     public NightProgress NightProgress { get => nightProgress; set => nightProgress = value; }
+    public CustomerControl CustomerContol { get => customerContol; set => customerContol = value; }
 
     #region Singleton
     private void Awake()
@@ -69,6 +70,8 @@ public class NightSystem : MonoBehaviour
         CurrentNight = night1;
         currentNightNumber = 0;
         currentDate = "27/11/2076";
+
+        //CustomerContol.UpdateCurrentNight(currentNight);
         Debug.Log("START");
     }
     private void Update()
@@ -255,7 +258,7 @@ public class NightSystem : MonoBehaviour
             CurrentNight = night4;
         }
 
-        customerContol.UpdateCurrentNight(currentNight);
+        CustomerContol.UpdateCurrentNight(currentNight);
 
         nightProgress.StartLoop(CurrentNight.NightsCustomers.Count, CurrentNight.NightsCustomers);
         formatNightSpecifications();

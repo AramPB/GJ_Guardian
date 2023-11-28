@@ -88,6 +88,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject docImplant;
     [SerializeField] private GameObject docCriminalProof;
 
+    //---- Pass Buttons ----
+    [SerializeField] private GameObject passButton;
+    [SerializeField] private GameObject declineButton;
+    [SerializeField] private GameObject craniumButton;
+    [SerializeField] private GameObject noseButton;
+    [SerializeField] private GameObject eyeRButton;
+    [SerializeField] private GameObject eyeLButton;
+    [SerializeField] private GameObject jawButton;
+    [SerializeField] private GameObject armRButton;
+    [SerializeField] private GameObject armLButton;
+    [SerializeField] private GameObject bodyButton;
+
     #region Getters & Setters
     public static UIManager Instance { get; private set; }
     public string CityDialog_String { get => cityDialog_String; set => cityDialog_String = value; }
@@ -210,6 +222,54 @@ public class UIManager : MonoBehaviour
         }
         crimes_Serial_Text.SetText(crimes_Serial_String);
         crimes_Text.SetText(crimes_String);
+    }
+
+    public void SwapPassButton(bool hide)
+    {
+        passButton.SetActive(hide);
+    }
+    public void SwapDeclineButton(bool hide)
+    {
+        declineButton.SetActive(hide);
+    }
+    public void SwapCraniumButton(bool hide)
+    {
+        craniumButton.SetActive(hide);
+    }
+
+    public void SwapNoseButton(bool hide)
+    {
+        noseButton.SetActive(hide);
+    }
+
+    public void SwapEyeRButton(bool hide)
+    {
+        eyeRButton.SetActive(hide);
+    }
+
+    public void SwapEyeLButton(bool hide)
+    {
+        eyeLButton.SetActive(hide);
+    }
+
+    public void SwapJawButton(bool hide)
+    {
+        jawButton.SetActive(hide);
+    }
+
+    public void SwapArmRButton(bool hide)
+    {
+        armRButton.SetActive(hide);
+    }
+
+    public void SwapArmLButton(bool hide)
+    {
+        armLButton.SetActive(hide);
+    }
+
+    public void SwapBodyButton(bool hide)
+    {
+        bodyButton.SetActive(hide);
     }
 
     #region Pages

@@ -18,6 +18,8 @@ public class NightProgress : MonoBehaviour
 
     private Customer currentCustomer;
 
+    private bool isClientApt;
+
     private bool actualPass;
 
     private int maxClients;
@@ -119,6 +121,18 @@ public class NightProgress : MonoBehaviour
         ScannerController.Instance.hideScannerUI();
         CurrentCustomer = clientsList[_currentClientNumber - 1];
         clientImage.GetComponent<Image>().sprite = CurrentCustomer.GetSprite;
+
+        isClientApt = NightSystem.Instance.CustomerContol.ControlOneCustomer(currentCustomer);
+        UIManager.Instance.SwapDeclineButton(false);
+        UIManager.Instance.SwapPassButton(false);
+        UIManager.Instance.SwapCraniumButton(false);
+        UIManager.Instance.SwapNoseButton(false);
+        UIManager.Instance.SwapEyeRButton(false);
+        UIManager.Instance.SwapEyeLButton(false);
+        UIManager.Instance.SwapJawButton(false);
+        UIManager.Instance.SwapArmRButton(false);
+        UIManager.Instance.SwapArmLButton(false);
+        UIManager.Instance.SwapBodyButton(false);
         tmpStartWait = Time.time;
     }
     private void UpdateClientApparition()
@@ -169,6 +183,16 @@ public class NightProgress : MonoBehaviour
         if (Time.time >= tmpWaitTime + tmpStartWait)
         {
             SwitchState(State.DNI);
+            UIManager.Instance.SwapDeclineButton(true);
+            UIManager.Instance.SwapPassButton(true);
+            UIManager.Instance.SwapCraniumButton(true);
+            UIManager.Instance.SwapNoseButton(true);
+            UIManager.Instance.SwapEyeRButton(true);
+            UIManager.Instance.SwapEyeLButton(true);
+            UIManager.Instance.SwapJawButton(true);
+            UIManager.Instance.SwapArmRButton(true);
+            UIManager.Instance.SwapArmLButton(true);
+            UIManager.Instance.SwapBodyButton(true);
         }
         //
     }
