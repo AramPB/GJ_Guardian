@@ -18,6 +18,7 @@ public class NightSystem : MonoBehaviour
 
     [SerializeField] private Night currentNight;
     [SerializeField] private int currentNightNumber;
+    [SerializeField] private NightProgress nightProgress;
 
     public TextMeshPro NightDialog { get => NightDialog; set => NightDialog = value; }
     public GameObject UIInspect { get => uiInspect; set => uiInspect = value; }
@@ -31,7 +32,7 @@ public class NightSystem : MonoBehaviour
     private void Start()
     {
         currentNight = night1;
-        currentNightNumber = 1;
+        currentNightNumber = 0;
     }
 
     public int NightResume(int successes, int fails)
@@ -93,6 +94,7 @@ public class NightSystem : MonoBehaviour
         {
             currentNight = Night4;
         }
+        nightProgress.StartLoop(currentNight.NightsCustomers.Count, currentNight.NightsCustomers);
     }
 
     private void NightTransition()
