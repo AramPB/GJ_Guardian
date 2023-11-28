@@ -8,6 +8,8 @@ public class NightSystem : MonoBehaviour
 {
     [SerializeField] private TextMeshPro nightDialog;
 
+    [SerializeField] private string currentDate;
+
     [SerializeField] private GameObject uiQueue;
     [SerializeField] private GameObject uiInspect;
 
@@ -20,6 +22,8 @@ public class NightSystem : MonoBehaviour
     [SerializeField] private int currentNightNumber;
     [SerializeField] private NightProgress nightProgress;
 
+    [SerializeField] private CustomerControl customerContol;
+
     public TextMeshPro NightDialog { get => NightDialog; set => NightDialog = value; }
     public GameObject UIInspect { get => uiInspect; set => uiInspect = value; }
     public GameObject UIQueue { get => UIQueue; set => UIQueue = value; }
@@ -28,10 +32,12 @@ public class NightSystem : MonoBehaviour
     public Night Night3 { get => night3; set => night3 = value; }
     public Night Night4 { get => night4; set => night4 = value; }
     public TextMeshPro NightDialog1 { get => nightDialog; set => nightDialog = value; }
+    public Night CurrentNight { get => currentNight; set => currentNight = value; }
+    public string CurrentDate { get => currentDate; set => currentDate = value; }
 
     private void Start()
     {
-        currentNight = night1;
+        CurrentNight = night1;
         currentNightNumber = 0;
         Debug.Log("START");
     }
@@ -78,7 +84,7 @@ public class NightSystem : MonoBehaviour
         NextNight();
         NightTransition();
 
-        return currentNight.NightNumber;
+        return CurrentNight.NightNumber;
 
     
 
@@ -103,22 +109,28 @@ public class NightSystem : MonoBehaviour
 
         if (currentNightNumber == 1)
         {
-            currentNight = night1;
+            CurrentDate = "27/11/2076";
+            CurrentNight = night1;
         }
         else if (currentNightNumber == 2)
         {
-            currentNight = night2;
+            CurrentDate = "28/11/2076";
+            CurrentNight = night2;
         }
         else if (currentNightNumber == 3)
         {
-            currentNight = night3;
+            CurrentDate = "29/11/2076";
+            CurrentNight = night3;
         }
         else
         {
-            currentNight = night4;
+            CurrentDate = "30/11/2076";
+            CurrentNight = night4;
         }
 
-        nightProgress.StartLoop(currentNight.NightsCustomers.Count, currentNight.NightsCustomers);
+        customerContol.UpdateCurrentNight(currentNight);
+
+        nightProgress.StartLoop(CurrentNight.NightsCustomers.Count, CurrentNight.NightsCustomers);
     }
 
     private void NightTransition()
@@ -134,4 +146,6 @@ public class NightSystem : MonoBehaviour
         //Play of an Animation, Animate in Unity the transition, Fade Out, Etc.
 
     }
+
+    
 }

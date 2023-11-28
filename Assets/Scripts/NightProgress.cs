@@ -188,7 +188,7 @@ public class NightProgress : MonoBehaviour
             UIManager.Instance.Dni_Serial_String = currentCustomer.GetId;
             UIManager.Instance.Dni_Foto_Sprite = currentCustomer.GetPhoto;
             UIManager.Instance.Dni_Caducity_String = currentCustomer.GetDocumentExpiryDate;
-            UIManager.Instance.Dni_District_String = currentCustomer.GetDistrictNumber;
+            UIManager.Instance.Dni_District_String = currentCustomer.GetDistrictNumber.ToString();
             foreach (Implant i in currentCustomer.GetImplants)
             {
                 UIManager.Instance.Dni_Implants_Name_String += i.ImplantName + "\n";
