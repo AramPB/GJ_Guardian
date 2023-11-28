@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NightSpecifications", menuName = "ScriptableObjects/NiightSpecifications", order = 4)]
+[CreateAssetMenu(fileName = "NightSpecifications", menuName = "ScriptableObjects/NightSpecifications", order = 4)]
 public class NightSpecifications : ScriptableObject
 {
     //Distric Limitations
@@ -27,7 +27,7 @@ public class NightSpecifications : ScriptableObject
     [SerializeField] private bool specificationUnjustifiedCrime;
 
     //Permited Crimes
-    [SerializeField] private List<string> specificationsPermitedCrimes;
+    [SerializeField] private List<Crimes> specificationsPermitedCrimes;
 
     public List<int> SpecificationDistricNumber { get => specificationDistricNumber; set => specificationDistricNumber = value; }
     public bool SpecificationRegisteredImplants { get => specificationRegisteredImplants; set => specificationRegisteredImplants = value; }
@@ -40,5 +40,5 @@ public class NightSpecifications : ScriptableObject
     public bool SpecificationNoCrime { get => specificationNoCrime; set => specificationNoCrime = value; }
     public bool SpecificationJustifiedCrime { get => specificationJustifiedCrime; set => specificationJustifiedCrime = value; }
     public bool SpecificationUnjustifiedCrime { get => specificationUnjustifiedCrime; set => specificationUnjustifiedCrime = value; }
-    public List<string> SpecificationsPermitedCrimes { get => specificationsPermitedCrimes; set => specificationsPermitedCrimes = value; }
+    public List<Crimes> SpecificationsPermitedCrimes { get => specificationsPermitedCrimes; set => specificationsPermitedCrimes = value; }
 }

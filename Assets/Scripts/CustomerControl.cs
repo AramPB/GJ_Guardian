@@ -96,17 +96,17 @@ public class CustomerControl : MonoBehaviour
 
     }
 
-    private bool isCriminal(List<string> crimes, bool hasJustificant)
+    private bool isCriminal(List<Crimes> crimes, bool hasJustificant)
     {
         bool noCrime = false, justifiedCrimes = false, unjustifiedCrimes = false, allowedCrimes = true; 
         int count = 0;
 
-        foreach (string crime in crimes)
+        foreach (Crimes crime in crimes)
         {
-            foreach (string allowed in currentNightSpecifications.SpecificationsPermitedCrimes)
+            foreach (Crimes allowed in currentNightSpecifications.SpecificationsPermitedCrimes)
             {
                 count = 0;
-                if (crime.Equals(allowed))
+                if (crime.CrimeName.Equals(allowed.CrimeName))
                 {
                     count++;
                 }

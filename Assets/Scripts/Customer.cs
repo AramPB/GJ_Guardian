@@ -16,7 +16,7 @@ public class Customer : ScriptableObject
     [SerializeField] private int customerDistricNumber;
     [SerializeField] private bool customerDNIToGive;
     [SerializeField] private Sprite customerSprite;
-    [SerializeField] private List<string> customerCrimes;
+    [SerializeField] private List<Crimes> customerCrimes;
     [SerializeField] private List<string> customerDialogLines;
     [SerializeField] private DialogType customerDialogType;
     [SerializeField] private int customerMoney;
@@ -34,7 +34,7 @@ public class Customer : ScriptableObject
     public int GetDistrictNumber { get { return customerDistricNumber; } }
     public bool GetDNIToGive { get { return customerDNIToGive; } }
     public Sprite GetSprite { get { return customerSprite; } }
-    public List<string> GetCrimes { get { return customerCrimes; } }
+    public List<Crimes> GetCrimes { get { return customerCrimes; } }
     public List<string> GetDialogLines { get { return customerDialogLines; } }
     public DialogType GetDialogType { get { return customerDialogType; } }
     public int GetMoney { get { return customerMoney; } }
