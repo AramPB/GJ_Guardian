@@ -202,6 +202,7 @@ public class UIManager : MonoBehaviour
         crimes_Text.SetText(crimes_String);
     }
 
+    #region Pages
     public void ResetPages()
     {
         hasCriminalProof = false;
@@ -226,7 +227,7 @@ public class UIManager : MonoBehaviour
     public void NextPage()
     {
         Debug.Log("NEXT PAGE");
-        if (!(currentPage == 4 || (currentPage == 3 && !hasCriminalProof)))
+        if (!(currentPage == maxPages || (currentPage == (maxPages-1) && !hasCriminalProof)))
         {
 
             UpdatePage(currentPage + 1);
@@ -239,7 +240,6 @@ public class UIManager : MonoBehaviour
 
     private void UpdatePage(int newPage)
     {
-        Debug.Log(newPage);
         switch (currentPage)
         {
             case 1:
@@ -273,4 +273,7 @@ public class UIManager : MonoBehaviour
         }
         currentPage = newPage;
     }
+    #endregion
+
+
 }

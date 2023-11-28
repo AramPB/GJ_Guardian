@@ -9,9 +9,9 @@ public class Night : ScriptableObject
 {
     [SerializeField] private int nightNumber;
     [SerializeField] private List<Customer> nightsCustomers;
-    [SerializeField] private List<NightSpecifications> nightSpecifications;
+    [SerializeField] private NightSpecifications nightSpecifications;
 
     public int NightNumber { get => nightNumber; set => nightNumber = value; }
     public List<Customer> NightsCustomers { get => nightsCustomers; set => nightsCustomers = value; }
-    public List<NightSpecifications> NightSpecifications { get => nightSpecifications; set => nightSpecifications = value; }
+    public NightSpecifications NightSpecifications { get => nightSpecifications; set => nightSpecifications = value; }
 }

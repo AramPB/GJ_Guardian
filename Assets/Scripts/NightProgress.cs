@@ -182,28 +182,7 @@ public class NightProgress : MonoBehaviour
         if (currentCustomer.GetDNIToGive)
         {
             //Setear la nueva info de DNI
-            DNIGameObject.SetActive(true);
-            UIManager.Instance.Dni_Age_String = currentCustomer.GetAge.ToString();
-            UIManager.Instance.Dni_Name_String = currentCustomer.GetName;
-            UIManager.Instance.Dni_Serial_String = currentCustomer.GetId;
-            UIManager.Instance.Dni_Foto_Sprite = currentCustomer.GetPhoto;
-            UIManager.Instance.Dni_Caducity_String = currentCustomer.GetDocumentExpiryDate;
-            UIManager.Instance.Dni_District_String = currentCustomer.GetDistrictNumber;
-            foreach (Implant i in currentCustomer.GetImplants)
-            {
-                UIManager.Instance.Dni_Implants_Name_String += i.ImplantName + "\n";
-                UIManager.Instance.Dni_Implants_number_String += i.ImplantManufacterNumber + "\n";
-            }
-            if (currentCustomer.GetCrimes.Count != 0)
-            {
-                buttonCP.SetActive(true);
-            }
-            else
-            {
-                buttonCP.SetActive(false);
-
-            }
-            UIManager.Instance.updateUI();
+            DNIUpdateInfo();
         }
         else
         {
@@ -224,6 +203,31 @@ public class NightProgress : MonoBehaviour
     private void EndObtainingDNI()
     {
 
+    }
+    private void DNIUpdateInfo()
+    {
+        DNIGameObject.SetActive(true);
+        UIManager.Instance.Dni_Age_String = currentCustomer.GetAge.ToString();
+        UIManager.Instance.Dni_Name_String = currentCustomer.GetName;
+        UIManager.Instance.Dni_Serial_String = currentCustomer.GetId;
+        UIManager.Instance.Dni_Foto_Sprite = currentCustomer.GetPhoto;
+        UIManager.Instance.Dni_Caducity_String = currentCustomer.GetDocumentExpiryDate;
+        UIManager.Instance.Dni_District_String = currentCustomer.GetDistrictNumber.ToString();
+        foreach (Implant i in currentCustomer.GetImplants)
+        {
+            UIManager.Instance.Dni_Implants_Name_String += i.ImplantName + "\n";
+            UIManager.Instance.Dni_Implants_number_String += i.ImplantManufacterNumber + "\n";
+        }
+        if (currentCustomer.GetCrimes.Count != 0)
+        {
+            buttonCP.SetActive(true);
+        }
+        else
+        {
+            buttonCP.SetActive(false);
+
+        }
+        UIManager.Instance.updateUI();
     }
     #endregion
 

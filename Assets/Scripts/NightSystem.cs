@@ -20,6 +20,9 @@ public class NightSystem : MonoBehaviour
     [SerializeField] private int currentNightNumber;
     [SerializeField] private NightProgress nightProgress;
 
+    private float transitionStartTime;
+    private float transitionDuration;
+
     public TextMeshPro NightDialog { get => NightDialog; set => NightDialog = value; }
     public GameObject UIInspect { get => uiInspect; set => uiInspect = value; }
     public GameObject UIQueue { get => UIQueue; set => UIQueue = value; }
@@ -40,12 +43,17 @@ public class NightSystem : MonoBehaviour
         if (currentNightNumber != 0) {
             if (nightProgress.isInProgress())
             {
-
+                transitionStartTime = Time.time;
             }
             else
             {
                 //
                 int a = NightResume(1, 1);
+                NightTransition();
+                if (Time.time >= transitionStartTime + transitionDuration)
+                {
+                    NextNight();
+                }
             }
         }
         else
@@ -75,8 +83,6 @@ public class NightSystem : MonoBehaviour
 
         //NightDialog1.text = "With today's shift you have won: " + auxiliarMoney + "€";
 
-        NextNight();
-        NightTransition();
 
         return currentNight.NightNumber;
 
