@@ -32,6 +32,23 @@ public class NightSystem : MonoBehaviour
     public Night Night4 { get => night4; set => night4 = value; }
     public TextMeshPro NightDialog1 { get => nightDialog; set => nightDialog = value; }
 
+    public static NightSystem Instance { get; private set; }
+    public NightProgress NightProgress { get => nightProgress; set => nightProgress = value; }
+
+    #region Singleton
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+        Instance = this;
+    }
+    #endregion
+
+
+
     private void Start()
     {
         currentNight = night1;
@@ -41,7 +58,7 @@ public class NightSystem : MonoBehaviour
     private void Update()
     {
         if (currentNightNumber != 0) {
-            if (nightProgress.isInProgress())
+            if (NightProgress.isInProgress())
             {
                 transitionStartTime = Time.time;
             }
@@ -124,7 +141,7 @@ public class NightSystem : MonoBehaviour
             currentNight = night4;
         }
 
-        nightProgress.StartLoop(currentNight.NightsCustomers.Count, currentNight.NightsCustomers);
+        NightProgress.StartLoop(currentNight.NightsCustomers.Count, currentNight.NightsCustomers);
     }
 
     private void NightTransition()

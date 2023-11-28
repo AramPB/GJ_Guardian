@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ImplantType { Eye, Cranium, Jaw, Nose, Arm, Torso};
+public enum ImplantType { EyeR, EyeL, Cranium, Jaw, Nose, ArmR, ArmL, Torso};
 
 
 [CreateAssetMenu(fileName = "Implants", menuName = "ScriptableObjects/Implants", order = 2)]

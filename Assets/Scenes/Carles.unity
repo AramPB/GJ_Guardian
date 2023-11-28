@@ -184,7 +184,7 @@ MonoBehaviour:
   armRButton: {fileID: 759197115}
   armLButton: {fileID: 343763048}
   jawButton: {fileID: 0}
-  noseRButton: {fileID: 628776306}
+  noseButton: {fileID: 0}
   bodyButton: {fileID: 120351859}
   craniumButton: {fileID: 2032426641}
 --- !u!1 &120351859
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
@@ -269,7 +269,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 120351862}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 86746398}
+        m_TargetAssemblyTypeName: ScannerController, Assembly-CSharp
+        m_MethodName: ClickBodyButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &120351862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,7 +650,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
@@ -658,7 +670,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 343763051}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 86746398}
+        m_TargetAssemblyTypeName: ScannerController, Assembly-CSharp
+        m_MethodName: ClickArmLButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &343763051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,7 +917,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
@@ -913,7 +937,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 398028967}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 86746398}
+        m_TargetAssemblyTypeName: ScannerController, Assembly-CSharp
+        m_MethodName: ClickJawButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &398028967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1148,7 +1184,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
@@ -1168,7 +1204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 628776309}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 86746398}
+        m_TargetAssemblyTypeName: ScannerController, Assembly-CSharp
+        m_MethodName: ClickNoseRButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &628776309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1535,7 +1583,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
@@ -1555,7 +1603,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 759197118}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 86746398}
+        m_TargetAssemblyTypeName: ScannerController, Assembly-CSharp
+        m_MethodName: ClickArmRButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &759197118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1790,7 +1850,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
@@ -1810,7 +1870,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 936128543}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 86746398}
+        m_TargetAssemblyTypeName: ScannerController, Assembly-CSharp
+        m_MethodName: ClickEyeRButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &936128543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2528,7 +2600,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
@@ -2548,7 +2620,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1759881870}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 86746398}
+        m_TargetAssemblyTypeName: ScannerController, Assembly-CSharp
+        m_MethodName: ClickEyeLButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1759881870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3174,7 +3258,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
@@ -3194,7 +3278,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2032426644}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 86746398}
+        m_TargetAssemblyTypeName: ScannerController, Assembly-CSharp
+        m_MethodName: ClickCraniumButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2032426644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3399,9 +3495,139 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2181876343076316433, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 636.8263
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419322877764967576, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_text
+      value: 'yTrace
+
+        Punk Hazard
+
+        Aftershock
+
+        BJ
+
+        Death
+        Star
+
+        Shark-T
+
+        Chunky'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419322877764967576, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_fontSize
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419322877764967576, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_lineSpacing
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419322877764967576, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2419322877764967576, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102768609615009422, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_text
+      value: 'Valle Quantico
+
+        Liks
+
+        Cromolit
+
+        Kabuki
+
+        F-Central
+
+        Hoster
+
+
+
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102768609615009422, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102768609615009422, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102768609615009422, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_lineSpacing
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3102768609615009422, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257162626308308658, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_text
+      value: '2F - L9
+
+        8J - K0
+
+        2D - D3
+
+        4R - T6
+
+        6F-6F
+
+        9P-2U
+
+        1K-4V'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257162626308308658, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257162626308308658, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_lineSpacing
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3257162626308308658, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 3714649626123593552, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059181337510176322, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_text
+      value: 'D-1
+
+        D-2
+
+        D-3
+
+        D-4
+
+        D-5
+
+        D-6'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059181337510176322, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059181337510176322, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059181337510176322, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_lineSpacing
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4059181337510176322, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 4189877720013830759, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
       propertyPath: docImplant
@@ -3503,6 +3729,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6024213491812503355, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6491267275333082697, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3518,6 +3748,10 @@ PrefabInstance:
     - target: {fileID: 6491267275333082697, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6828025841321199541, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_text
+      value: Distrito
       objectReference: {fileID: 0}
     - target: {fileID: 7064744340345001833, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
       propertyPath: m_Pivot.x
@@ -3597,6 +3831,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7064744340345001833, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7320308755784789387, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9182387059736039112, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
