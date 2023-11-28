@@ -22,10 +22,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI district_NamesList_Text;
     [SerializeField] TextMeshProUGUI district_NumberList_Text;
 
-    //--- Implant List UI ---
-    [SerializeField] TextMeshProUGUI implant_NamesList_Text;
-    [SerializeField] TextMeshProUGUI implant_NumberList_Text;
-
     //--- Criminal Prove UI ---
     [SerializeField] TextMeshProUGUI crimes_Text;
     [SerializeField] TextMeshProUGUI crimes_Name_Text;
@@ -56,14 +52,6 @@ public class UIManager : MonoBehaviour
     // -- INSPECT --
     // --- Night Specification UI ---
     [SerializeField] string restriction_String;
-
-    //--- District list UI ---
-    [SerializeField] string district_NamesList_String;
-    [SerializeField] string district_NumberList_String;
-
-    //--- Implant List UI ---
-    [SerializeField] string implant_NamesList_String;
-    [SerializeField] string implant_NumberList_String;
 
     //--- Criminal Prove UI ---
     [SerializeField] string crimes_String;
@@ -101,10 +89,6 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance { get; private set; }
     public string CityDialog_String { get => cityDialog_String; set => cityDialog_String = value; }
     public string Restriction_String { get => restriction_String; set => restriction_String = value; }
-    public string District_NamesList_String { get => district_NamesList_String; set => district_NamesList_String = value; }
-    public string District_NumberList_String { get => district_NumberList_String; set => district_NumberList_String = value; }
-    public string Implant_NamesList_String { get => implant_NamesList_String; set => implant_NamesList_String = value; }
-    public string Implant_NumberList_String { get => implant_NumberList_String; set => implant_NumberList_String = value; }
     public string Crimes_String { get => crimes_String; set => crimes_String = value; }
     public string Crimes_Name_String { get => crimes_Name_String; set => crimes_Name_String = value; }
     public string Crimes_Age_String { get => crimes_Age_String; set => crimes_Age_String = value; }
@@ -158,25 +142,17 @@ public class UIManager : MonoBehaviour
         
         //Night specification
         restriction_Text.SetText(restriction_String);
-        
-        //District
-        district_NamesList_Text.SetText(district_NamesList_String);
-        district_NumberList_Text.SetText(district_NumberList_String);
 
         //Implant scanner
-        if (implants_Foto_Sprite)
+        if (implants_Foto_Sprite && implants_Foto_Sprite != null)
         {
             implants_Foto_Image.sprite = implants_Foto_Sprite;
         }
         implants_Name_Text.SetText(implants_Name_String);
         implants_Number_Text.SetText(Implants_Number_String);
-        
-        //Implant List
-        implant_NamesList_Text.SetText(implant_NamesList_String);
-        implant_NumberList_Text.SetText(implant_NumberList_String);
 
         //DNI
-        if (dni_Foto_Sprite)
+        if (dni_Foto_Sprite && dni_Foto_Sprite != null)
         {
             dni_Foto_Image.sprite = dni_Foto_Sprite;
         }
@@ -187,14 +163,14 @@ public class UIManager : MonoBehaviour
         dni_Age_Text.SetText(dni_Age_String);
         dni_Implants_Name_Text.SetText(dni_Implants_Name_String);
         dni_Implants_number_Text.SetText(dni_Implants_number_String);
-        if (dni_Criminal_Stamp_Sprite)
+        if (dni_Criminal_Stamp_Sprite && dni_Criminal_Stamp_Sprite != null)
         {
             dni_Criminal_Stamp_Image.sprite = dni_Criminal_Stamp_Sprite;
         }
 
         //Crime Doc
         crimes_Name_Text.SetText(crimes_Name_String);
-        if (crimes_Foto_Sprite)
+        if (crimes_Foto_Sprite && crimes_Foto_Sprite != null)
         {
             crimes_Foto_Image.sprite = crimes_Foto_Sprite;
         }
@@ -202,6 +178,7 @@ public class UIManager : MonoBehaviour
         crimes_Text.SetText(crimes_String);
     }
 
+    #region Pages
     public void ResetPages()
     {
         hasCriminalProof = false;
@@ -226,7 +203,7 @@ public class UIManager : MonoBehaviour
     public void NextPage()
     {
         Debug.Log("NEXT PAGE");
-        if (!(currentPage == 4 || (currentPage == 3 && !hasCriminalProof)))
+        if (!(currentPage == maxPages || (currentPage == (maxPages-1) && !hasCriminalProof)))
         {
 
             UpdatePage(currentPage + 1);
@@ -239,7 +216,6 @@ public class UIManager : MonoBehaviour
 
     private void UpdatePage(int newPage)
     {
-        Debug.Log(newPage);
         switch (currentPage)
         {
             case 1:
@@ -273,4 +249,7 @@ public class UIManager : MonoBehaviour
         }
         currentPage = newPage;
     }
+    #endregion
+
+
 }

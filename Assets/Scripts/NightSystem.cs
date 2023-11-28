@@ -24,6 +24,9 @@ public class NightSystem : MonoBehaviour
 
     [SerializeField] private CustomerControl customerContol;
 
+    private float transitionStartTime;
+    private float transitionDuration;
+
     public TextMeshPro NightDialog { get => NightDialog; set => NightDialog = value; }
     public GameObject UIInspect { get => uiInspect; set => uiInspect = value; }
     public GameObject UIQueue { get => UIQueue; set => UIQueue = value; }
@@ -35,6 +38,23 @@ public class NightSystem : MonoBehaviour
     public Night CurrentNight { get => currentNight; set => currentNight = value; }
     public string CurrentDate { get => currentDate; set => currentDate = value; }
 
+    public static NightSystem Instance { get; private set; }
+    public NightProgress NightProgress { get => nightProgress; set => nightProgress = value; }
+
+    #region Singleton
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+        Instance = this;
+    }
+    #endregion
+
+
+
     private void Start()
     {
         CurrentNight = night1;
@@ -44,14 +64,19 @@ public class NightSystem : MonoBehaviour
     private void Update()
     {
         if (currentNightNumber != 0) {
-            if (nightProgress.isInProgress())
+            if (NightProgress.isInProgress())
             {
-
+                transitionStartTime = Time.time;
             }
             else
             {
                 //
                 int a = NightResume(1, 1);
+                NightTransition();
+                if (Time.time >= transitionStartTime + transitionDuration)
+                {
+                    NextNight();
+                }
             }
         }
         else
@@ -81,8 +106,6 @@ public class NightSystem : MonoBehaviour
 
         //NightDialog1.text = "With today's shift you have won: " + auxiliarMoney + "€";
 
-        NextNight();
-        NightTransition();
 
         return CurrentNight.NightNumber;
 
