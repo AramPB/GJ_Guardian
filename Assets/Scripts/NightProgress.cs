@@ -113,10 +113,12 @@ public class NightProgress : MonoBehaviour
     #region ClientApparition
     private void StartClientApparition()
     {
+
+        ScannerController.Instance.hideScannerUI();
         currentCustomer = clientsList[_currentClientNumber - 1];
         clientImage.GetComponent<Image>().sprite = currentCustomer.GetSprite;
-        tmpStartWait = Time.time;
 
+        tmpStartWait = Time.time;
     }
     private void UpdateClientApparition()
     {
