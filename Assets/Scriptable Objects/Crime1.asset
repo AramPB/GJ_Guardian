@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Crime1
   m_EditorClassIdentifier: 
   crimeName: Asesinato
-  crimeDescription: asdasdasd
+  crimeDescription: Mato a muchos a sangre fira
   crimeSentenceTime: 9

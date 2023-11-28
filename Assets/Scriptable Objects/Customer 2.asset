@@ -15,7 +15,7 @@ MonoBehaviour:
   customerName: Tonacho
   customerId: 423
   customerPhoto: {fileID: 21300000, guid: 69ef803c66cdc6d489edbe1ddd3fe216, type: 3}
-  customerAge: 324
+  customerAge: 3
   customerDistricNumber: 0
   customerDNIToGive: 1
   customerSprite: {fileID: 21300000, guid: 69ef803c66cdc6d489edbe1ddd3fe216, type: 3}
@@ -23,11 +23,11 @@ MonoBehaviour:
   customerDialogLines:
   - holasio
   - adeuasio
-  customerDialogType: 2
+  customerDialogType: 0
   customerMoney: 325
   customerNightApparition: 1
   customerImplants:
   - {fileID: 11400000, guid: 62e47803e5ca2a447aaa5190eebd936d, type: 2}
   customerImplantsRegistered: []
-  customerDocumentExpiryDate: 45647
+  customerDocumentExpiryDate: 21/02/2066
   customerHasJustificant: 0

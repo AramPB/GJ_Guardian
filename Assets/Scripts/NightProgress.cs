@@ -282,7 +282,19 @@ public class NightProgress : MonoBehaviour
     {
         //Pondra las cosas de UI de Criminal Proof
         tmpStartWait = Time.time;
-        //UIManager.Instance.
+        UIManager.Instance.Crimes_Age_String = currentCustomer.GetAge.ToString();
+        UIManager.Instance.Crimes_Name_String = currentCustomer.GetName;
+        UIManager.Instance.Crimes_Serial_String = currentCustomer.GetId;
+        UIManager.Instance.Crimes_Foto_Sprite = CurrentCustomer.GetPhoto;
+        string crimesString = "";
+        foreach (var crime in currentCustomer.GetCrimes)
+        {
+            crimesString += "- " + crime.CrimeName + ": " + crime.CrimeDescription + " " + "\n- Condena: " + crime.CrimeSentenceTime + " años\n\n";
+        }
+        UIManager.Instance.Crimes_String = crimesString;
+        UIManager.Instance.updateUI();
+
+
     }
     private void UpdateCriminalProof()
     {

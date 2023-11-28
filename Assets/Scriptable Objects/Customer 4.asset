@@ -21,9 +21,10 @@ MonoBehaviour:
   customerSprite: {fileID: 21300000, guid: 66de2089f822df2458e21e56866b143a, type: 3}
   customerCrimes: []
   customerDialogLines: []
-  customerDialogType: 2
+  customerDialogType: 0
   customerMoney: 435
   customerNightApparition: 1
   customerImplants: []
   customerImplantsRegistered: []
-  customerDocumentExpiryDate: 3454
+  customerDocumentExpiryDate: 21/02/2066
+  customerHasJustificant: 0
