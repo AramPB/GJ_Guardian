@@ -14,10 +14,6 @@ public class NightSpecifications : ScriptableObject
     [SerializeField] private bool specificationNoImplants;
     [SerializeField] private bool specificationIlegalImplants;
 
-    //People Restrictions
-    [SerializeField] private bool specificationModifiedPeople;
-    [SerializeField] private bool specificationVanilaPeople;
-
     //Age Restriction
     [SerializeField] private int specificationMinimumAge;
     
@@ -34,8 +30,6 @@ public class NightSpecifications : ScriptableObject
     public bool SpecificationUnregisteredImplants { get => specificationUnregisteredImplants; set => specificationUnregisteredImplants = value; }
     public bool SpecificationNoImplants { get => specificationNoImplants; set => specificationNoImplants = value; }
     public bool SpecificationIlegalImplants { get => specificationIlegalImplants; set => specificationIlegalImplants = value; }
-    public bool SpecificationModifiedPeople { get => specificationModifiedPeople; set => specificationModifiedPeople = value; }
-    public bool SpecificationVanilaPeople { get => specificationVanilaPeople; set => specificationVanilaPeople = value; }
     public int SpecificationMinimumAge { get => specificationMinimumAge; set => specificationMinimumAge = value; }
     public bool SpecificationNoCrime { get => specificationNoCrime; set => specificationNoCrime = value; }
     public bool SpecificationJustifiedCrime { get => specificationJustifiedCrime; set => specificationJustifiedCrime = value; }

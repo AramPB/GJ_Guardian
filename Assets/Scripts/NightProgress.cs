@@ -18,6 +18,8 @@ public class NightProgress : MonoBehaviour
 
     private Customer currentCustomer;
 
+    private bool isClientApt;
+
     private bool actualPass;
 
     private int maxClients;
@@ -38,6 +40,8 @@ public class NightProgress : MonoBehaviour
         Waiting
     }
     private State currentState = State.Waiting;
+
+    public Customer CurrentCustomer { get => currentCustomer; set => currentCustomer = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -115,9 +119,19 @@ public class NightProgress : MonoBehaviour
     {
 
         ScannerController.Instance.hideScannerUI();
-        currentCustomer = clientsList[_currentClientNumber - 1];
-        clientImage.GetComponent<Image>().sprite = currentCustomer.GetSprite;
-
+        CurrentCustomer = clientsList[_currentClientNumber - 1];
+        clientImage.GetComponent<Image>().sprite = CurrentCustomer.GetSprite;
+        isClientApt = NightSystem.Instance.CustomerContol.ControlOneCustomer(currentCustomer);
+        UIManager.Instance.SwapDeclineButton(false);
+        UIManager.Instance.SwapPassButton(false);
+        UIManager.Instance.SwapCraniumButton(false);
+        UIManager.Instance.SwapNoseButton(false);
+        UIManager.Instance.SwapEyeRButton(false);
+        UIManager.Instance.SwapEyeLButton(false);
+        UIManager.Instance.SwapJawButton(false);
+        UIManager.Instance.SwapArmRButton(false);
+        UIManager.Instance.SwapArmLButton(false);
+        UIManager.Instance.SwapBodyButton(false);
         tmpStartWait = Time.time;
     }
     private void UpdateClientApparition()
@@ -168,6 +182,16 @@ public class NightProgress : MonoBehaviour
         if (Time.time >= tmpWaitTime + tmpStartWait)
         {
             SwitchState(State.DNI);
+            UIManager.Instance.SwapDeclineButton(true);
+            UIManager.Instance.SwapPassButton(true);
+            UIManager.Instance.SwapCraniumButton(true);
+            UIManager.Instance.SwapNoseButton(true);
+            UIManager.Instance.SwapEyeRButton(true);
+            UIManager.Instance.SwapEyeLButton(true);
+            UIManager.Instance.SwapJawButton(true);
+            UIManager.Instance.SwapArmRButton(true);
+            UIManager.Instance.SwapArmLButton(true);
+            UIManager.Instance.SwapBodyButton(true);
         }
         //
     }
@@ -181,7 +205,7 @@ public class NightProgress : MonoBehaviour
     #region DNI
     private void StartObtainingDNI()
     {
-        if (currentCustomer.GetDNIToGive)
+        if (CurrentCustomer.GetDNIToGive)
         {
             //Setear la nueva info de DNI
             DNIUpdateInfo();
@@ -209,20 +233,20 @@ public class NightProgress : MonoBehaviour
     private void DNIUpdateInfo()
     {
         DNIGameObject.SetActive(true);
-        UIManager.Instance.Dni_Age_String = currentCustomer.GetAge.ToString();
-        UIManager.Instance.Dni_Name_String = currentCustomer.GetName;
-        UIManager.Instance.Dni_Serial_String = currentCustomer.GetId;
-        UIManager.Instance.Dni_Foto_Sprite = currentCustomer.GetPhoto;
-        UIManager.Instance.Dni_Caducity_String = currentCustomer.GetDocumentExpiryDate;
-        UIManager.Instance.Dni_District_String = currentCustomer.GetDistrictNumber.ToString();
+        UIManager.Instance.Dni_Age_String = CurrentCustomer.GetAge.ToString();
+        UIManager.Instance.Dni_Name_String = CurrentCustomer.GetName;
+        UIManager.Instance.Dni_Serial_String = CurrentCustomer.GetId;
+        UIManager.Instance.Dni_Foto_Sprite = CurrentCustomer.GetPhoto;
+        UIManager.Instance.Dni_Caducity_String = CurrentCustomer.GetDocumentExpiryDate;
+        UIManager.Instance.Dni_District_String = CurrentCustomer.GetDistrictNumber.ToString();
         UIManager.Instance.Dni_Implants_Name_String = "";
         UIManager.Instance.Dni_Implants_number_String = "";
-        foreach (Implant i in currentCustomer.GetImplants)
+        foreach (Implant i in CurrentCustomer.GetImplants)
         {
             UIManager.Instance.Dni_Implants_Name_String += i.ImplantName + "\n";
             UIManager.Instance.Dni_Implants_number_String += i.ImplantManufacterNumber + "\n";
         }
-        if (currentCustomer.GetCrimes.Count != 0)
+        if (CurrentCustomer.GetCrimes.Count != 0)
         {
             buttonCP.SetActive(true);
         }
@@ -325,7 +349,7 @@ public class NightProgress : MonoBehaviour
             _currentClientNumber++;
             if (_currentClientNumber <= maxClients)
             {
-                currentCustomer = clientsList[_currentClientNumber - 1];
+                CurrentCustomer = clientsList[_currentClientNumber - 1];
                 SwitchState(State.Apparition);
             }
             else
