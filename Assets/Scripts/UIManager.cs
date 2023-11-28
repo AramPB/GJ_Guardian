@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     // -- INSPECT --
     // --- Night Specification UI ---
     [SerializeField] TextMeshProUGUI restriction_Text;
+    [SerializeField] TextMeshProUGUI permitedCrimes_Text;
 
     //--- District list UI ---
     [SerializeField] TextMeshProUGUI district_NamesList_Text;
@@ -53,6 +54,7 @@ public class UIManager : MonoBehaviour
     // -- INSPECT --
     // --- Night Specification UI ---
     [SerializeField] string restriction_String;
+    [SerializeField] string permitedCrimes_String;
 
     //--- Criminal Prove UI ---
     [SerializeField] string crimes_String;
@@ -107,6 +109,8 @@ public class UIManager : MonoBehaviour
     public Sprite Implants_Foto_Sprite { get => implants_Foto_Sprite; set => implants_Foto_Sprite = value; }
     public string Implants_Name_String { get => implants_Name_String; set => implants_Name_String = value; }
     public string Implants_Number_String { get => implants_Number_String; set => implants_Number_String = value; }
+    public string PermitedCrimes_String { get => permitedCrimes_String; set => permitedCrimes_String = value; }
+
     #endregion
 
     #region Singleton
@@ -143,6 +147,7 @@ public class UIManager : MonoBehaviour
         
         //Night specification
         restriction_Text.SetText(restriction_String);
+        permitedCrimes_Text.SetText(PermitedCrimes_String);
 
         //Implant scanner
         if (implants_Foto_Sprite && implants_Foto_Sprite != null)

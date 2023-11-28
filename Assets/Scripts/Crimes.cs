@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "Crimes", menuName = "ScriptableObjects/Crimes", order = 6)]
-public class Crimes : MonoBehaviour
+public class Crimes : ScriptableObject
 {
     [SerializeField] private string crimeName;
     [SerializeField] private string crimeDescription;

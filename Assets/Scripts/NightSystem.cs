@@ -68,6 +68,7 @@ public class NightSystem : MonoBehaviour
     {
         CurrentNight = night1;
         currentNightNumber = 0;
+        currentDate = "27/11/2076";
         Debug.Log("START");
     }
     private void Update()
@@ -96,7 +97,7 @@ public class NightSystem : MonoBehaviour
     {
         Debug.Log("RESUME");
         currentNightNumber++; //endGame?
-        
+
         //Player Goal = 1000€
         float auxiliarMoney = 50 * successes - 10 * fails;
 
@@ -106,7 +107,7 @@ public class NightSystem : MonoBehaviour
             return 0;
         }
 
-        
+
 
         //Add Money to GameManager
 
@@ -115,7 +116,7 @@ public class NightSystem : MonoBehaviour
 
         return CurrentNight.NightNumber;
 
-    
+
 
     }
 
@@ -132,9 +133,100 @@ public class NightSystem : MonoBehaviour
         Debug.Log("EEENDDDDDD GAMEEEEEEE");
     }
 
+    private string mapDistrictName(int districtNumber){
+        switch (districtNumber)
+        {
+            case 1:
+                return "Valle Quantico";
+            case 2:
+                return "Liks";
+            case 3:
+                return "Cromolit";
+            case 4:
+                return "Kabuki";
+            case 5:
+                return "F-Central";
+            case 6:
+                return "Hoster";
+            default:
+                return "";
+        }
+    }
+
+    private void formatNightSpecifications()
+    {
+        String formattedString = "";
+        String permitedCrimes = "";
+
+        if (currentNight.NightSpecifications.SpecificationDistricNumber.Count > 0)
+        {
+            foreach (var district in currentNight.NightSpecifications.SpecificationDistricNumber)
+            {
+                if (district < 7)
+                {
+                    formattedString += "- Personas del distrito " + mapDistrictName(district);
+                    formattedString += "\n";
+                }
+            }
+        }
+        if (!currentNight.NightSpecifications.SpecificationRegisteredImplants)
+        {
+            formattedString += "- Personas con implantes registrados";
+            formattedString += "\n";
+        }
+        if (!currentNight.NightSpecifications.SpecificationUnregisteredImplants)
+        {
+            formattedString += "- Personas con implantes NO registrados";
+            formattedString += "\n";
+        }
+        if (!currentNight.NightSpecifications.SpecificationNoImplants)
+        {
+            formattedString += "- Personas SIN implantes";
+            formattedString += "\n";
+        }
+        if (currentNight.NightSpecifications.SpecificationIlegalImplants)
+        {
+            formattedString += "- Personas con implantes ILEGALES";
+            formattedString += "\n";
+        }
+        if (currentNight.NightSpecifications.SpecificationMinimumAge != 0)
+        {
+            formattedString += "- Personas MENORES de " + currentNight.NightSpecifications.SpecificationMinimumAge;
+            formattedString += "\n";
+        }
+        if (currentNight.NightSpecifications.SpecificationNoCrime)
+        {
+            formattedString += "- Gente SIN crimenes";
+            formattedString += "\n";
+        }
+        if (currentNight.NightSpecifications.SpecificationJustifiedCrime)
+        {
+            formattedString += "- Gente CON justificante penal";
+            formattedString += "\n";
+        }
+        if (currentNight.NightSpecifications.SpecificationUnjustifiedCrime)
+        {
+            formattedString += "- Gente SIN justificante penal";
+            formattedString += "\n";
+        }
+        if (currentNight.NightSpecifications.SpecificationsPermitedCrimes.Count > 0)
+        {
+            foreach (var permitedCrime in currentNight.NightSpecifications.SpecificationsPermitedCrimes)
+            {
+                permitedCrimes += "- " + permitedCrime.CrimeName;
+                permitedCrimes += "\n";
+            }
+        }
+        UIManager.Instance.Restriction_String = formattedString;
+        UIManager.Instance.PermitedCrimes_String = permitedCrimes;
+        UIManager.Instance.updateUI();
+    }
+
     private void NextNight()
     {
         Debug.Log("NEXT NIGHT");
+
+        formatNightSpecifications();
 
         if (currentNightNumber == 1)
         {

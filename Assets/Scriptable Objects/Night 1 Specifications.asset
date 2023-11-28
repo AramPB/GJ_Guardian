@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ab56ea2f10c054b9092f094bf263e5, type: 3}
   m_Name: Night 1 Specifications
   m_EditorClassIdentifier: 
-  specificationDistricNumber: 
-  specificationRegisteredImplants: 0
-  specificationUnregisteredImplants: 0
+  specificationDistricNumber: 0300000005000000
+  specificationRegisteredImplants: 1
+  specificationUnregisteredImplants: 1
   specificationNoImplants: 1
-  specificationIlegalImplants: 0
-  specificationModifiedPeople: 0
-  specificationVanilaPeople: 0
-  specificationMinimumAge: 19
-  specificationNoCrime: 0
-  specificationJustifiedCrime: 0
-  specificationUnjustifiedCrime: 0
-  specificationsPermitedCrimes: []
+  specificationIlegalImplants: 1
+  specificationModifiedPeople: 1
+  specificationVanilaPeople: 1
+  specificationMinimumAge: 0
+  specificationNoCrime: 1
+  specificationJustifiedCrime: 1
+  specificationUnjustifiedCrime: 1
+  specificationsPermitedCrimes:
+  - {fileID: 11400000, guid: 1204cf6be4f8cae459a13c09bff50bfb, type: 2}
