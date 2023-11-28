@@ -11,13 +11,13 @@ public class CustomerControl : MonoBehaviour
     public NightSpecifications CurrentNightSpecifications { get => currentNightSpecifications; set => currentNightSpecifications = value; }
     public Customer CurrentCustomerToControl { get => currentCustomerToControl; set => currentCustomerToControl = value; }
 
-    public struct GameDate
+    public struct Date
     {
         public int day;
         public int month;
         public int year;
 
-        public GameDate(int day, int month, int year)
+        public Date(int day, int month, int year)
         {
             this.day = day;
             this.month = month;
@@ -25,7 +25,7 @@ public class CustomerControl : MonoBehaviour
         }
 
         // Custom method to check if one date is greater than another
-        public static bool operator >(GameDate date1, GameDate date2)
+        public static bool operator >(Date date1, Date date2)
         {
             if (date1.year > date2.year)
                 return true;
@@ -41,19 +41,19 @@ public class CustomerControl : MonoBehaviour
         }
 
         // Custom method to check if one date is less than another
-        public static bool operator <(GameDate date1, GameDate date2)
+        public static bool operator <(Date date1, Date date2)
         {
             return !(date1 > date2) && !(date1 == date2);
         }
 
         // Custom method to check if two dates are equal
-        public static bool operator ==(GameDate date1, GameDate date2)
+        public static bool operator ==(Date date1, Date date2)
         {
             return date1.day == date2.day && date1.month == date2.month && date1.year == date2.year;
         }
 
         // Custom method to check if two dates are not equal
-        public static bool operator !=(GameDate date1, GameDate date2)
+        public static bool operator !=(Date date1, Date date2)
         {
             return !(date1 == date2);
         }
@@ -85,12 +85,15 @@ public class CustomerControl : MonoBehaviour
         {
             return false;
         }
-        else if (isDocumentExpired(currentCustomerToControl.GetDocumentExpiryDate, "15/10/2078"))
+        else if (isDocumentExpired(currentCustomerToControl.GetDocumentExpiryDate, NightSystem.Instance.CurrentDate))
         {
-
+            return false;
+        }
+        else
+        {
+            return true;
         }
 
-        return true;
     }
 
     private bool isCriminal(List<string> crimes, bool hasJustificant)
@@ -244,10 +247,10 @@ public class CustomerControl : MonoBehaviour
     public bool isDocumentExpired(string expiryDateString, string gameDateString)
     {
         // Parse the expiry date string
-        if (TryParseGameDate(expiryDateString, out GameDate expiryDate))
+        if (TryParseDate(expiryDateString, out Date expiryDate))
         {
             // Parse the game date string
-            if (TryParseGameDate(gameDateString, out GameDate currentDate))
+            if (TryParseDate(gameDateString, out Date currentDate))
             {
                 // Compare the expiry date with the current date
                 if (expiryDate < currentDate)
@@ -263,7 +266,7 @@ public class CustomerControl : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Invalid game date format. Please provide the date in DD/MM/YYYY format.");
+                Debug.LogError("Invalid date format. Please provide the date in DD/MM/YYYY format.");
                 return false;
             }
         }
@@ -274,14 +277,34 @@ public class CustomerControl : MonoBehaviour
         }
     }
 
-    private bool TryParseGameDate(string dateString, out GameDate result)
+    private bool TryParseDate(string dateString, out Date result)
     {
-        result = new GameDate();
+        result = new Date();
 
         string[] dateParts = dateString.Split('/');
         if (dateParts.Length == 3 && int.TryParse(dateParts[0], out result.day) && int.TryParse(dateParts[1], out result.month) && int.TryParse(dateParts[2], out result.year))
         {
-            return true;
+            if (result.day > 31 && (result.month == 1 || result.month == 3 || result.month == 5 || result.month == 7 || result.month == 8 || result.month == 10 || result.month == 12))
+            {
+                return false;
+            }
+            else if (result.day > 30 && (result.month == 4 || result.month == 6 || result.month == 9 || result.month == 11))
+            {
+                return false;
+            }
+            else if (result.day > 28 && result.month == 2)
+            {
+                return false;
+            }
+            else if (0 > result.month && result.month > 12)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
         }
         else
         {
