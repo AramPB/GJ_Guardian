@@ -209,6 +209,7 @@ public class UIManager : MonoBehaviour
 
         //Crime Doc
         crimes_Name_Text.SetText(crimes_Name_String);
+        crimes_Age_Text.SetText(crimes_Age_String);
         if (crimes_Foto_Sprite && crimes_Foto_Sprite != null)
         {
             try

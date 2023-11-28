@@ -16,5 +16,6 @@ MonoBehaviour:
   nightsCustomers:
   - {fileID: 11400000, guid: d2ae214740a6967429dc017340dbed0e, type: 2}
   - {fileID: 11400000, guid: 5251d8da7d19a394b810f957d646e2e0, type: 2}
-  nightSpecifications:
-  - {fileID: 11400000, guid: 6a25b39e00cd92c4fba0dcfee531aab4, type: 2}
+  nightSpecifications: {fileID: 11400000, guid: 6a25b39e00cd92c4fba0dcfee531aab4, type: 2}
+  successes: 0
+  fails: 0
