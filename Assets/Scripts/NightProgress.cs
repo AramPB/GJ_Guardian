@@ -213,6 +213,8 @@ public class NightProgress : MonoBehaviour
         UIManager.Instance.Dni_Foto_Sprite = currentCustomer.GetPhoto;
         UIManager.Instance.Dni_Caducity_String = currentCustomer.GetDocumentExpiryDate;
         UIManager.Instance.Dni_District_String = currentCustomer.GetDistrictNumber.ToString();
+        UIManager.Instance.Dni_Implants_Name_String = "";
+        UIManager.Instance.Dni_Implants_number_String = "";
         foreach (Implant i in currentCustomer.GetImplants)
         {
             UIManager.Instance.Dni_Implants_Name_String += i.ImplantName + "\n";
@@ -338,6 +340,10 @@ public class NightProgress : MonoBehaviour
         DNIGameObject.SetActive(false);
         buttonCP.SetActive(false);
         UIManager.Instance.ResetPages();
+    }
+    public void ResetCustomer()
+    {
+        clientImage.GetComponent<Image>().sprite = null;
     }
     #endregion
 
