@@ -31,6 +31,11 @@ public class ScannerController : MonoBehaviour
 
     public static ScannerController Instance { get; private set; }
 
+    public void hideScannerUI()
+    {
+        scannerUI.SetActive(false);
+    }
+
     public void ClickEyeRButton()
     {
         found = false;
