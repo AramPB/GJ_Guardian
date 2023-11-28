@@ -9,6 +9,7 @@ public enum ImplantType { Eye, Cranium, Jaw, Nose, Arm, Torso};
 public class Implant : ScriptableObject
 {
     [SerializeField] private string implantName;
+    [SerializeField] private Sprite implantImage;
     [SerializeField] private string implantManufacterNumber;
     [SerializeField] private bool isLegal;
     [SerializeField] private ImplantType implantType;
@@ -17,4 +18,5 @@ public class Implant : ScriptableObject
     public string ImplantManufacterNumber { get => implantManufacterNumber; set => implantManufacterNumber = value; }
     public bool IsLegal { get => isLegal; set => isLegal = value; }
     public ImplantType ImplantType { get => implantType; set => implantType = value; }
+    public Sprite ImplantImage { get => implantImage; set => implantImage = value; }
 }
