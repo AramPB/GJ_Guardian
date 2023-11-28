@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -146,7 +147,14 @@ public class UIManager : MonoBehaviour
         //Implant scanner
         if (implants_Foto_Sprite && implants_Foto_Sprite != null)
         {
-            implants_Foto_Image.sprite = implants_Foto_Sprite;
+            try
+            {
+                implants_Foto_Image.sprite = implants_Foto_Sprite;
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e.Message);
+            }
         }
         implants_Name_Text.SetText(implants_Name_String);
         implants_Number_Text.SetText(Implants_Number_String);
@@ -154,7 +162,14 @@ public class UIManager : MonoBehaviour
         //DNI
         if (dni_Foto_Sprite && dni_Foto_Sprite != null)
         {
-            dni_Foto_Image.sprite = dni_Foto_Sprite;
+            try
+            {
+                dni_Foto_Image.sprite = dni_Foto_Sprite;
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e.Message);
+            }
         }
         dni_Name_Text.SetText(dni_Name_String);
         dni_Caducity_Text.SetText(dni_Caducity_String);
@@ -165,14 +180,28 @@ public class UIManager : MonoBehaviour
         dni_Implants_number_Text.SetText(dni_Implants_number_String);
         if (dni_Criminal_Stamp_Sprite && dni_Criminal_Stamp_Sprite != null)
         {
-            dni_Criminal_Stamp_Image.sprite = dni_Criminal_Stamp_Sprite;
+            try
+            {
+                dni_Criminal_Stamp_Image.sprite = dni_Criminal_Stamp_Sprite;
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e.Message);
+            }
         }
 
         //Crime Doc
         crimes_Name_Text.SetText(crimes_Name_String);
         if (crimes_Foto_Sprite && crimes_Foto_Sprite != null)
         {
-            crimes_Foto_Image.sprite = crimes_Foto_Sprite;
+            try
+            {
+                crimes_Foto_Image.sprite = crimes_Foto_Sprite;
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e.Message);
+            }
         }
         crimes_Serial_Text.SetText(crimes_Serial_String);
         crimes_Text.SetText(crimes_String);

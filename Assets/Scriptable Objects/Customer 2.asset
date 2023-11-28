@@ -26,7 +26,8 @@ MonoBehaviour:
   customerDialogType: 2
   customerMoney: 325
   customerNightApparition: 1
-  customerImplants: []
+  customerImplants:
+  - {fileID: 11400000, guid: 62e47803e5ca2a447aaa5190eebd936d, type: 2}
   customerImplantsRegistered: []
   customerDocumentExpiryDate: 45647
   customerHasJustificant: 0

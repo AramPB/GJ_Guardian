@@ -33,3 +33,4 @@ MonoBehaviour:
   customerImplantsRegistered:
   - {fileID: 11400000, guid: 62e47803e5ca2a447aaa5190eebd936d, type: 2}
   customerDocumentExpiryDate: 218349
+  customerHasJustificant: 0

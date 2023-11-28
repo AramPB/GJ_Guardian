@@ -118,7 +118,6 @@ public class NightProgress : MonoBehaviour
         CurrentCustomer = clientsList[_currentClientNumber - 1];
         clientImage.GetComponent<Image>().sprite = CurrentCustomer.GetSprite;
         tmpStartWait = Time.time;
-
     }
     private void UpdateClientApparition()
     {
@@ -215,11 +214,18 @@ public class NightProgress : MonoBehaviour
         UIManager.Instance.Dni_Foto_Sprite = CurrentCustomer.GetPhoto;
         UIManager.Instance.Dni_Caducity_String = CurrentCustomer.GetDocumentExpiryDate;
         UIManager.Instance.Dni_District_String = CurrentCustomer.GetDistrictNumber.ToString();
-        foreach (Implant i in CurrentCustomer.GetImplants)
+        foreach (Implant i in CurrentCustomer.GetImplantsRegistered)
         {
             UIManager.Instance.Dni_Implants_Name_String += i.ImplantName + "\n";
             UIManager.Instance.Dni_Implants_number_String += i.ImplantManufacterNumber + "\n";
         }
+
+        if(CurrentCustomer.GetImplants.Count <= 0)
+        {
+            UIManager.Instance.Dni_Implants_Name_String = "";
+            UIManager.Instance.Dni_Implants_number_String = "";
+        }
+
         if (CurrentCustomer.GetCrimes.Count != 0)
         {
             buttonCP.SetActive(true);
