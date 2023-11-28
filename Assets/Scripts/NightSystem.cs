@@ -30,8 +30,12 @@ public class NightSystem : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Hola");
         currentNight = night1;
         currentNightNumber = 1;
+        UIManager.Instance.Dni_Age_String = currentNight.NightsCustomers[0].GetAge.ToString();
+        UIManager.Instance.Dni_Name_String = currentNight.NightsCustomers[0].GetName;
+        UIManager.Instance.updateUI();
     }
 
     public int NightResume(int successes, int fails)
