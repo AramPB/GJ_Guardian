@@ -88,6 +88,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] string implants_Name_String;
     [SerializeField] string implants_Number_String;
 
+    //---- Pages ----
+    private int currentPage = 1;
+    private bool hasCriminalProof = false;
+    [SerializeField] private int maxPages = 4;
+    [SerializeField] private GameObject docNightSpecifications;
+    [SerializeField] private GameObject docDistrict;
+    [SerializeField] private GameObject docImplant;
+    [SerializeField] private GameObject docCriminalProof;
+
     #region Getters & Setters
     public static UIManager Instance { get; private set; }
     public string CityDialog_String { get => cityDialog_String; set => cityDialog_String = value; }
@@ -153,9 +162,12 @@ public class UIManager : MonoBehaviour
         //District
         district_NamesList_Text.SetText(district_NamesList_String);
         district_NumberList_Text.SetText(district_NumberList_String);
-        
+
         //Implant scanner
-        //implants_Foto_Image.sprite = implants_Foto_Sprite;
+        if (implants_Foto_Sprite)
+        {
+            implants_Foto_Image.sprite = implants_Foto_Sprite;
+        }
         implants_Name_Text.SetText(implants_Name_String);
         implants_Number_Text.SetText(Implants_Number_String);
         
@@ -164,8 +176,10 @@ public class UIManager : MonoBehaviour
         implant_NumberList_Text.SetText(implant_NumberList_String);
 
         //DNI
-        //dni_Foto_Image.sprite = dni_Foto_Sprite;
-        Debug.Log(dni_Name_String);
+        if (dni_Foto_Sprite)
+        {
+            dni_Foto_Image.sprite = dni_Foto_Sprite;
+        }
         dni_Name_Text.SetText(dni_Name_String);
         dni_Caducity_Text.SetText(dni_Caducity_String);
         dni_Serial_Text.SetText(dni_Serial_String);
@@ -173,7 +187,90 @@ public class UIManager : MonoBehaviour
         dni_Age_Text.SetText(dni_Age_String);
         dni_Implants_Name_Text.SetText(dni_Implants_Name_String);
         dni_Implants_number_Text.SetText(dni_Implants_number_String);
-        //dni_Criminal_Stamp_Image.sprite = dni_Criminal_Stamp_Sprite;
+        if (dni_Criminal_Stamp_Sprite)
+        {
+            dni_Criminal_Stamp_Image.sprite = dni_Criminal_Stamp_Sprite;
+        }
+
+        //Crime Doc
+        crimes_Name_Text.SetText(crimes_Name_String);
+        if (crimes_Foto_Sprite)
+        {
+            crimes_Foto_Image.sprite = crimes_Foto_Sprite;
+        }
+        crimes_Serial_Text.SetText(crimes_Serial_String);
+        crimes_Text.SetText(crimes_String);
     }
 
+    public void ResetPages()
+    {
+        hasCriminalProof = false;
+        UpdatePage(1);
+    }
+
+    public void ObtainCP()
+    {
+        hasCriminalProof = true;
+        UpdatePage(4);
+    }
+
+    public void PreviousPage()
+    {
+        Debug.Log("PREVIOUS PAGE");
+        if (currentPage != 1)
+        {
+            UpdatePage(currentPage - 1);
+        }
+    }
+
+    public void NextPage()
+    {
+        Debug.Log("NEXT PAGE");
+        if (!(currentPage == 4 || (currentPage == 3 && !hasCriminalProof)))
+        {
+
+            UpdatePage(currentPage + 1);
+        }
+        else
+        {
+            Debug.Log("MAX PAGE");
+        }
+    }
+
+    private void UpdatePage(int newPage)
+    {
+        Debug.Log(newPage);
+        switch (currentPage)
+        {
+            case 1:
+                docNightSpecifications.SetActive(false);
+                break;
+            case 2:
+                docDistrict.SetActive(false);
+                break;
+            case 3:
+                docImplant.SetActive(false);
+                break;
+            case 4:
+                docCriminalProof.SetActive(false);
+                break;
+        }
+
+        switch (newPage)
+        {
+            case 1:
+                docNightSpecifications.SetActive(true);
+                break;
+            case 2:
+                docDistrict.SetActive(true);
+                break;
+            case 3:
+                docImplant.SetActive(true);
+                break;
+            case 4:
+                docCriminalProof.SetActive(true);
+                break;
+        }
+        currentPage = newPage;
+    }
 }

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e1caa72589b9d347b2be10c8d9a5645, type: 3}
-  m_Name: Night 1
+  m_Name: Night 4
   m_EditorClassIdentifier: 
-  nightNumber: 1
+  nightNumber: 4
   nightsCustomers:
+  - {fileID: 11400000, guid: d2ae214740a6967429dc017340dbed0e, type: 2}
   - {fileID: 11400000, guid: 5251d8da7d19a394b810f957d646e2e0, type: 2}
-  - {fileID: 11400000, guid: 3541f7b076111004d968d1a19723e7f2, type: 2}
   nightSpecifications:
   - {fileID: 11400000, guid: 6a25b39e00cd92c4fba0dcfee531aab4, type: 2}

@@ -14,6 +14,7 @@ public class Customer : ScriptableObject
     [SerializeField] private Sprite customerPhoto;
     [SerializeField] private int customerAge;
     [SerializeField] private string customerDistricNumber;
+    [SerializeField] private bool customerDNIToGive;
     [SerializeField] private Sprite customerSprite;
     [SerializeField] private List<string> customerCrimes;
     [SerializeField] private List<string> customerDialogLines;
@@ -30,6 +31,7 @@ public class Customer : ScriptableObject
     public Sprite GetPhoto { get { return customerPhoto; } }
     public int GetAge { get { return customerAge; } }
     public string GetDistrictNumber { get { return customerDistricNumber; } }
+    public bool GetDNIToGive { get { return customerDNIToGive; } }
     public Sprite GetSprite { get { return customerSprite; } }
     public List<string> GetCrimes { get { return customerCrimes; } }
     public List<string> GetDialogLines { get { return customerDialogLines; } }
