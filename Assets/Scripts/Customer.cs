@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum DialogType{Beg, Bribe, Normal};
+public enum DialogType { Beg, Bribe, Normal };
 
 
 [CreateAssetMenu(fileName = "Customers", menuName = "ScriptableObjects/Customers", order = 1)]

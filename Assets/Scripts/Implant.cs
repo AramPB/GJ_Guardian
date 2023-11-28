@@ -12,4 +12,9 @@ public class Implant : ScriptableObject
     [SerializeField] private string implantManufacterNumber;
     [SerializeField] private bool isLegal;
     [SerializeField] private ImplantType implantType;
+
+    public string ImplantName { get => implantName; set => implantName = value; }
+    public string ImplantManufacterNumber { get => implantManufacterNumber; set => implantManufacterNumber = value; }
+    public bool IsLegal { get => isLegal; set => isLegal = value; }
+    public ImplantType ImplantType { get => implantType; set => implantType = value; }
 }
