@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NightProgress : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class NightProgress : MonoBehaviour
     [SerializeField] private GameObject clientImage;
     [SerializeField] private GameObject dialogGameObject;
     [SerializeField] private GameObject DNIGameObject;
+    [SerializeField] private GameObject buttonCP;
+    
+    [SerializeField] private float tmpWaitTime;
+    private float tmpStartWait;
 
     private int _currentClientNumber;
 
@@ -17,6 +22,8 @@ public class NightProgress : MonoBehaviour
 
     private int maxClients;
     private List<Customer> clientsList;
+
+    private bool inProgress = false;
 
 
     private enum State
@@ -35,33 +42,27 @@ public class NightProgress : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (clientsList.Count != 0)
-        {
-            if (clientImage.GetComponent<Sprite>())
-            {
-                if (dialogGameObject) {
-                    if (DNIGameObject) {
 
-                        SwitchState(State.Waiting);
-                    }
-                    else
-                    {
-                        Debug.Log("No encuentra el DNI GO");
-                    }
+        if (clientImage.GetComponent<Image>())
+        {
+            if (dialogGameObject) {
+                if (DNIGameObject) {
+
+                    SwitchState(State.Waiting);
                 }
                 else
                 {
-                    Debug.Log("No encuentra el Dialog GO");
+                    Debug.Log("No encuentra el DNI GO");
                 }
             }
             else
             {
-                Debug.Log("No encuentra sprite de Cliente");
+                Debug.Log("No encuentra el Dialog GO");
             }
         }
         else
         {
-            Debug.Log("Clients List Empty");
+            Debug.Log("No encuentra sprite de Cliente");
         }
 
     }
@@ -113,15 +114,19 @@ public class NightProgress : MonoBehaviour
     private void StartClientApparition()
     {
         currentCustomer = clientsList[_currentClientNumber - 1];
-        Sprite photo = clientImage.GetComponent<Sprite>();
-        photo = currentCustomer.GetPhoto;
+        clientImage.GetComponent<Image>().sprite = currentCustomer.GetSprite;
+        tmpStartWait = Time.time;
 
     }
     private void UpdateClientApparition()
     {
         //Animaión de la aparición
         //Al acabar:
-        //SwitchState(State.Documentation);
+        if (Time.time >= tmpWaitTime + tmpStartWait)
+        {
+            SwitchState(State.Documentation);
+        }
+        //
     }
     private void EndClientApparition()
     {
@@ -132,7 +137,19 @@ public class NightProgress : MonoBehaviour
         maxClients = maxCustomers;
         _currentClientNumber = 1;
         clientsList = customersList;
-        SwitchState(State.Apparition);
+        if (clientsList.Count <= 0)
+        {
+            Debug.Log("Clients List Empty");
+        }
+        else
+        {
+            inProgress = true;
+            DNIGameObject.SetActive(false);
+            buttonCP.SetActive(false);
+            UIManager.Instance.ResetPages();
+            UIManager.Instance.updateUI();
+            SwitchState(State.Apparition);
+        }
     }
     #endregion
 
@@ -140,13 +157,17 @@ public class NightProgress : MonoBehaviour
     #region Documentation
     private void StartDocumentationAsk()
     {
-
+        tmpStartWait = Time.time;
     }
     private void UpdateDocumentationAsk()
     {
         //Animaión de la documentación y dialogos
         //Al acabar:
-        //SwitchState(State.DNI);
+        if (Time.time >= tmpWaitTime + tmpStartWait)
+        {
+            SwitchState(State.DNI);
+        }
+        //
     }
     private void EndDocumentationAsk()
     {
@@ -162,13 +183,43 @@ public class NightProgress : MonoBehaviour
         {
             //Setear la nueva info de DNI
             DNIGameObject.SetActive(true);
+            UIManager.Instance.Dni_Age_String = currentCustomer.GetAge.ToString();
+            UIManager.Instance.Dni_Name_String = currentCustomer.GetName;
+            UIManager.Instance.Dni_Serial_String = currentCustomer.GetId;
+            UIManager.Instance.Dni_Foto_Sprite = currentCustomer.GetPhoto;
+            UIManager.Instance.Dni_Caducity_String = currentCustomer.GetDocumentExpiryDate;
+            UIManager.Instance.Dni_District_String = currentCustomer.GetDistrictNumber;
+            foreach (Implant i in currentCustomer.GetImplants)
+            {
+                UIManager.Instance.Dni_Implants_Name_String += i.ImplantName + "\n";
+                UIManager.Instance.Dni_Implants_number_String += i.ImplantManufacterNumber + "\n";
+            }
+            if (currentCustomer.GetCrimes.Count != 0)
+            {
+                buttonCP.SetActive(true);
+            }
+            else
+            {
+                buttonCP.SetActive(false);
+
+            }
+            UIManager.Instance.updateUI();
         }
+        else
+        {
+            Debug.Log("No DNI");
+        }
+        tmpStartWait = Time.time;
     }
     private void UpdateObtainingDNI()
     {
         //Animacion de DNI
         //Al acabar:
-        //SwitchState(State.DataCheck);
+        if (Time.time >= tmpWaitTime + tmpStartWait)
+        {
+            SwitchState(State.DataCheck);
+        }
+        //
     }
     private void EndObtainingDNI()
     {
@@ -180,7 +231,7 @@ public class NightProgress : MonoBehaviour
     #region DataCheck
     private void StartDataCheck()
     {
-
+        
     }
     private void UpdateDataCheck()
     {
@@ -197,19 +248,27 @@ public class NightProgress : MonoBehaviour
     private void StartCriminalProof()
     {
         //Pondra las cosas de UI de Criminal Proof
+        tmpStartWait = Time.time;
+        //UIManager.Instance.
     }
     private void UpdateCriminalProof()
     {
         //Animacion de CriminalProof
         //Al acabar:
-        //SwitchState(State.FinalDecision)
+        if (Time.time >= tmpWaitTime + tmpStartWait)
+        {
+            SwitchState(State.FinalDecision);
+        }
+        //
     }
     private void EndCriminalProof()
     {
 
     }
-    public void obtainCriminalProof()
+    public void ObtainCriminalProof()
     {
+        buttonCP.SetActive(false);
+        UIManager.Instance.ObtainCP();
         SwitchState(State.CriminalProof);
     }
     #endregion
@@ -228,7 +287,7 @@ public class NightProgress : MonoBehaviour
     {
 
     }
-    public void pulsedDecision(bool pass)
+    public void PulsedDecision(bool pass)
     {
         actualPass = pass;
         SwitchState(State.EndDialogue);
@@ -239,6 +298,7 @@ public class NightProgress : MonoBehaviour
     #region EndDialogue
     private void StartEndDialogue()
     {
+        tmpStartWait = Time.time;
         if (actualPass)
         {
             //Animacion y dialogos de Sí
@@ -252,21 +312,28 @@ public class NightProgress : MonoBehaviour
     {
         //Animacion y dialogo resultado
         //Al acabar:
-        if (_currentClientNumber <= maxClients)
+        if (Time.time >= tmpWaitTime + tmpStartWait)
         {
             _currentClientNumber++;
-            currentCustomer = clientsList[_currentClientNumber - 1];
-            SwitchState(State.Apparition);
-        }
-        else
-        {
-            //END LOOP
-            SwitchState(State.Waiting);
+            if (_currentClientNumber <= maxClients)
+            {
+                currentCustomer = clientsList[_currentClientNumber - 1];
+                SwitchState(State.Apparition);
+            }
+            else
+            {
+                //END LOOP
+                inProgress = false;
+                SwitchState(State.Waiting);
+            }
         }
     }
     private void EndEndDialogue()
     {
         //Desactivar cosas
+        DNIGameObject.SetActive(false);
+        buttonCP.SetActive(false);
+        UIManager.Instance.ResetPages();
     }
     #endregion
 
@@ -285,6 +352,11 @@ public class NightProgress : MonoBehaviour
 
     }
     #endregion
+
+    public bool isInProgress()
+    {
+        return inProgress;
+    }
 
     private void SwitchState(State state)
     {

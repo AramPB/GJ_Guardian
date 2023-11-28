@@ -12,17 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
   m_Name: Customer 1
   m_EditorClassIdentifier: 
-  customerName: 
-  customerId: 
-  customerPhoto: {fileID: 0}
-  customerAge: 0
-  customerDistricNumber: 
-  customerSprite: {fileID: 0}
-  customerCrimes: []
-  customerDialogLines: []
-  customerDialogType: 0
-  customerMoney: 0
-  customerNightApparition: 0
-  customerImplants: []
-  customerImplantsRegistered: []
-  customerDocumentExpiryDate: 
+  customerName: Dylan
+  customerId: 12
+  customerPhoto: {fileID: 21300000, guid: eec354ae6aa389448a8962d42ad0f5d7, type: 3}
+  customerAge: 23
+  customerDistricNumber: 131124324
+  customerDNIToGive: 1
+  customerSprite: {fileID: 21300000, guid: eec354ae6aa389448a8962d42ad0f5d7, type: 3}
+  customerCrimes:
+  - PAtata
+  customerDialogLines:
+  - hola
+  - adeu
+  customerDialogType: 2
+  customerMoney: 432
+  customerNightApparition: 1
+  customerImplants:
+  - {fileID: 11400000, guid: 62e47803e5ca2a447aaa5190eebd936d, type: 2}
+  - {fileID: 11400000, guid: ee0b8d5fcdafec340b6ad1e8062f182b, type: 2}
+  customerImplantsRegistered:
+  - {fileID: 11400000, guid: 62e47803e5ca2a447aaa5190eebd936d, type: 2}
+  customerDocumentExpiryDate: 218349

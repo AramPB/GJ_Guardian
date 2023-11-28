@@ -33,10 +33,31 @@ public class NightSystem : MonoBehaviour
     {
         currentNight = night1;
         currentNightNumber = 0;
+        Debug.Log("START");
+    }
+    private void Update()
+    {
+        if (currentNightNumber != 0) {
+            if (nightProgress.isInProgress())
+            {
+
+            }
+            else
+            {
+                //
+                int a = NightResume(1, 1);
+            }
+        }
+        else
+        {
+            currentNightNumber++;
+            NextNight();
+        }
     }
 
     public int NightResume(int successes, int fails)
     {
+        Debug.Log("RESUME");
         currentNightNumber++; //endGame?
         
         //Player Goal = 1000€
@@ -52,7 +73,7 @@ public class NightSystem : MonoBehaviour
 
         //Add Money to GameManager
 
-         NightDialog1.text = "With today's shift you have won: " + auxiliarMoney + "€";
+        //NightDialog1.text = "With today's shift you have won: " + auxiliarMoney + "€";
 
         NextNight();
         NightTransition();
@@ -73,27 +94,30 @@ public class NightSystem : MonoBehaviour
         //{
         //    //Play Bad Ending Animation & Return to Menu
         //}
-
+        Debug.Log("EEENDDDDDD GAMEEEEEEE");
     }
 
     private void NextNight()
     {
+        Debug.Log("NEXT NIGHT");
+
         if (currentNightNumber == 1)
         {
             currentNight = night1;
         }
         else if (currentNightNumber == 2)
         {
-            currentNight = Night2;
+            currentNight = night2;
         }
         else if (currentNightNumber == 3)
         {
-            currentNight = Night3;
+            currentNight = night3;
         }
         else
         {
-            currentNight = Night4;
+            currentNight = night4;
         }
+
         nightProgress.StartLoop(currentNight.NightsCustomers.Count, currentNight.NightsCustomers);
     }
 

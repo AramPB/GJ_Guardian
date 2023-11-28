@@ -88,6 +88,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] string implants_Name_String;
     [SerializeField] string implants_Number_String;
 
+    //---- Pages ----
+    private int currentPage = 1;
+    private bool hasCriminalProof = false;
+    [SerializeField] private int maxPages = 4;
+    [SerializeField] private GameObject docNightSpecifications;
+    [SerializeField] private GameObject docDistrict;
+    [SerializeField] private GameObject docImplant;
+    [SerializeField] private GameObject docCriminalProof;
+
     #region Getters & Setters
     public static UIManager Instance { get; private set; }
     public string CityDialog_String { get => cityDialog_String; set => cityDialog_String = value; }
@@ -193,4 +202,75 @@ public class UIManager : MonoBehaviour
         crimes_Text.SetText(crimes_String);
     }
 
+    public void ResetPages()
+    {
+        hasCriminalProof = false;
+        UpdatePage(1);
+    }
+
+    public void ObtainCP()
+    {
+        hasCriminalProof = true;
+        UpdatePage(4);
+    }
+
+    public void PreviousPage()
+    {
+        Debug.Log("PREVIOUS PAGE");
+        if (currentPage != 1)
+        {
+            UpdatePage(currentPage - 1);
+        }
+    }
+
+    public void NextPage()
+    {
+        Debug.Log("NEXT PAGE");
+        if (!(currentPage == 4 || (currentPage == 3 && !hasCriminalProof)))
+        {
+
+            UpdatePage(currentPage + 1);
+        }
+        else
+        {
+            Debug.Log("MAX PAGE");
+        }
+    }
+
+    private void UpdatePage(int newPage)
+    {
+        Debug.Log(newPage);
+        switch (currentPage)
+        {
+            case 1:
+                docNightSpecifications.SetActive(false);
+                break;
+            case 2:
+                docDistrict.SetActive(false);
+                break;
+            case 3:
+                docImplant.SetActive(false);
+                break;
+            case 4:
+                docCriminalProof.SetActive(false);
+                break;
+        }
+
+        switch (newPage)
+        {
+            case 1:
+                docNightSpecifications.SetActive(true);
+                break;
+            case 2:
+                docDistrict.SetActive(true);
+                break;
+            case 3:
+                docImplant.SetActive(true);
+                break;
+            case 4:
+                docCriminalProof.SetActive(true);
+                break;
+        }
+        currentPage = newPage;
+    }
 }

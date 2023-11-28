@@ -12,17 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
   m_Name: Customer 2
   m_EditorClassIdentifier: 
-  customerName: 
-  customerId: 
-  customerPhoto: {fileID: 0}
-  customerAge: 0
-  customerDistricNumber: 
-  customerSprite: {fileID: 0}
+  customerName: Tonacho
+  customerId: 423
+  customerPhoto: {fileID: 21300000, guid: 69ef803c66cdc6d489edbe1ddd3fe216, type: 3}
+  customerAge: 324
+  customerDistricNumber: 65436
+  customerDNIToGive: 1
+  customerSprite: {fileID: 21300000, guid: 69ef803c66cdc6d489edbe1ddd3fe216, type: 3}
   customerCrimes: []
-  customerDialogLines: []
-  customerDialogType: 0
-  customerMoney: 0
-  customerNightApparition: 0
+  customerDialogLines:
+  - holasio
+  - adeuasio
+  customerDialogType: 2
+  customerMoney: 325
+  customerNightApparition: 1
   customerImplants: []
   customerImplantsRegistered: []
-  customerDocumentExpiryDate: 
+  customerDocumentExpiryDate: 45647

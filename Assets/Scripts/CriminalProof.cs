@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Criminal Proof")]
+[CreateAssetMenu(fileName = "New Criminal Proof", menuName = "ScriptableObjects/Criminal Proof", order = 5)]
 public class CriminalProof : ScriptableObject
 {
     [SerializeField] public new string name;
