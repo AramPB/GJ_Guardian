@@ -20,7 +20,7 @@ MonoBehaviour:
   customerDNIToGive: 1
   customerSprite: {fileID: 21300000, guid: eec354ae6aa389448a8962d42ad0f5d7, type: 3}
   customerCrimes:
-  - PAtata
+  - {fileID: 11400000, guid: 1204cf6be4f8cae459a13c09bff50bfb, type: 2}
   customerDialogLines:
   - hola
   - adeu
@@ -30,5 +30,5 @@ MonoBehaviour:
   customerImplants: []
   customerImplantsRegistered:
   - {fileID: 11400000, guid: 62e47803e5ca2a447aaa5190eebd936d, type: 2}
-  customerDocumentExpiryDate: 218349
+  customerDocumentExpiryDate: 12/12/2077
   customerHasJustificant: 0

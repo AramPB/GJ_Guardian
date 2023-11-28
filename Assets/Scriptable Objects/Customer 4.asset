@@ -26,4 +26,5 @@ MonoBehaviour:
   customerNightApparition: 1
   customerImplants: []
   customerImplantsRegistered: []
-  customerDocumentExpiryDate: 3454
+  customerDocumentExpiryDate: 30/01/2079
+  customerHasJustificant: 0

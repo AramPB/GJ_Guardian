@@ -28,6 +28,8 @@ public class NightSystem : MonoBehaviour
 
     [SerializeField] private CustomerControl customerContol;
 
+    [SerializeField] private int moneyEarned;
+
     private float transitionStartTime;
     private float transitionStartTime2;
     [SerializeField] private float transitionDuration;
@@ -50,6 +52,7 @@ public class NightSystem : MonoBehaviour
     public static NightSystem Instance { get; private set; }
     public NightProgress NightProgress { get => nightProgress; set => nightProgress = value; }
     public CustomerControl CustomerContol { get => customerContol; set => customerContol = value; }
+    public int MoneyEarned { get => moneyEarned; set => moneyEarned = value; }
 
     #region Singleton
     private void Awake()
@@ -70,8 +73,6 @@ public class NightSystem : MonoBehaviour
         CurrentNight = night1;
         currentNightNumber = 0;
         currentDate = "27/11/2076";
-
-        //CustomerContol.UpdateCurrentNight(currentNight);
         Debug.Log("START");
     }
     private void Update()
@@ -96,13 +97,13 @@ public class NightSystem : MonoBehaviour
         }
     }
 
-    public int NightResume(int successes, int fails)
+    public int NightResume()
     {
         Debug.Log("RESUME");
         currentNightNumber++; //endGame?
 
         //Player Goal = 1000€
-        float auxiliarMoney = 50 * successes - 10 * fails;
+        moneyEarned = 50 * currentNight.Successes - 10 * currentNight.Fails;
 
         if (currentNightNumber >= 5)
         {
@@ -110,16 +111,7 @@ public class NightSystem : MonoBehaviour
             return 0;
         }
 
-
-
-        //Add Money to GameManager
-
-        //NightDialog1.text = "With today's shift you have won: " + auxiliarMoney + "€";
-
-
         return CurrentNight.NightNumber;
-
-
 
     }
 
@@ -268,7 +260,7 @@ public class NightSystem : MonoBehaviour
     {
         if (endLoopTrigger)
         {
-            int a = NightResume(1, 1);
+            int a = NightResume();
             endLoopTrigger = false;
         }
         NightTransition();

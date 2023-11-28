@@ -323,6 +323,18 @@ public class NightProgress : MonoBehaviour
     public void PulsedDecision(bool pass)
     {
         actualPass = pass;
+        bool isApt = NightSystem.Instance.CustomerContol.ControlOneCustomer(currentCustomer);
+
+        if (actualPass == isApt)
+        {
+            Debug.Log("Acertaste");
+            NightSystem.Instance.CurrentNight.Successes++;
+        }
+        else
+        {
+            Debug.Log("Cagtaste");
+            NightSystem.Instance.CurrentNight.Fails++;
+        }
         SwitchState(State.EndDialogue);
     }
     #endregion
