@@ -1174,6 +1174,16 @@ MonoBehaviour:
   docDistrict: {fileID: 3714649626123593552}
   docImplant: {fileID: 7320308755784789387}
   docCriminalProof: {fileID: 1121866577178391391}
+  passButton: {fileID: 9015011700515987695}
+  declineButton: {fileID: 3004937426940370259}
+  craniumButton: {fileID: 5187001614315648409}
+  noseButton: {fileID: 1687321177994878520}
+  eyeRButton: {fileID: 1986992431988158357}
+  eyeLButton: {fileID: 1723897552591287418}
+  jawButton: {fileID: 7947705011350376522}
+  armRButton: {fileID: 8619256343467441230}
+  armLButton: {fileID: 2177309762685744423}
+  bodyButton: {fileID: 672965077133629865}
 --- !u!1 &672965077133629865
 GameObject:
   m_ObjectHideFlags: 0
@@ -5910,12 +5920,12 @@ GameObject:
   - component: {fileID: 750782321609485711}
   - component: {fileID: 8079200012623525851}
   m_Layer: 5
-  m_Name: Image
+  m_Name: FadeOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2137055475285362532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5956,7 +5966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
