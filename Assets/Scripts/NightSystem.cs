@@ -158,7 +158,7 @@ public class NightSystem : MonoBehaviour
         String formattedString = "";
         String permitedCrimes = "";
 
-        if (currentNight.NightSpecifications.SpecificationDistricNumber.Count > 0)
+        if (currentNight != null && currentNight.NightSpecifications != null && currentNight.NightSpecifications.SpecificationDistricNumber != null && currentNight.NightSpecifications.SpecificationDistricNumber.Count > 0)
         {
             foreach (var district in currentNight.NightSpecifications.SpecificationDistricNumber)
             {
@@ -169,53 +169,61 @@ public class NightSystem : MonoBehaviour
                 }
             }
         }
-        if (!currentNight.NightSpecifications.SpecificationRegisteredImplants)
+        if (currentNight != null && currentNight.NightSpecifications != null && !currentNight.NightSpecifications.SpecificationRegisteredImplants)
         {
-            formattedString += "- Personas con implantes registrados";
+            formattedString += "- Personas CON implantes registrados";
             formattedString += "\n";
         }
-        if (!currentNight.NightSpecifications.SpecificationUnregisteredImplants)
+        if (currentNight != null && currentNight.NightSpecifications != null && !currentNight.NightSpecifications.SpecificationUnregisteredImplants)
         {
-            formattedString += "- Personas con implantes NO registrados";
+            formattedString += "- Personas SIN implantes registrados";
             formattedString += "\n";
         }
-        if (!currentNight.NightSpecifications.SpecificationNoImplants)
+        if (currentNight != null && currentNight.NightSpecifications != null && !currentNight.NightSpecifications.SpecificationNoImplants)
         {
             formattedString += "- Personas SIN implantes";
             formattedString += "\n";
         }
-        if (currentNight.NightSpecifications.SpecificationIlegalImplants)
+        if (currentNight != null && currentNight.NightSpecifications != null && !currentNight.NightSpecifications.SpecificationIlegalImplants)
         {
             formattedString += "- Personas con implantes ILEGALES";
             formattedString += "\n";
         }
-        if (currentNight.NightSpecifications.SpecificationMinimumAge != 0)
+        if (currentNight != null && currentNight.NightSpecifications != null && currentNight.NightSpecifications.SpecificationMinimumAge != 0)
         {
             formattedString += "- Personas MENORES de " + currentNight.NightSpecifications.SpecificationMinimumAge;
             formattedString += "\n";
         }
-        if (currentNight.NightSpecifications.SpecificationNoCrime)
+        if (currentNight != null && currentNight.NightSpecifications != null && !currentNight.NightSpecifications.SpecificationNoCrime)
         {
             formattedString += "- Gente SIN crimenes";
             formattedString += "\n";
         }
-        if (currentNight.NightSpecifications.SpecificationJustifiedCrime)
+        if (currentNight != null && currentNight.NightSpecifications != null && !currentNight.NightSpecifications.SpecificationJustifiedCrime)
         {
             formattedString += "- Gente CON justificante penal";
             formattedString += "\n";
         }
-        if (currentNight.NightSpecifications.SpecificationUnjustifiedCrime)
+        if (currentNight != null && currentNight.NightSpecifications != null && !currentNight.NightSpecifications.SpecificationUnjustifiedCrime)
         {
             formattedString += "- Gente SIN justificante penal";
             formattedString += "\n";
         }
-        if (currentNight.NightSpecifications.SpecificationsPermitedCrimes.Count > 0)
+        if (currentNight != null && currentNight.NightSpecifications != null && currentNight.NightSpecifications.SpecificationsPermitedCrimes != null && currentNight.NightSpecifications.SpecificationsPermitedCrimes.Count > 0)
         {
             foreach (var permitedCrime in currentNight.NightSpecifications.SpecificationsPermitedCrimes)
             {
                 permitedCrimes += "- " + permitedCrime.CrimeName;
                 permitedCrimes += "\n";
             }
+        }
+        if(formattedString == "")
+        {
+            formattedString = "Sin información disponible!";
+        }
+        if (permitedCrimes == "")
+        {
+            permitedCrimes = "No se permite ningún crimen!";
         }
         UIManager.Instance.Restriction_String = formattedString;
         UIManager.Instance.PermitedCrimes_String = permitedCrimes;
@@ -225,8 +233,6 @@ public class NightSystem : MonoBehaviour
     private void NextNight()
     {
         Debug.Log("NEXT NIGHT");
-
-        formatNightSpecifications();
 
         if (currentNightNumber == 1)
         {
@@ -252,6 +258,7 @@ public class NightSystem : MonoBehaviour
         customerContol.UpdateCurrentNight(currentNight);
 
         nightProgress.StartLoop(CurrentNight.NightsCustomers.Count, CurrentNight.NightsCustomers);
+        formatNightSpecifications();
     }
 
     private void BetweenNightsTransitionController()

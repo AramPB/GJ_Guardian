@@ -16,7 +16,7 @@ MonoBehaviour:
   specificationRegisteredImplants: 1
   specificationUnregisteredImplants: 1
   specificationNoImplants: 1
-  specificationIlegalImplants: 1
+  specificationIlegalImplants: 0
   specificationModifiedPeople: 1
   specificationVanilaPeople: 1
   specificationMinimumAge: 0
