@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e13aa13aabb49040841c3c970f75ad9, type: 3}
   m_Name: I-Nariz-Legal
   m_EditorClassIdentifier: 
-  implantName: 
-  implantImage: {fileID: 0}
-  implantManufacterNumber: 
-  isLegal: 0
-  implantType: 0
+  implantName: AeroBreathe
+  implantImage: {fileID: 21300000, guid: d7d286531f068074aa8ab0df510096b1, type: 3}
+  implantManufacterNumber: 8P-3K
+  isLegal: 1
+  implantType: 4

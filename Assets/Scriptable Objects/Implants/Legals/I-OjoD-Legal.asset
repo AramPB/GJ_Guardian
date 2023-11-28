@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e13aa13aabb49040841c3c970f75ad9, type: 3}
   m_Name: I-OjoD-Legal
   m_EditorClassIdentifier: 
-  implantName: 
-  implantImage: {fileID: 0}
-  implantManufacterNumber: 
-  isLegal: 0
+  implantName: OptiGaze
+  implantImage: {fileID: 21300000, guid: 478040e90c397164694af10d1f8df25a, type: 3}
+  implantManufacterNumber: 1Y-5A
+  isLegal: 1
   implantType: 0

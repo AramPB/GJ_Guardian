@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Implant 1
   m_EditorClassIdentifier: 
   implantName: Ojo
-  implantImage: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  implantImage: {fileID: 21300000, guid: 7b99c80c322335243bb75027fe081b63, type: 3}
   implantManufacterNumber: 47832
   isLegal: 1
   implantType: 0

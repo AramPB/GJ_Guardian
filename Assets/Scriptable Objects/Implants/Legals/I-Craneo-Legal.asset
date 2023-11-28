@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e13aa13aabb49040841c3c970f75ad9, type: 3}
   m_Name: I-Craneo-Legal
   m_EditorClassIdentifier: 
-  implantName: 
-  implantImage: {fileID: 0}
-  implantManufacterNumber: 
-  isLegal: 0
-  implantType: 0
+  implantName: CogniSync
+  implantImage: {fileID: 21300000, guid: 28c0a605d4d2501439f17eff9c88a65d, type: 3}
+  implantManufacterNumber: 2L-9B
+  isLegal: 1
+  implantType: 2

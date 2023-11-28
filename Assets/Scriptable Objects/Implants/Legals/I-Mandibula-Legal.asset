@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e13aa13aabb49040841c3c970f75ad9, type: 3}
   m_Name: I-Mandibula-Legal
   m_EditorClassIdentifier: 
-  implantName: 
-  implantImage: {fileID: 0}
-  implantManufacterNumber: 
-  isLegal: 0
-  implantType: 0
+  implantName: VoxMorph
+  implantImage: {fileID: 21300000, guid: 07b775275bdc3454296a1e3db7a527c4, type: 3}
+  implantManufacterNumber: 6X-1E
+  isLegal: 1
+  implantType: 3
