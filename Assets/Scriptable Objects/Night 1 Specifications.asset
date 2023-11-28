@@ -15,11 +15,11 @@ MonoBehaviour:
   specificationDistricNumber: 
   specificationRegisteredImplants: 0
   specificationUnregisteredImplants: 0
-  specificationNoImplants: 0
+  specificationNoImplants: 1
   specificationIlegalImplants: 0
   specificationModifiedPeople: 0
   specificationVanilaPeople: 0
-  specificationMinimumAge: 0
+  specificationMinimumAge: 19
   specificationNoCrime: 0
   specificationJustifiedCrime: 0
   specificationUnjustifiedCrime: 0
