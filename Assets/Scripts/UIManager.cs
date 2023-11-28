@@ -153,9 +153,12 @@ public class UIManager : MonoBehaviour
         //District
         district_NamesList_Text.SetText(district_NamesList_String);
         district_NumberList_Text.SetText(district_NumberList_String);
-        
+
         //Implant scanner
-        implants_Foto_Image.sprite = implants_Foto_Sprite;
+        if (implants_Foto_Sprite)
+        {
+            implants_Foto_Image.sprite = implants_Foto_Sprite;
+        }
         implants_Name_Text.SetText(implants_Name_String);
         implants_Number_Text.SetText(Implants_Number_String);
         
@@ -164,7 +167,10 @@ public class UIManager : MonoBehaviour
         implant_NumberList_Text.SetText(implant_NumberList_String);
 
         //DNI
-        dni_Foto_Image.sprite = dni_Foto_Sprite;
+        if (dni_Foto_Sprite)
+        {
+            dni_Foto_Image.sprite = dni_Foto_Sprite;
+        }
         dni_Name_Text.SetText(dni_Name_String);
         dni_Caducity_Text.SetText(dni_Caducity_String);
         dni_Serial_Text.SetText(dni_Serial_String);
@@ -172,7 +178,19 @@ public class UIManager : MonoBehaviour
         dni_Age_Text.SetText(dni_Age_String);
         dni_Implants_Name_Text.SetText(dni_Implants_Name_String);
         dni_Implants_number_Text.SetText(dni_Implants_number_String);
-        dni_Criminal_Stamp_Image.sprite = dni_Criminal_Stamp_Sprite;
+        if (dni_Criminal_Stamp_Sprite)
+        {
+            dni_Criminal_Stamp_Image.sprite = dni_Criminal_Stamp_Sprite;
+        }
+
+        //Crime Doc
+        crimes_Name_Text.SetText(crimes_Name_String);
+        if (crimes_Foto_Sprite)
+        {
+            crimes_Foto_Image.sprite = crimes_Foto_Sprite;
+        }
+        crimes_Serial_Text.SetText(crimes_Serial_String);
+        crimes_Text.SetText(crimes_String);
     }
 
 }
