@@ -333,7 +333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cf856499447927f42b8551fa27159c90, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 246bec09f959bbe488e14db1afb6e89e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1467,7 +1467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58dbc6a3b4e6c8b47aac49b69dc335aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scannerUI: {fileID: 0}
+  scannerUI: {fileID: 6408952299684319318}
   eyeRButton: {fileID: 3846746889829493102}
   eyeLButton: {fileID: 6935498915866756977}
   armRButton: {fileID: 289726970980883369}

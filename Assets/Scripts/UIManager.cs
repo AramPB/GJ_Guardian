@@ -155,6 +155,11 @@ public class UIManager : MonoBehaviour
             try
             {
                 implants_Foto_Image.sprite = implants_Foto_Sprite;
+                implants_Foto_Image.SetNativeSize();
+                implants_Foto_Image.gameObject.GetComponent<RectTransform>().sizeDelta /= new Vector2(1.6f, 1.6f);
+
+                //Ficar variable al night system per veure quin implante tenim seleccionat actualemnt
+                implants_Foto_Image.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 45));
             }
             catch (Exception e)
             {
