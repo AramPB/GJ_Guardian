@@ -177,16 +177,6 @@ public class NightSystem : MonoBehaviour
     {
         isEndGame = true;
         dialogueTrigger2 = true;
-        if ( moneyEarned >= goalMoney)
-        {
-            //Play Good Ending Animation & Return to Menu
-            endGameMessage = "Suuu Ganaste!!";
-        }
-        else
-        {
-            //Play Bad Ending Animation & Return to Menu
-            endGameMessage = "No shegaste al dinero, perdiste pelotudo";
-        }
         Debug.Log("EEENDDDDDD GAMEEEEEEE");
     }
 
@@ -342,8 +332,6 @@ public class NightSystem : MonoBehaviour
             {
                 reflectionDialogLines.Add("Dinero ganado esta noche: " + moneyEarnedThisNight);
                 reflectionDialogLines.Add("Dinero total: " + moneyEarned);
-                DialogManager.Instance.SetLines(reflectionDialogLines); //TODO: AFEGIR QUANTITAT DE PASTA EN EL TEXT
-
                 DialogManager.Instance.startDialogLines();
                 dialogueTrigger = false;
             }
@@ -356,8 +344,7 @@ public class NightSystem : MonoBehaviour
                 {
                     transitionStartTime2 = Time.time;
                     endLoopTrigger2 = false;
-                    reflectionDialogLines.Remove("Dinero ganado esta noche: " + moneyEarnedThisNight);
-                    reflectionDialogLines.Remove("Dinero total: " + moneyEarned);
+                    reflectionDialogLines.Clear();
                     nightProgress.InMiddleTransition();
                 }
                 NextNightTransition();
@@ -370,9 +357,16 @@ public class NightSystem : MonoBehaviour
                     {
                         //Dialeg final
                         if (dialogueTrigger2) {
-                            Debug.Log("Epaaaa");
-                            reflectionDialogLines.Add("Dinero total: " + moneyEarned);
-                            reflectionDialogLines.Add(endGameMessage);
+                            if (moneyEarned >= goalMoney)
+                            {
+                                //Play Good Ending Animation & Return to Menu
+                                reflectionDialogLines.Add("");
+                            }
+                            else
+                            {
+                                //Play Bad Ending Animation & Return to Menu
+                                reflectionDialogLines.Add("");
+                            }
                             DialogManager.Instance.SetLines(reflectionDialogLines);
                             DialogManager.Instance.startDialogLines();
                             dialogueTrigger2 = false;
@@ -437,7 +431,14 @@ public class NightSystem : MonoBehaviour
                 else
                 {
                     //Activar final
-                    UIManager.Instance.ActivateGameOverUI();
+                    if (moneyEarned >= 1000)
+                    {
+                        UIManager.Instance.ActivateGameOverUI(true);
+                    }
+                    else
+                    {
+                        UIManager.Instance.ActivateGameOverUI(false);
+                    }
                 }
             }
         }

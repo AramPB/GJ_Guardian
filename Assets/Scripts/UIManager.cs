@@ -49,6 +49,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI implants_Name_Text;
     [SerializeField] TextMeshProUGUI implants_Number_Text;
 
+    //--- Game Over ---
+    [SerializeField] TextMeshProUGUI gameOver_Text;
+
     // --- --- STRINGS --- ---
     //--- CIUTAT ---
     [SerializeField] string cityDialog_String;
@@ -81,6 +84,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] string implants_Name_String;
     [SerializeField] string implants_Number_String;
 
+    //--- Game Over ---
+    [SerializeField] string gameOver_String;
+
+
     //---- Pages ----
     private int currentPage = 1;
     private bool hasCriminalProof = false;
@@ -112,6 +119,7 @@ public class UIManager : MonoBehaviour
     public string Implants_Name_String { get => implants_Name_String; set => implants_Name_String = value; }
     public string Implants_Number_String { get => implants_Number_String; set => implants_Number_String = value; }
     public string PermitedCrimes_String { get => permitedCrimes_String; set => permitedCrimes_String = value; }
+    public string GameOver_String { get => gameOver_String; set => gameOver_String = value; }
 
     #endregion
 
@@ -266,8 +274,12 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ActivateGameOverUI()
+    public void ActivateGameOverUI(bool goodEnding)
     {
+        if (goodEnding)
+        {
+            
+        }
         gameOverUI.SetActive(true);
     }
 
