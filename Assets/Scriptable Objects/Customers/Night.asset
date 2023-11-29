@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Night
+  m_EditorClassIdentifier: 
+  customerName: Night
+  customerId: 5F-27-PL
+  customerPhoto: {fileID: 0}
+  customerAge: 37
+  customerDistricNumber: 4
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes: []
+  customerDialogLines:
+  - "Buenas noches. D\xE9jame un segundo que busco mi documentaci\xF3n."
+  - "\xBFTe puedes creer que me gano la vida viviendo a la sombra de una ni\xF1ata
+    engre\xEDda? En todo caso hay ventajas de vivir en las sombras jeje\u2026"
+  - Lo bueno es que le puedo ir birlando dinero y no se entera, lo que me permite
+    vivir casi de lujo sin mover ni un dedo.
+  - "Mira, ya la encontr\xE9, toma la documentaci\xF3n."
+  customerAcceptDialogLines:
+  - "Bueno, si te tomas un descanso, te invito a una copa, \xA1invita Ego! Jaja"
+  customerDeclineDialogLines:
+  - "Mierda, supongo que no todo me puede salir bien en la vida\u2026"
+  customerDialogType: 2
+  customerMoney: 0
+  customerNightApparition: 0
+  customerImplants: []
+  customerImplantsRegistered: []
+  customerDocumentExpiryDate: 09/11/2077
+  customerHasJustificant: 0

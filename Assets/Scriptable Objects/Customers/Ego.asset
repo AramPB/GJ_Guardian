@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Ego
+  m_EditorClassIdentifier: 
+  customerName: Ego
+  customerId: 4N-18-FS
+  customerPhoto: {fileID: 0}
+  customerAge: 29
+  customerDistricNumber: 6
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes: []
+  customerDialogLines:
+  - "\xA1Abran paso a la mejor de todas! \xA1Ego ya ha llegado!"
+  - "Mi \xFAltima pel\xEDcula est\xE1 siendo un \xE9xito en todo el mundo, espero
+    que con eso mi m\xE1nager me consiga mejores sueldos porque menudo incompetente."
+  - "Te puedes crees que solo he cobrado un 5% de lo que ha generado la pel\xEDcula?
+    \xA1Si soy la estrella! Deber\xEDa ser el 100%!"
+  - "\xBFIncluso yo debo mostrar documentaci\xF3n? \xBFPero no sabes qui\xE9n soy?
+    Bueno toma. Vaya garito de poca monta."
+  customerAcceptDialogLines:
+  - "\xA1Ego est\xE1 aqu\xED para romper esta fiesta, alucinad con mi brillo!"
+  customerDeclineDialogLines:
+  - "\xA1Vaya ignorante estas hecho! \xBFComo puede ser que no dejes paras a la superestrella
+    Ego? Que poca clase tiene este lugar, ahora ya no quiero entrar, que os caiga
+    un rel\xE1mpago encima a ti y a todo el local."
+  customerDialogType: 2
+  customerMoney: 0
+  customerNightApparition: 0
+  customerImplants:
+  - {fileID: 11400000, guid: c8de9d27fb367d64d8a02c31ca779e89, type: 2}
+  - {fileID: 11400000, guid: ae103f49dd2e271418bf2612dff868bc, type: 2}
+  customerImplantsRegistered:
+  - {fileID: 11400000, guid: ae103f49dd2e271418bf2612dff868bc, type: 2}
+  customerDocumentExpiryDate: 22/08/2079
+  customerHasJustificant: 0

@@ -35,6 +35,7 @@ MonoBehaviour:
   customerNightApparition: 0
   customerImplants:
   - {fileID: 11400000, guid: 606ea9be4cfd7fc44b2950e4cbd411d6, type: 2}
+  - {fileID: 11400000, guid: 06d5360efc3e0f14c951d14fa0520e5f, type: 2}
   customerImplantsRegistered: []
   customerDocumentExpiryDate: 15/04/2077
   customerHasJustificant: 1

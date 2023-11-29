@@ -21,14 +21,17 @@ MonoBehaviour:
   customerSprite: {fileID: 0}
   customerCrimes: []
   customerDialogLines:
-  - 
-  - 
-  - 
-  - 
+  - Buenas noches caballero, espero que hoy no tenga problemas con mi brazo, me lo
+    he dejado en casa.
+  - En serio, entre ayer y hoy, empiezo a perder la fe en que mi trabajo mejore,
+    hoy tocaba mover un elefante y se me ha cagado encima.
+  - "Definitivamente no se si puede ir a peor\u2026"
+  - "Toma mi documentaci\xF3n. Hoy deber\xEDa estar todo en orden."
   customerAcceptDialogLines:
-  - 
+  - "Gracias caballero, por fin algo me sale bien. \xA1Buenas noches!"
   customerDeclineDialogLines:
-  - 
+  - "Bueno, desde luego el universo me est\xE1 diciendo algo, creo que voy a pasear
+    de vuelta a casa por el puente\u2026"
   customerDialogType: 2
   customerMoney: 0
   customerNightApparition: 0
