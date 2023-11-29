@@ -91,11 +91,12 @@ public class UIManager : MonoBehaviour
     //---- Pages ----
     private int currentPage = 1;
     private bool hasCriminalProof = false;
-    [SerializeField] private int maxPages = 4;
+    [SerializeField] private int maxPages = 5;
     [SerializeField] private GameObject docNightSpecifications;
     [SerializeField] private GameObject docDistrict;
     [SerializeField] private GameObject docImplant;
     [SerializeField] private GameObject docCriminalProof;
+    [SerializeField] private GameObject docInstructions;
 
     #region Getters & Setters
     public static UIManager Instance { get; private set; }
@@ -248,12 +249,11 @@ public class UIManager : MonoBehaviour
     public void ObtainCP()
     {
         hasCriminalProof = true;
-        UpdatePage(4);
+        UpdatePage(5);
     }
 
     public void PreviousPage()
     {
-        Debug.Log("PREVIOUS PAGE");
         if (currentPage != 1)
         {
             UpdatePage(currentPage - 1);
@@ -262,7 +262,6 @@ public class UIManager : MonoBehaviour
 
     public void NextPage()
     {
-        Debug.Log("NEXT PAGE");
         if (!(currentPage == maxPages || (currentPage == (maxPages-1) && !hasCriminalProof)))
         {
 
@@ -270,7 +269,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("MAX PAGE");
+            //So de negar passar pagina
         }
     }
 
@@ -288,15 +287,18 @@ public class UIManager : MonoBehaviour
         switch (currentPage)
         {
             case 1:
-                docNightSpecifications.SetActive(false);
+                docInstructions.SetActive(false);
                 break;
             case 2:
-                docDistrict.SetActive(false);
+                docNightSpecifications.SetActive(false);
                 break;
             case 3:
-                docImplant.SetActive(false);
+                docDistrict.SetActive(false);
                 break;
             case 4:
+                docImplant.SetActive(false);
+                break;
+            case 5:
                 docCriminalProof.SetActive(false);
                 break;
         }
@@ -304,15 +306,18 @@ public class UIManager : MonoBehaviour
         switch (newPage)
         {
             case 1:
-                docNightSpecifications.SetActive(true);
+                docInstructions.SetActive(true);
                 break;
             case 2:
-                docDistrict.SetActive(true);
+                docNightSpecifications.SetActive(true);
                 break;
             case 3:
-                docImplant.SetActive(true);
+                docDistrict.SetActive(true);
                 break;
             case 4:
+                docImplant.SetActive(true);
+                break;
+            case 5:
                 docCriminalProof.SetActive(true);
                 break;
         }
