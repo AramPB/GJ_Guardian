@@ -321,12 +321,12 @@ public class NightProgress : MonoBehaviour
         declineButton.SetActive(false);
         if (actualPass == isApt)
         {
-            //Debug.Log("Acertaste");
+            Debug.Log("Acertaste");
             NightSystem.Instance.CurrentNight.Successes++;
         }
         else
         {
-            //Debug.Log("Cagtaste");
+            Debug.Log("Cagaste");
             NightSystem.Instance.CurrentNight.Fails++;
         }
         SwitchState(State.EndDialogue);
@@ -342,6 +342,14 @@ public class NightProgress : MonoBehaviour
             //Animacion y dialogos de Sí
             DialogManager.Instance.SetLines(currentCustomer.GetAcceptDialogLines);
             DialogManager.Instance.startDialogLines();
+            if (currentCustomer.GetDialogType.Equals(DialogType.Beg))
+            {
+                NightSystem.Instance.ModifyMoneyNight(-currentCustomer.GetMoney);
+            }
+            if (currentCustomer.GetDialogType.Equals(DialogType.Bribe))
+            {
+                NightSystem.Instance.ModifyMoneyNight(+currentCustomer.GetMoney);
+            }
         }
         else
         {

@@ -30,7 +30,9 @@ public class NightSystem : MonoBehaviour
 
     [SerializeField] private CustomerControl customerContol;
 
+    [SerializeField] private int goalMoney;
     [SerializeField] private int moneyEarned;
+    private int moneyEarnedThisNight;
 
     private float firstTransStartTime;
     private float firstTransStartTime2;
@@ -50,6 +52,11 @@ public class NightSystem : MonoBehaviour
     private bool endLoopTrigger2 = false;
     private bool endLoopTrigger3 = false;
     private bool dialogueTrigger = false;
+    private bool dialogueTrigger2 = false;
+    private bool isEndGame = false;
+    private bool endLoopGame = false;
+
+    private string endGameMessage;
 
     public Implant currentSelectedImplant;
 
@@ -91,37 +98,52 @@ public class NightSystem : MonoBehaviour
         Debug.Log("START");
         firstTransStartTime = Time.time;
         endLoopTrigger3 = true;
+        moneyEarned = 0;
+        isEndGame = false;
+        endGameMessage = "";
+        endLoopGame = false;
     }
     private void Update()
     {
-        if (currentNightNumber != 0) {
-            if (NightProgress.IsInProgress())
-            {
-                transitionStartTime = Time.time;
-                endLoopTrigger = true;
-                endLoopTrigger2 = true;
-
-                if (NightProgress.IsInTransition())
+        if (!endLoopGame) {
+            if (currentNightNumber != 0) {
+                if (NightProgress.IsInProgress())
                 {
-                    BetweenCustomersTransitionController();
+                    transitionStartTime = Time.time;
+                    endLoopTrigger = true;
+                    endLoopTrigger2 = true;
+
+                    if (NightProgress.IsInTransition())
+                    {
+                        BetweenCustomersTransitionController();
+                    }
+                    else
+                    {
+                        transitionClientStartTime = Time.time;
+                        endLoopTrigger3 = true;
+                    }
                 }
                 else
                 {
-                    transitionClientStartTime = Time.time;
-                    endLoopTrigger3 = true;
+                    //Despues de terminar una noche, hace el sistema de transición
+                    BetweenNightsTransitionController();
                 }
             }
             else
             {
-                //Despues de terminar una noche, hace el sistema de transición
-                BetweenNightsTransitionController();
+                FirstTransitionControler();
+
             }
         }
         else
         {
-            FirstTransitionControler();
-
+            //estaria acabat el joc
         }
+    }
+
+    public void ModifyMoneyNight(int newMoney)
+    {
+        moneyEarned += newMoney;
     }
 
     public int NightResume()
@@ -130,7 +152,9 @@ public class NightSystem : MonoBehaviour
         currentNightNumber++; //endGame?
 
         //Player Goal = 1000€
-        moneyEarned = 50 * currentNight.Successes - 10 * currentNight.Fails;
+        moneyEarnedThisNight = 50 * currentNight.Successes - 10 * currentNight.Fails;
+        moneyEarned += moneyEarnedThisNight;
+        Debug.Log(":::::" + moneyEarnedThisNight + "::::::" + moneyEarned);
 
         if (currentNightNumber >= 5)
         {
@@ -144,14 +168,18 @@ public class NightSystem : MonoBehaviour
 
     private void endGame()
     {
-        //if (GameManager.money >= 1000)
-        //{
-        //    //Play Good Ending Animation & Return to Menu
-        //}
-        //else
-        //{
-        //    //Play Bad Ending Animation & Return to Menu
-        //}
+        isEndGame = true;
+        dialogueTrigger2 = true;
+        if ( moneyEarned >= goalMoney)
+        {
+            //Play Good Ending Animation & Return to Menu
+            endGameMessage = "Suuu Ganaste!!";
+        }
+        else
+        {
+            //Play Bad Ending Animation & Return to Menu
+            endGameMessage = "No shegaste al dinero, perdiste pelotudo";
+        }
         Debug.Log("EEENDDDDDD GAMEEEEEEE");
     }
 
@@ -276,7 +304,8 @@ public class NightSystem : MonoBehaviour
             CurrentDate = "30/11/2076";
             CurrentNight = night4;
         }
-
+        currentNight.Successes = 0;
+        currentNight.Fails = 0;
         CustomerContol.UpdateCurrentNight(currentNight);
 
         nightProgress.StartLoop(CurrentNight.NightsCustomers.Count, CurrentNight.NightsCustomers);
@@ -299,24 +328,48 @@ public class NightSystem : MonoBehaviour
             //city
             if (dialogueTrigger)
             {
+                reflectionDialogLines.Add("Dinero ganado esta noche: " + moneyEarnedThisNight);
+                reflectionDialogLines.Add("Dinero total: " + moneyEarned);
                 DialogManager.Instance.SetLines(reflectionDialogLines); //TODO: AFEGIR QUANTITAT DE PASTA EN EL TEXT
+
                 DialogManager.Instance.startDialogLines();
                 dialogueTrigger = false;
             }
 
             if (DialogManager.Instance.hasEnded)
             {
+
                 //nextnight
                 if (endLoopTrigger2)
                 {
                     transitionStartTime2 = Time.time;
                     endLoopTrigger2 = false;
+                    reflectionDialogLines.Remove("Dinero ganado esta noche: " + moneyEarnedThisNight);
+                    reflectionDialogLines.Remove("Dinero total: " + moneyEarned);
                     nightProgress.InMiddleTransition();
                 }
                 NextNightTransition();
                 if (Time.time >= transitionStartTime2 + transitionDuration2)
                 {
-                    NextNight();
+                    if (!isEndGame) {
+                        NextNight();
+                    }
+                    else
+                    {
+                        //Dialeg final
+                        if (dialogueTrigger2) {
+                            Debug.Log("Epaaaa");
+                            reflectionDialogLines.Add("Dinero total: " + moneyEarned);
+                            reflectionDialogLines.Add(endGameMessage);
+                            DialogManager.Instance.SetLines(reflectionDialogLines);
+                            DialogManager.Instance.startDialogLines();
+                            dialogueTrigger2 = false;
+                        }
+                        if (DialogManager.Instance.hasEnded)
+                        {
+                            endLoopGame = true;
+                        }
+                    }
                 }
             }
 
@@ -365,8 +418,15 @@ public class NightSystem : MonoBehaviour
             else
             {
                 aux.a = LerpFunction.Lerp(1, 0, transitionStartTime2 + transitionDuration2 / 2, transitionDuration2 / 2);
-                UIManager.Instance.ActivateInspectUI(true);
-                UIManager.Instance.ActivateCityUI(false);
+                if (!isEndGame) {
+                    UIManager.Instance.ActivateInspectUI(true);
+                    UIManager.Instance.ActivateCityUI(false);
+                }
+                else
+                {
+                    //Activar final
+                    UIManager.Instance.ActivateCityUI(true);
+                }
             }
         }
         else

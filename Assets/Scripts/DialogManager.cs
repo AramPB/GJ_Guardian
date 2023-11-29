@@ -29,7 +29,7 @@ public class DialogManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && lines.Count > 0)
+        if (Input.GetMouseButtonDown(0) && lines.Count > 0 && !hasEnded)
         {
             if (dialogueTextComponent.text == lines[index])
             {
@@ -88,9 +88,9 @@ public class DialogManager : MonoBehaviour
         else
         {
             //End Dialog
-            hasEnded = true;
             dialogueTextComponent.gameObject.SetActive(false);
             dialogueTextComponent.text = string.Empty;
+            hasEnded = true;
         }
     }
 
