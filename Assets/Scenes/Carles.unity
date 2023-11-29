@@ -128,11 +128,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5903107944155087301, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
   m_PrefabInstance: {fileID: 6384847325672971220}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &21124289 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3183328174822035957, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
-  m_PrefabInstance: {fileID: 6384847325672971220}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &47739468 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8915989912924059257, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
@@ -144,6 +139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &142740269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8268054119636604457, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+  m_PrefabInstance: {fileID: 6384847325672971220}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &524347772 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3604591877157491891, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
@@ -496,7 +496,7 @@ PrefabInstance:
     - target: {fileID: 4884660152655853521, guid: d938c6c93e7f3e24d986818d7ace6af9, type: 3}
       propertyPath: scannerGO
       value: 
-      objectReference: {fileID: 21124289}
+      objectReference: {fileID: 142740269}
     - target: {fileID: 4884660152655853521, guid: d938c6c93e7f3e24d986818d7ace6af9, type: 3}
       propertyPath: acceptButton
       value: 
