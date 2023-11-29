@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerName: Cycle
   customerId: ' 2K-12-ZW'
-  customerPhoto: {fileID: 0}
+  customerPhoto: {fileID: 21300000, guid: 7703218a88f098440846b987af316b83, type: 3}
   customerAge: 47
   customerDistricNumber: 3
   customerDNIToGive: 1
-  customerSprite: {fileID: 0}
+  customerSprite: {fileID: 21300000, guid: 7703218a88f098440846b987af316b83, type: 3}
   customerCrimes:
   - {fileID: 11400000, guid: a12e086d45a19cd49946ae3e666a701b, type: 2}
   customerDialogLines:

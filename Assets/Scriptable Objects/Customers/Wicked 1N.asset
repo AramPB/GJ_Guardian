@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerName: Wicked
   customerId: 5D-45-JP
-  customerPhoto: {fileID: 0}
+  customerPhoto: {fileID: 21300000, guid: 833046be2e978914d9fb09acc3829a74, type: 3}
   customerAge: 31
   customerDistricNumber: 2
   customerDNIToGive: 1
-  customerSprite: {fileID: 0}
+  customerSprite: {fileID: 21300000, guid: 833046be2e978914d9fb09acc3829a74, type: 3}
   customerCrimes: []
   customerDialogLines:
   - "Buenas noches caballero, \xBFtodo en orden esta noche? \xBFSin muchos altercados?"

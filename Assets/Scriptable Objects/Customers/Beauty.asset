@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerName: Beauty
   customerId: 4G-89-MN
-  customerPhoto: {fileID: 0}
+  customerPhoto: {fileID: 21300000, guid: 87b8ab80a9ffe3b48be34538e2f15ea4, type: 3}
   customerAge: 27
   customerDistricNumber: 4
   customerDNIToGive: 1
-  customerSprite: {fileID: 0}
+  customerSprite: {fileID: 21300000, guid: 87b8ab80a9ffe3b48be34538e2f15ea4, type: 3}
   customerCrimes: []
   customerDialogLines:
   - "Buenas noches, cari\xF1o. \xBFSabes si hay personas tan apuestas como tu ah\xED

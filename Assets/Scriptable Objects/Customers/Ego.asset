@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerName: Ego
   customerId: 4N-18-FS
-  customerPhoto: {fileID: 0}
+  customerPhoto: {fileID: 21300000, guid: 05448abbbf636994883723ea27b18c40, type: 3}
   customerAge: 29
   customerDistricNumber: 6
   customerDNIToGive: 1
-  customerSprite: {fileID: 0}
+  customerSprite: {fileID: 21300000, guid: 05448abbbf636994883723ea27b18c40, type: 3}
   customerCrimes: []
   customerDialogLines:
   - "\xA1Abran paso a la mejor de todas! \xA1Ego ya ha llegado!"
