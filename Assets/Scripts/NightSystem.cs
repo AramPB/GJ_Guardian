@@ -10,6 +10,7 @@ public class NightSystem : MonoBehaviour
 {
     [SerializeField] private List<string> reflectionDialogLines;
 
+    [SerializeField] private MusicController musicController;
     [SerializeField] private TextMeshPro nightDialog;
 
     [SerializeField] private string currentDate;
@@ -25,6 +26,7 @@ public class NightSystem : MonoBehaviour
     [SerializeField] private Night night2;
     [SerializeField] private Night night3;
     [SerializeField] private Night night4;
+    [SerializeField] private Night night5;
 
     [SerializeField] private Night currentNight;
     [SerializeField] private int currentNightNumber;
@@ -79,6 +81,7 @@ public class NightSystem : MonoBehaviour
     public CustomerControl CustomerContol { get => customerContol; set => customerContol = value; }
     public int MoneyEarned { get => moneyEarned; set => moneyEarned = value; }
     public GameObject CharacterContainer { get => characterContainer; set => characterContainer = value; }
+    public MusicController MusicController { get => musicController; set => musicController = value; }
 
     #region Singleton
     private void Awake()
@@ -303,10 +306,15 @@ public class NightSystem : MonoBehaviour
             CurrentDate = "29/11/2076";
             CurrentNight = night3;
         }
-        else
+        else if (currentNightNumber == 4)
         {
             CurrentDate = "30/11/2076";
             CurrentNight = night4;
+        }
+        else
+        {
+            CurrentDate = "1/12/2076";
+            CurrentNight = night5;
         }
         currentNight.Successes = 0;
         currentNight.Fails = 0;

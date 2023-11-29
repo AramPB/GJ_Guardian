@@ -43,6 +43,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c8de9d27fb367d64d8a02c31ca779e89, type: 2}
   - {fileID: 11400000, guid: 72512ad662121fe41be189faf862f1e6, type: 2}
   - {fileID: 11400000, guid: ae103f49dd2e271418bf2612dff868bc, type: 2}
+  - {fileID: 11400000, guid: b6192708548005f4ca28d33d26c4fdbd, type: 2}
   customerImplantsRegistered: []
   customerDocumentExpiryDate: 19/04/2079
   customerHasJustificant: 0

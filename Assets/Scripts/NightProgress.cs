@@ -110,7 +110,6 @@ public class NightProgress : MonoBehaviour
                 UpdateWaiting();
                 break;
         }
-        
     }
 
     //------------CLIENT APPARITION-----------
@@ -118,6 +117,9 @@ public class NightProgress : MonoBehaviour
     private void StartClientApparition()
     {
         Debug.Log("NEW CLIENT!!");
+        if (NightSystem.Instance.MusicController.State == "Normal") {
+            NightSystem.Instance.MusicController.startFilteredMusic();
+        }
         CurrentCustomer = clientsList[_currentClientNumber - 1];
         instantiatedCustomer = Instantiate(currentCustomer.GetCustomerPrefab, NightSystem.Instance.CharacterContainer.transform);
         UIManager.Instance.scannerController.hideScannerUI();
@@ -331,6 +333,7 @@ public class NightProgress : MonoBehaviour
         acceptButton.SetActive(false);
         declineButton.SetActive(false);
         isInInspect = false;
+
         if (actualPass == isApt)
         {
             Debug.Log("Acertaste");
@@ -352,6 +355,10 @@ public class NightProgress : MonoBehaviour
         if (actualPass)
         {
             //Animacion y dialogos de Sí
+            if (NightSystem.Instance.MusicController.State == "Filtered")
+            {
+                NightSystem.Instance.MusicController.startNormalMusic();
+            }
             DialogManager.Instance.SetLines(currentCustomer.GetAcceptDialogLines);
             DialogManager.Instance.startDialogLines();
             if (currentCustomer.GetDialogType.Equals(DialogType.Beg))
