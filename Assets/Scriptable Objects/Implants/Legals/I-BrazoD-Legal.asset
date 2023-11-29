@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e13aa13aabb49040841c3c970f75ad9, type: 3}
   m_Name: I-BrazoD-Legal
   m_EditorClassIdentifier: 
-  implantName: 
-  implantImage: {fileID: 0}
-  implantManufacterNumber: 
-  isLegal: 0
-  implantType: 0
+  implantName: PowerFlex
+  implantImage: {fileID: 21300000, guid: ce90e38386b0ab44abc120950d3e12bd, type: 3}
+  implantManufacterNumber: 3A-6D
+  isLegal: 1
+  implantType: 5

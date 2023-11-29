@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e13aa13aabb49040841c3c970f75ad9, type: 3}
   m_Name: I-BrazoI-Legal
   m_EditorClassIdentifier: 
-  implantName: 
-  implantImage: {fileID: 0}
-  implantManufacterNumber: 
-  isLegal: 0
-  implantType: 0
+  implantName: MechReach
+  implantImage: {fileID: 21300000, guid: bb7211f3ba8bdfc4b85d92a1620c1e33, type: 3}
+  implantManufacterNumber: 5R-7Q
+  isLegal: 1
+  implantType: 6

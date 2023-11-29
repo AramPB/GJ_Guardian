@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e13aa13aabb49040841c3c970f75ad9, type: 3}
   m_Name: I-Torso-Legal
   m_EditorClassIdentifier: 
-  implantName: 
-  implantImage: {fileID: 0}
-  implantManufacterNumber: 
-  isLegal: 0
-  implantType: 0
+  implantName: NanoCore
+  implantImage: {fileID: 21300000, guid: 1e98dbbb2e480594ab6e38efdd8b4c62, type: 3}
+  implantManufacterNumber: 7G-2M
+  isLegal: 1
+  implantType: 7

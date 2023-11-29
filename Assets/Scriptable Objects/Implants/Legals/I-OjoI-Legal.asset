@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   implantName: CyberSpectra
   implantImage: {fileID: 21300000, guid: 382c51e1457cd6d4b96ccc67eb2d76ea, type: 3}
-  implantManufacterNumber: 3W-1M
+  implantManufacterNumber: 3Z-1L
   isLegal: 1
   implantType: 1
