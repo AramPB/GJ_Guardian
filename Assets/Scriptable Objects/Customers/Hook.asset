@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Hook
+  m_EditorClassIdentifier: 
+  customerName: Hook
+  customerId: 6A-32-OP
+  customerPhoto: {fileID: 0}
+  customerAge: 40
+  customerDistricNumber: 5
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes:
+  - {fileID: 11400000, guid: 6db2d620e7fa2c24c9d965a641835e19, type: 2}
+  customerDialogLines:
+  - "\xBFQuieres pasarlo bien esta noche?"
+  - "Acabo de salir del trullo y vuelvo a estar activo jeje\u2026"
+  - "\xBFDocumentaci\xF3n? D\xE9jame pasar anda, que seguro que la fiesta se anima
+    su prueban mi \u201Cmagia\u201D."
+  - "Bueno aqu\xED tienes, espero que seas lo suficientemente sabio como para tomar
+    la decisi\xF3n correcta."
+  customerAcceptDialogLines:
+  - "Gracias jefe, ya ver\xE1s como se anima el asunto de aqu\xED poco, que esto
+    est\xE1 un poco muerto."
+  customerDeclineDialogLines:
+  - "\xA1Te vas a enterar, cuando al acabar el turno te partan las piernas unos gorilas
+    el doble de grandes que t\xFA, vas a ver mi cara y te voy a perseguir hasta en
+    tus pesadillas! "
+  customerDialogType: 2
+  customerMoney: 0
+  customerNightApparition: 0
+  customerImplants:
+  - {fileID: 11400000, guid: 6ff406f80b61fe242942fd590a97baa1, type: 2}
+  - {fileID: 11400000, guid: ae103f49dd2e271418bf2612dff868bc, type: 2}
+  customerImplantsRegistered: []
+  customerDocumentExpiryDate: 20/02/2076
+  customerHasJustificant: 0

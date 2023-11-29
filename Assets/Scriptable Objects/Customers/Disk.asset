@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Disk
+  m_EditorClassIdentifier: 
+  customerName: Disk
+  customerId: 2D-45-FG
+  customerPhoto: {fileID: 0}
+  customerAge: 27
+  customerDistricNumber: 1
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes: []
+  customerDialogLines:
+  - "\xA1Hey Baby! \xA1Preparaos para el mejor espect\xE1culo jam\xE1s visto!"
+  - "\xBFA m\xED tambi\xE9n me vas a pedir documentaci\xF3n? \xA1Pero si soy el alma
+    de la fiesta! Bueno, aqu\xED tienes."
+  - "\xA1Escuchadme todos, hoy toca mover ese culo de metal! \xA1No vale quedarse
+    en una esquina de la fiesta!"
+  - "\xA1En cuanto empiece a tocar se te va a complicar la faena, la gente se va
+    a volver loca!"
+  customerAcceptDialogLines:
+  - "Venga, con suerte me podr\xE1s escuchar desde aqu\xED. \xA1Atentos todos que
+    el Rey ha llegado!"
+  customerDeclineDialogLines:
+  - "\xBFComo? \xBFNo me dejas entrar? \xA1Pero si me ha contratado tu jefe! \xA1Desgraciado!
+    \xBFNo sabes qui\xE9n soy? \xA1D\xE9jame entrar malparido! \xA1SI soy el Rey
+    de la Noche! \xA1Tendr\xE1s noticias de mi abogado!"
+  customerDialogType: 2
+  customerMoney: 0
+  customerNightApparition: 0
+  customerImplants:
+  - {fileID: 11400000, guid: b7a6a4b4a4d5b264baf895a32d822cd0, type: 2}
+  - {fileID: 11400000, guid: 3025113b870b1ef4cb9183dca0ca8c5e, type: 2}
+  customerImplantsRegistered:
+  - {fileID: 11400000, guid: b7a6a4b4a4d5b264baf895a32d822cd0, type: 2}
+  - {fileID: 11400000, guid: 3025113b870b1ef4cb9183dca0ca8c5e, type: 2}
+  customerDocumentExpiryDate: 05/09/2078
+  customerHasJustificant: 0

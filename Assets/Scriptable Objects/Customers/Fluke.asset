@@ -17,7 +17,7 @@ MonoBehaviour:
   customerPhoto: {fileID: 0}
   customerAge: 47
   customerDistricNumber: 5
-  customerDNIToGive: 0
+  customerDNIToGive: 1
   customerSprite: {fileID: 0}
   customerCrimes: []
   customerDialogLines:
