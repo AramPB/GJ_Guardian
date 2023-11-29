@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Bell
+  m_EditorClassIdentifier: 
+  customerName: Bell
+  customerId: 3R-67-XY
+  customerPhoto: {fileID: 0}
+  customerAge: 79
+  customerDistricNumber: 3
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes:
+  - {fileID: 11400000, guid: bd1fb70ebfa43b541a98b4a9272b9abd, type: 2}
+  - {fileID: 11400000, guid: 05bcdb0d7e07ef04cbd0c41b3a45a32f, type: 2}
+  - {fileID: 11400000, guid: 36509bde0bfb0db4ea1f062a08fa81b9, type: 2}
+  - {fileID: 11400000, guid: 8283bb326942a2a468bf9b27e1268c96, type: 2}
+  - {fileID: 11400000, guid: d6fe906a2368b144fbc1105ac516eb46, type: 2}
+  - {fileID: 11400000, guid: bbb604621d2af6942a2a9557f3e134a2, type: 2}
+  customerDialogLines:
+  - "Buenas noches p\xE9talo, que ganas tengo de pasarlo bien esta noche.Buenas noches
+    p\xE9talo, que ganas tengo de pasarlo bien esta noche."
+  - "No te sorprendas con mi documentaci\xF3n eh, todos hemos hecho tonter\xEDas
+    en nuestra juventud."
+  - "\xBFBueno, sabes si ha pasado un tal Hook? Tengo que comentarle algunas cosas...
+    Los j\xF3venes de hoy en d\xEDa no conocen su lugar."
+  - "Espero que la m\xFAsica hoy sea buena, desde luego el otro d\xEDa pusieron una
+    aberraci\xF3n, \xBFc\xF3mo les puede gustar esto a los j\xF3venes? Todo es PUM
+    PUM BAM BIM, no hay composici\xF3n, \xA1no hay nada! Tendr\xE9 que hablar con
+    el due\xF1o para que lo solucione\u2026"
+  customerAcceptDialogLines:
+  - "Muchas gracias, cielo, y si algun d\xEDa tienes algun problema b\xFAscame, seguro
+    que te puedo echar un cable."
+  customerDeclineDialogLines:
+  - "\xBFComo? \xBFNo puedo pasar? Ai cielo te has equivocado de persona a la que
+    denegar el paso, tranquilo, tendr\xE1s noticias m\xEDas en un futuro\u2026"
+  customerDialogType: 2
+  customerMoney: 0
+  customerNightApparition: 0
+  customerImplants:
+  - {fileID: 11400000, guid: ae103f49dd2e271418bf2612dff868bc, type: 2}
+  - {fileID: 11400000, guid: 74b8d40b598d27d4b84a31cfc45de368, type: 2}
+  customerImplantsRegistered:
+  - {fileID: 11400000, guid: ae103f49dd2e271418bf2612dff868bc, type: 2}
+  - {fileID: 11400000, guid: 74b8d40b598d27d4b84a31cfc45de368, type: 2}
+  customerDocumentExpiryDate: 10/06/2077
+  customerHasJustificant: 1

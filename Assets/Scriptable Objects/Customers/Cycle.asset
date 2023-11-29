@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Cycle
+  m_EditorClassIdentifier: 
+  customerName: Cycle
+  customerId: ' 2K-12-ZW'
+  customerPhoto: {fileID: 0}
+  customerAge: 47
+  customerDistricNumber: 3
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes:
+  - {fileID: 11400000, guid: a12e086d45a19cd49946ae3e666a701b, type: 2}
+  customerDialogLines:
+  - "\xA1JAJA Buenas noches chaval! Que ganas de explotar esta fiesta, figuradamente
+    digo\u2026 o no. \xA1Es broma, tranquilo que no te quedas sin curro! JAJAJAJA"
+  - "Espero que sirvan esos chupitos con llamas, \xA1son hipnotizantes!"
+  - "Bueno, no tenemos todo el d\xEDa, \xA1la gente de esta cola se est\xE1 calentando!"
+  - "Aqu\xED tienes mi documentaci\xF3n, \xA1cuidado que quema! JAJAJA"
+  customerAcceptDialogLines:
+  - "\xA1Bien! \xA1A por esos chupitos llameantes! \xA1Suerte esta noche chaval!"
+  customerDeclineDialogLines:
+  - "\xBFComo que no paso? ARRRGGG\u2026 vale Cycle, respira, calma las ganas de
+    quemar a este desgraciado... 1,2,3,4,5,6\u2026."
+  customerDialogType: 2
+  customerMoney: 0
+  customerNightApparition: 0
+  customerImplants:
+  - {fileID: 11400000, guid: 72512ad662121fe41be189faf862f1e6, type: 2}
+  - {fileID: 11400000, guid: b7a6a4b4a4d5b264baf895a32d822cd0, type: 2}
+  customerImplantsRegistered:
+  - {fileID: 11400000, guid: c8de9d27fb367d64d8a02c31ca779e89, type: 2}
+  customerDocumentExpiryDate: 25/01/2078
+  customerHasJustificant: 1

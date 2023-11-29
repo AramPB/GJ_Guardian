@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Beauty
+  m_EditorClassIdentifier: 
+  customerName: Beauty
+  customerId: 4G-89-MN
+  customerPhoto: {fileID: 0}
+  customerAge: 27
+  customerDistricNumber: 4
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes: []
+  customerDialogLines:
+  - "Buenas noches, cari\xF1o. \xBFSabes si hay personas tan apuestas como tu ah\xED
+    dentro?"
+  - "\xA1No te sonrojes! Solo estaba bromeando, mira te voy a ser sincera, antes
+    de ayer me implante esta nariz, se que no me deber\xEDas dejar pasar, pero mira
+    lo bonita que es y lo bien que me queda. Desde luego ser\xEDa \xFAtil ah\xED
+    dentro para el negocia. D\xE9jame pasar te dar\xE9 75\u20AC."
+  - "Piensa que todas las personas de dentro se quedar\xE1n alucinando, seguro que
+    te dan las gracias, jeje."
+  - "\xA1Que ganas de mostrarle a todo el mundo mi \xFAltima adquisici\xF3n!"
+  customerAcceptDialogLines:
+  - "Muchas gracias, ya sabia yo que eras de los listos de la clase. Toma, tu recompensa.
+    Si te aburres, b\xFAscame dentro\u2026"
+  customerDeclineDialogLines:
+  - Aish, siempre los grandotes son los que menos luces tienen, bueno tu te lo pierdes,
+    incluso estaba pensando en visitarte al acabar la noche
+  customerDialogType: 1
+  customerMoney: 75
+  customerNightApparition: 0
+  customerImplants:
+  - {fileID: 11400000, guid: aa01b146cdd4a8141ae7af7793a5c3b7, type: 2}
+  - {fileID: 11400000, guid: a291cdb76a48cdf46870b77c69a03f02, type: 2}
+  customerImplantsRegistered: []
+  customerDocumentExpiryDate: 15/09/2077
+  customerHasJustificant: 0

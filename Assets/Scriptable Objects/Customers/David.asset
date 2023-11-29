@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: David
+  m_EditorClassIdentifier: 
+  customerName: David Martinez
+  customerId: ' 1A-34-BT'
+  customerPhoto: {fileID: 0}
+  customerAge: 18
+  customerDistricNumber: 3
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes: []
+  customerDialogLines:
+  - "\xA1Buenas noches t\xEDo!"
+  - "Creo que antes ha pasado mi\u2026 amiga. Joder estoy muy nervioso, no se ni
+    lo que somos."
+  - "Bueno lo siento, tiendo a pensar en voz alta. Pero creo que s\xED que le gusto\u2026"
+  - "Toma mi documentaci\xF3n, espero que este todo bien."
+  customerAcceptDialogLines:
+  - "\xA1Muchas gracias! \xA1Cuando este en lo alto de la torre, te recordar\xE9!"
+  customerDeclineDialogLines:
+  - "Joder, ahora se va a pensar que me he escaqueado... Gracias por nada, \xA1si
+    no le gusto ser\xE1 tu culpa!"
+  customerDialogType: 2
+  customerMoney: 0
+  customerNightApparition: 0
+  customerImplants: []
+  customerImplantsRegistered: []
+  customerDocumentExpiryDate: 20/11/2078
+  customerHasJustificant: 0

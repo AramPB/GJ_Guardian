@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Wicked 1N
+  m_EditorClassIdentifier: 
+  customerName: Wicked
+  customerId: 5D-45-JP
+  customerPhoto: {fileID: 0}
+  customerAge: 31
+  customerDistricNumber: 2
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes: []
+  customerDialogLines:
+  - "Buenas noches caballero, \xBFtodo en orden esta noche? \xBFSin muchos altercados?"
+  - "Hoy ha sido un d\xEDa duro, he tenido que transportar un acuario enorme para
+    alguien del distrito 6. \xA1Malditos ricos! Nunca piensan en nosotros. "
+  - "Bueno, ma\xF1ana seguro que es un mejor d\xEDa."
+  - "Toma mi documentaci\xF3n."
+  customerAcceptDialogLines:
+  - "Gracias caballero, acaba de contribuir a que mi d\xEDa mejore un poco. \xA1Buenas
+    noches!"
+  customerDeclineDialogLines:
+  - "Bueno, definitivamente hoy no es mi d\xEDa, ma\xF1ana volver\xE9 a intentarlo\u2026"
+  customerDialogType: 2
+  customerMoney: 0
+  customerNightApparition: 0
+  customerImplants:
+  - {fileID: 11400000, guid: 749e035ad75d45f47a0267d96a741a95, type: 2}
+  - {fileID: 11400000, guid: b6192708548005f4ca28d33d26c4fdbd, type: 2}
+  customerImplantsRegistered:
+  - {fileID: 11400000, guid: b6192708548005f4ca28d33d26c4fdbd, type: 2}
+  customerDocumentExpiryDate: 08/04/2079
+  customerHasJustificant: 0

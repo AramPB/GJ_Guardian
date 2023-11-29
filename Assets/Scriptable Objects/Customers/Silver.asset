@@ -17,7 +17,7 @@ MonoBehaviour:
   customerPhoto: {fileID: 0}
   customerAge: 19
   customerDistricNumber: 2
-  customerDNIToGive: 0
+  customerDNIToGive: 1
   customerSprite: {fileID: 0}
   customerCrimes:
   - {fileID: 11400000, guid: dd3a2ece0a816614b9d56b2c3a99c7ab, type: 2}
