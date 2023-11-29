@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.90588236, g: 0.55103374, b: 0.12549017, a: 0.78431374}
+  m_Color: {r: 0, g: 0.9882353, b: 1, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -407,17 +407,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PARTY KEEPER
+  m_text: PARTY  KEEPER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c7fd80a59290f04b8c35a93252a3f1d, type: 2}
+  m_sharedMaterial: {fileID: 1583531340418328053, guid: 3c7fd80a59290f04b8c35a93252a3f1d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4290392063
+  m_fontColor: {r: 1, g: 0.18396229, b: 0.728748, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -640,6 +640,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 534597978371737575, guid: ea9824ad7ad67114b930a8abc92178c8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c40811e5369ae54b957d6d724dce61d, type: 2}
+    - target: {fileID: 534597978371737575, guid: ea9824ad7ad67114b930a8abc92178c8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8527226945760444303, guid: 9c40811e5369ae54b957d6d724dce61d, type: 2}
+    - target: {fileID: 534597978371737575, guid: ea9824ad7ad67114b930a8abc92178c8, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1037402544059791151, guid: ea9824ad7ad67114b930a8abc92178c8, type: 3}
       propertyPath: m_Color.a
       value: 0.8666667
@@ -724,6 +736,18 @@ PrefabInstance:
       propertyPath: sprites.Array.data[7]
       value: 
       objectReference: {fileID: 21300000, guid: f45ed6afa0ceb6b43bc387c7abff3997, type: 3}
+    - target: {fileID: 6028969124648396540, guid: ea9824ad7ad67114b930a8abc92178c8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c40811e5369ae54b957d6d724dce61d, type: 2}
+    - target: {fileID: 6028969124648396540, guid: ea9824ad7ad67114b930a8abc92178c8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8527226945760444303, guid: 9c40811e5369ae54b957d6d724dce61d, type: 2}
+    - target: {fileID: 6028969124648396540, guid: ea9824ad7ad67114b930a8abc92178c8, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8920821334281591729, guid: ea9824ad7ad67114b930a8abc92178c8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
