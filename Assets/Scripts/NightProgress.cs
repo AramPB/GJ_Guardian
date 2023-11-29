@@ -336,12 +336,12 @@ public class NightProgress : MonoBehaviour
 
         if (actualPass == isApt)
         {
-            Debug.Log("Acertaste");
+            //Debug.Log("Acertaste");
             NightSystem.Instance.CurrentNight.Successes++;
         }
         else
         {
-            Debug.Log("Cagaste");
+            //Debug.Log("Cagaste");
             NightSystem.Instance.CurrentNight.Fails++;
         }
         SwitchState(State.EndDialogue);
@@ -352,6 +352,7 @@ public class NightProgress : MonoBehaviour
     #region EndDialogue
     private void StartEndDialogue()
     {
+
         if (actualPass)
         {
             //Animacion y dialogos de Sí
