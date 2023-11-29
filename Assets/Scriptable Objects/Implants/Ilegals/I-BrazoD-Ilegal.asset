@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   implantName: Aftershock
   implantImage: {fileID: 21300000, guid: d9082ac26ba19b74b8c64268811945b1, type: 3}
-  implantManufacterNumber: 2F-L9
+  implantManufacterNumber: 2D-D3
   isLegal: 0
   implantType: 5

@@ -195,7 +195,7 @@ public class UIManager : MonoBehaviour
         dni_Name_Text.SetText(dni_Name_String);
         dni_Caducity_Text.SetText(dni_Caducity_String);
         dni_Serial_Text.SetText(dni_Serial_String);
-        dni_District_Text.SetText(dni_District_String);
+        dni_District_Text.SetText("D-"+dni_District_String);
         dni_Age_Text.SetText(dni_Age_String);
         dni_Implants_Name_Text.SetText(dni_Implants_Name_String);
         dni_Implants_number_Text.SetText(dni_Implants_number_String);

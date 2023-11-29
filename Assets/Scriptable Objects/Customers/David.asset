@@ -39,3 +39,4 @@ MonoBehaviour:
   customerImplantsRegistered: []
   customerDocumentExpiryDate: 20/11/2078
   customerHasJustificant: 1
+  customerPrefab: {fileID: 1005021252392794392, guid: 38c6da7ae9f8d4441afec387fdcaa979, type: 3}

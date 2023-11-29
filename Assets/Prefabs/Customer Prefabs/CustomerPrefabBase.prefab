@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 8255344417764956337}
   - component: {fileID: 8783185198835845497}
   m_Layer: 5
-  m_Name: Customer_DJ_Prefab
+  m_Name: CustomerPrefabBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -46,3 +46,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3025113b870b1ef4cb9183dca0ca8c5e, type: 2}
   customerDocumentExpiryDate: 05/09/2078
   customerHasJustificant: 0
+  customerPrefab: {fileID: 1005021252392794392, guid: 2ab8b3b4c2534ee46892870592f16978, type: 3}

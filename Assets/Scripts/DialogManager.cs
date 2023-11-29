@@ -6,6 +6,7 @@ using TMPro;
 public class DialogManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI dialogueTextComponent;
+    [SerializeField] GameObject DialogPanel;
     [SerializeField] List<string> lines;
     [SerializeField] float textSpeed;
 
@@ -55,6 +56,7 @@ public class DialogManager : MonoBehaviour
         index = 0;
         if (lines.Count > 0)
         {
+            DialogPanel.SetActive(true);
             dialogueTextComponent.text = string.Empty;
             hasEnded = false;
             dialogueTextComponent.gameObject.SetActive(true);
@@ -88,6 +90,7 @@ public class DialogManager : MonoBehaviour
         else
         {
             //End Dialog
+            DialogPanel.SetActive(false);
             dialogueTextComponent.gameObject.SetActive(false);
             dialogueTextComponent.text = string.Empty;
             hasEnded = true;
