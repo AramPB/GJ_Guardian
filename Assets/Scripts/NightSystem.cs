@@ -32,11 +32,17 @@ public class NightSystem : MonoBehaviour
 
     private float transitionStartTime;
     private float transitionStartTime2;
+    private float transitionClientStartTime;
+    private float transitionClientStartTime2;
+    [SerializeField] private float transitionClientTime;
+    [SerializeField] private float transitionClientTime2;
     [SerializeField] private float transitionDuration;
-    [SerializeField] private float cityDuration;
     [SerializeField] private float transitionDuration2;
+    [SerializeField] private float cityDuration;
+    [SerializeField] private float queueDuration;
     private bool endLoopTrigger = false;
     private bool endLoopTrigger2 = false;
+    private bool endLoopTrigger3 = false;
 
     public TextMeshPro NightDialog { get => NightDialog; set => NightDialog = value; }
     public GameObject UIInspect { get => uiInspect; set => uiInspect = value; }
@@ -78,11 +84,21 @@ public class NightSystem : MonoBehaviour
     private void Update()
     {
         if (currentNightNumber != 0) {
-            if (NightProgress.isInProgress())
+            if (NightProgress.IsInProgress())
             {
                 transitionStartTime = Time.time;
                 endLoopTrigger = true;
                 endLoopTrigger2 = true;
+
+                if (NightProgress.IsInTransition())
+                {
+                    BetweenCustomersTransitionController();
+                }
+                else
+                {
+                    transitionClientStartTime = Time.time;
+                    endLoopTrigger3 = true;
+                }
             }
             else
             {
@@ -99,7 +115,7 @@ public class NightSystem : MonoBehaviour
 
     public int NightResume()
     {
-        Debug.Log("RESUME");
+        //Debug.Log("RESUME");
         currentNightNumber++; //endGame?
 
         //Player Goal = 1000€
@@ -256,8 +272,10 @@ public class NightSystem : MonoBehaviour
         formatNightSpecifications();
     }
 
+    #region NightsTransition
     private void BetweenNightsTransitionController()
     {
+        Debug.Log("NIGHTS TRANSITION");
         if (endLoopTrigger)
         {
             int a = NightResume();
@@ -275,6 +293,7 @@ public class NightSystem : MonoBehaviour
                 {
                     transitionStartTime2 = Time.time;
                     endLoopTrigger2 = false;
+                    nightProgress.InMiddleTransition();
                 }
                 NextNightTransition();
                 if (Time.time >= transitionStartTime2 + transitionDuration2)
@@ -314,7 +333,7 @@ public class NightSystem : MonoBehaviour
         fadeOut.color = aux;
     }
 
-    public void NextNightTransition()
+    private void NextNightTransition()
     {
         Color aux = fadeOut.color;
         fadeOut.gameObject.SetActive(true);
@@ -340,6 +359,88 @@ public class NightSystem : MonoBehaviour
 
 
     }
+    #endregion
 
-    
+    #region CustomerTransition
+    private void BetweenCustomersTransitionController()
+    {
+        Debug.Log("CUSTOMER TRANSITION");
+        CustomerTransition();
+        if (Time.time >= transitionClientStartTime + transitionClientTime)
+        {
+            //Queue
+
+            if (Time.time >= transitionClientStartTime + transitionClientTime + queueDuration)
+            {
+                //nextcustomer
+                if (endLoopTrigger3)
+                {
+                    transitionClientStartTime2 = Time.time;
+                    endLoopTrigger3 = false;
+                    nightProgress.InMiddleTransition();
+                }
+                NextCustomerTransition();
+                if (Time.time >= transitionClientStartTime2 + transitionClientTime2)
+                {
+                    nightProgress.TransitionHasToEnd();
+                }
+            }
+
+        }
+    }
+    private void CustomerTransition()
+    {
+        Color aux = fadeOut.color;
+        fadeOut.gameObject.SetActive(true);
+
+        if (Time.time >= transitionClientStartTime + transitionClientTime / 2)
+        {
+            if (Time.time >= transitionClientStartTime + transitionClientTime)
+            {
+                fadeOut.gameObject.SetActive(false);
+            }
+            else
+            {
+                aux.a = LerpFunction.Lerp(1, 0, transitionClientStartTime + transitionClientTime / 2, transitionClientTime / 2);
+
+                UIManager.Instance.ActivateInspectUI(false);
+                nightProgress.ResetCustomer();
+                UIManager.Instance.ActivateQueueUI(true);
+
+            }
+        }
+        else
+        {
+            aux.a = LerpFunction.Lerp(0, 1, transitionClientStartTime, transitionClientTime / 2);
+        }
+        fadeOut.color = aux;
+    }
+
+    private void NextCustomerTransition()
+    {
+        Color aux = fadeOut.color;
+        fadeOut.gameObject.SetActive(true);
+
+        if (Time.time >= transitionClientStartTime2 + transitionClientTime2 / 2)
+        {
+            if (Time.time >= transitionClientStartTime2 + transitionClientTime2)
+            {
+                fadeOut.gameObject.SetActive(false);
+            }
+            else
+            {
+                aux.a = LerpFunction.Lerp(1, 0, transitionClientStartTime2 + transitionClientTime2 / 2, transitionClientTime2 / 2);
+                UIManager.Instance.ActivateInspectUI(true);
+                UIManager.Instance.ActivateQueueUI(false);
+            }
+        }
+        else
+        {
+            aux.a = LerpFunction.Lerp(0, 1, transitionClientStartTime2, transitionClientTime2 / 2);
+        }
+        fadeOut.color = aux;
+
+
+    }
+    #endregion
 }

@@ -12,13 +12,12 @@ public class NightProgress : MonoBehaviour
     [SerializeField] private GameObject buttonCP;
     
     [SerializeField] private float tmpWaitTime;
+
     private float tmpStartWait;
 
     private int _currentClientNumber;
 
     private Customer currentCustomer;
-
-    private bool isClientApt;
 
     private bool actualPass;
 
@@ -26,6 +25,8 @@ public class NightProgress : MonoBehaviour
     private List<Customer> clientsList;
 
     private bool inProgress = false;
+    private bool inTransition = false;
+    private bool transitionHasToEnd = false;
 
 
     private enum State
@@ -37,6 +38,7 @@ public class NightProgress : MonoBehaviour
         CriminalProof,
         FinalDecision,
         EndDialogue,
+        Transition,
         Waiting
     }
     private State currentState = State.Waiting;
@@ -105,7 +107,11 @@ public class NightProgress : MonoBehaviour
             case State.EndDialogue:
                 UpdateEndDialogue();
                 break;
-             //waiting
+            //Transicion entre clientes
+            case State.Transition:
+                UpdateTransition();
+                break;
+            //waiting
             case State.Waiting:
                 UpdateWaiting();
                 break;
@@ -117,22 +123,12 @@ public class NightProgress : MonoBehaviour
     #region ClientApparition
     private void StartClientApparition()
     {
-
+        Debug.Log("NEW CLIENT!!");
         ScannerController.Instance.hideScannerUI();
         CurrentCustomer = clientsList[_currentClientNumber - 1];
         clientImage.GetComponent<Image>().sprite = CurrentCustomer.GetSprite;
+        //INSTANCIAR CLIENTE (imagen y botones)
 
-        isClientApt = NightSystem.Instance.CustomerContol.ControlOneCustomer(currentCustomer);
-        UIManager.Instance.SwapDeclineButton(false);
-        UIManager.Instance.SwapPassButton(false);
-        UIManager.Instance.SwapCraniumButton(false);
-        UIManager.Instance.SwapNoseButton(false);
-        UIManager.Instance.SwapEyeRButton(false);
-        UIManager.Instance.SwapEyeLButton(false);
-        UIManager.Instance.SwapJawButton(false);
-        UIManager.Instance.SwapArmRButton(false);
-        UIManager.Instance.SwapArmLButton(false);
-        UIManager.Instance.SwapBodyButton(false);
         tmpStartWait = Time.time;
     }
     private void UpdateClientApparition()
@@ -164,6 +160,16 @@ public class NightProgress : MonoBehaviour
             DNIGameObject.SetActive(false);
             buttonCP.SetActive(false);
             UIManager.Instance.ResetPages();
+            UIManager.Instance.SwapDeclineButton(false);
+            UIManager.Instance.SwapPassButton(false);
+            UIManager.Instance.SwapCraniumButton(false);
+            UIManager.Instance.SwapNoseButton(false);
+            UIManager.Instance.SwapEyeRButton(false);
+            UIManager.Instance.SwapEyeLButton(false);
+            UIManager.Instance.SwapJawButton(false);
+            UIManager.Instance.SwapArmRButton(false);
+            UIManager.Instance.SwapArmLButton(false);
+            UIManager.Instance.SwapBodyButton(false);
             UIManager.Instance.updateUI();
             SwitchState(State.Apparition);
         }
@@ -339,12 +345,12 @@ public class NightProgress : MonoBehaviour
 
         if (actualPass == isApt)
         {
-            Debug.Log("Acertaste");
+            //Debug.Log("Acertaste");
             NightSystem.Instance.CurrentNight.Successes++;
         }
         else
         {
-            Debug.Log("Cagtaste");
+            //Debug.Log("Cagtaste");
             NightSystem.Instance.CurrentNight.Fails++;
         }
         SwitchState(State.EndDialogue);
@@ -375,7 +381,7 @@ public class NightProgress : MonoBehaviour
             if (_currentClientNumber <= maxClients)
             {
                 CurrentCustomer = clientsList[_currentClientNumber - 1];
-                SwitchState(State.Apparition);
+                SwitchState(State.Transition);
             }
             else
             {
@@ -390,11 +396,53 @@ public class NightProgress : MonoBehaviour
         //Desactivar cosas
         DNIGameObject.SetActive(false);
         buttonCP.SetActive(false);
+        UIManager.Instance.SwapDeclineButton(false);
+        UIManager.Instance.SwapPassButton(false);
+        UIManager.Instance.SwapCraniumButton(false);
+        UIManager.Instance.SwapNoseButton(false);
+        UIManager.Instance.SwapEyeRButton(false);
+        UIManager.Instance.SwapEyeLButton(false);
+        UIManager.Instance.SwapJawButton(false);
+        UIManager.Instance.SwapArmRButton(false);
+        UIManager.Instance.SwapArmLButton(false);
+        UIManager.Instance.SwapBodyButton(false);
         UIManager.Instance.ResetPages();
+        UIManager.Instance.updateUI();
     }
     public void ResetCustomer()
     {
+
+    }
+    #endregion
+
+    //--------TRANSITION-----
+    #region Transition
+    private void StartTransition()
+    {
+        inTransition = true;
+        transitionHasToEnd = false;
+    }
+    private void UpdateTransition()
+    {
+        if (transitionHasToEnd)
+        {
+
+            SwitchState(State.Apparition);
+
+        }
+    }
+    private void EndTransition()
+    {
+        inTransition = false;
+    }
+    public void InMiddleTransition()
+    {
         clientImage.GetComponent<Image>().sprite = null;
+        //BORRAR CLIENTE (imagen y botones)
+    }
+    public void TransitionHasToEnd()
+    {
+        transitionHasToEnd = true;
     }
     #endregion
 
@@ -414,9 +462,14 @@ public class NightProgress : MonoBehaviour
     }
     #endregion
 
-    public bool isInProgress()
+    public bool IsInProgress()
     {
         return inProgress;
+    }
+
+    public bool IsInTransition()
+    {
+        return inTransition;
     }
 
     private void SwitchState(State state)
@@ -443,6 +496,9 @@ public class NightProgress : MonoBehaviour
                 break;
             case State.EndDialogue:
                 EndEndDialogue();
+                break;
+            case State.Transition:
+                EndTransition();
                 break;
             case State.Waiting:
                 EndWaiting();
@@ -471,6 +527,9 @@ public class NightProgress : MonoBehaviour
                 break;
             case State.EndDialogue:
                 StartEndDialogue();
+                break;
+            case State.Transition:
+                StartTransition();
                 break;
             case State.Waiting:
                 StartWaiting();

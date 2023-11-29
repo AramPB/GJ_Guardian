@@ -19,8 +19,7 @@ MonoBehaviour:
   customerDistricNumber: 2
   customerDNIToGive: 1
   customerSprite: {fileID: 21300000, guid: 83ddf683711489445b23dfe159f8bf40, type: 3}
-  customerCrimes:
-  - {fileID: 0}
+  customerCrimes: []
   customerDialogLines: []
   customerDialogType: 0
   customerMoney: 6876
