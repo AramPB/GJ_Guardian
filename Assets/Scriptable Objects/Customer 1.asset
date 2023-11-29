@@ -24,6 +24,12 @@ MonoBehaviour:
   customerDialogLines:
   - hola
   - adeu
+  customerAcceptDialogLines:
+  - asi
+  - posi
+  customerDeclineDialogLines:
+  - ano
+  - posno
   customerDialogType: 2
   customerMoney: 432
   customerNightApparition: 1

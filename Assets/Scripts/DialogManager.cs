@@ -9,19 +9,27 @@ public class DialogManager : MonoBehaviour
     [SerializeField] List<string> lines;
     [SerializeField] float textSpeed;
 
-    private bool hasEnded = false;
+    public bool hasEnded = false;
     private int index;
 
-    // Start is called before the first frame update
-    void Start()
+    public static DialogManager Instance { get; private set; }
+
+    #region Singleton
+    private void Awake()
     {
-        dialogueTextComponent.text = string.Empty;
-        StartDialog();
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+        Instance = this;
     }
+    #endregion
+
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && lines.Count > 0)
         {
             if (dialogueTextComponent.text == lines[index])
             {
@@ -44,8 +52,14 @@ public class DialogManager : MonoBehaviour
 
     public void startDialogLines()
     {
-        dialogueTextComponent.text = string.Empty;
-        StartDialog();
+        index = 0;
+        if (lines.Count > 0)
+        {
+            dialogueTextComponent.text = string.Empty;
+            hasEnded = false;
+            dialogueTextComponent.gameObject.SetActive(true);
+            StartDialog();
+        }
     }
 
     private void StartDialog()
@@ -75,7 +89,13 @@ public class DialogManager : MonoBehaviour
         {
             //End Dialog
             hasEnded = true;
+            dialogueTextComponent.gameObject.SetActive(false);
             dialogueTextComponent.text = string.Empty;
         }
+    }
+
+    public void SetLines(List<string> newLines)
+    {
+        lines = newLines;
     }
 }

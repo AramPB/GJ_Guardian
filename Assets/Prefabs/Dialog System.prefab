@@ -45,9 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTextComponent: {fileID: 0}
-  lines:
-  - "Hola compa\xF1ero, que tal la fiesta?"
-  - Bueno, me dejas pasar?
-  - Va que tengo los colegas esperandome dento
-  - Gracias! eres un crack!
+  lines: []
   textSpeed: 0.07
+  hasEnded: 0

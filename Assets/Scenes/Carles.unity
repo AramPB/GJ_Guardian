@@ -123,6 +123,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &2277502 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5903107944155087301, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+  m_PrefabInstance: {fileID: 6384847325672971220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &21124289 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3183328174822035957, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+  m_PrefabInstance: {fileID: 6384847325672971220}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &47739468 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8915989912924059257, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
@@ -134,6 +144,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &524347772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3604591877157491891, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+  m_PrefabInstance: {fileID: 6384847325672971220}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &673321195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4625305496784843824, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+  m_PrefabInstance: {fileID: 6384847325672971220}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1420201165
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,13 +486,29 @@ PrefabInstance:
       value: NightProgress
       objectReference: {fileID: 0}
     - target: {fileID: 4884660152655853521, guid: d938c6c93e7f3e24d986818d7ace6af9, type: 3}
+      propertyPath: docGO
+      value: 
+      objectReference: {fileID: 673321195}
+    - target: {fileID: 4884660152655853521, guid: d938c6c93e7f3e24d986818d7ace6af9, type: 3}
       propertyPath: buttonCP
       value: 
       objectReference: {fileID: 6262195382939645173}
     - target: {fileID: 4884660152655853521, guid: d938c6c93e7f3e24d986818d7ace6af9, type: 3}
+      propertyPath: scannerGO
+      value: 
+      objectReference: {fileID: 21124289}
+    - target: {fileID: 4884660152655853521, guid: d938c6c93e7f3e24d986818d7ace6af9, type: 3}
+      propertyPath: acceptButton
+      value: 
+      objectReference: {fileID: 524347772}
+    - target: {fileID: 4884660152655853521, guid: d938c6c93e7f3e24d986818d7ace6af9, type: 3}
       propertyPath: DNIGameObject
       value: 
       objectReference: {fileID: 2476337698092161562}
+    - target: {fileID: 4884660152655853521, guid: d938c6c93e7f3e24d986818d7ace6af9, type: 3}
+      propertyPath: declineButton
+      value: 
+      objectReference: {fileID: 2277502}
     - target: {fileID: 4884660152655853521, guid: d938c6c93e7f3e24d986818d7ace6af9, type: 3}
       propertyPath: dialogGameObject
       value: 

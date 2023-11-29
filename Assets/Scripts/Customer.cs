@@ -38,6 +38,8 @@ public class Customer : ScriptableObject
     public Sprite GetSprite { get { return customerSprite; } }
     public List<Crimes> GetCrimes { get { return customerCrimes; } }
     public List<string> GetDialogLines { get { return customerDialogLines; } }
+    public List<string> GetAcceptDialogLines { get { return customerAcceptDialogLines; } }
+    public List<string> GetDeclineDialogLines { get { return customerDeclineDialogLines; } }
     public DialogType GetDialogType { get { return customerDialogType; } }
     public int GetMoney { get { return customerMoney; } }
     public bool GetNightApparition { get { return customerNightApparition; } }

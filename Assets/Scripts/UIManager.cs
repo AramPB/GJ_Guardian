@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject cityUI;//"Escena" de inspeccionar
     [SerializeField] GameObject queueUI;//"Escena" transició client
     [SerializeField] GameObject InspectUI;//"Escena" transició nit
+    public ScannerController scannerController;
 
     //--- CIUTAT ---
     [SerializeField] GameObject dialogBackgroundPanel;

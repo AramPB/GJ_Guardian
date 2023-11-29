@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class NightProgress : MonoBehaviour
 {
-    [SerializeField] private GameObject dialogGameObject;
     [SerializeField] private GameObject DNIGameObject;
+    [SerializeField] private GameObject docGO;
+    [SerializeField] private GameObject scannerGO;
+    [SerializeField] private GameObject acceptButton;
+    [SerializeField] private GameObject declineButton;
     [SerializeField] private GameObject buttonCP;
     
     [SerializeField] private float tmpWaitTime;
@@ -48,20 +51,10 @@ public class NightProgress : MonoBehaviour
     {
 
 
-        if (dialogGameObject) {
-            if (DNIGameObject) {
 
-                SwitchState(State.Waiting);
-            }
-            else
-            {
-                Debug.Log("No encuentra el DNI GO");
-            }
-        }
-        else
-        {
-            Debug.Log("No encuentra el Dialog GO");
-        }
+       SwitchState(State.Waiting);
+
+
     }
 
     // Update is called once per frame
@@ -115,10 +108,10 @@ public class NightProgress : MonoBehaviour
     private void StartClientApparition()
     {
         Debug.Log("NEW CLIENT!!");
-        ScannerController.Instance.hideScannerUI();
+        UIManager.Instance.scannerController.hideScannerUI();
         CurrentCustomer = clientsList[_currentClientNumber - 1];
 
-        //INSTANCIAR CLIENTE (imagen y botones)
+        //TODO: INSTANCIAR CLIENTE (imagen y botones)
 
         tmpStartWait = Time.time;
     }
@@ -149,6 +142,10 @@ public class NightProgress : MonoBehaviour
         {
             inProgress = true;
             DNIGameObject.SetActive(false);
+            docGO.SetActive(false);
+            scannerGO.SetActive(false);
+            acceptButton.SetActive(false);
+            declineButton.SetActive(false);
             buttonCP.SetActive(false);
             UIManager.Instance.ResetPages();
             UIManager.Instance.updateUI();
@@ -161,17 +158,17 @@ public class NightProgress : MonoBehaviour
     #region Documentation
     private void StartDocumentationAsk()
     {
-        tmpStartWait = Time.time;
+        DialogManager.Instance.SetLines(currentCustomer.GetDialogLines);
+        DialogManager.Instance.startDialogLines();
     }
     private void UpdateDocumentationAsk()
     {
         //Animaión de la documentación y dialogos
         //Al acabar:
-        if (Time.time >= tmpWaitTime + tmpStartWait)
+        if (DialogManager.Instance.hasEnded)
         {
             SwitchState(State.DNI);
         }
-        //
     }
     private void EndDocumentationAsk()
     {
@@ -211,6 +208,10 @@ public class NightProgress : MonoBehaviour
     private void DNIUpdateInfo()
     {
         DNIGameObject.SetActive(true);
+        docGO.SetActive(true);
+        scannerGO.SetActive(true);
+        acceptButton.SetActive(true);
+        declineButton.SetActive(true);
         UIManager.Instance.Dni_Age_String = CurrentCustomer.GetAge.ToString();
         UIManager.Instance.Dni_Name_String = CurrentCustomer.GetName;
         UIManager.Instance.Dni_Serial_String = CurrentCustomer.GetId;
@@ -313,7 +314,11 @@ public class NightProgress : MonoBehaviour
     {
         actualPass = pass;
         bool isApt = NightSystem.Instance.CustomerContol.ControlOneCustomer(currentCustomer);
-
+        DNIGameObject.SetActive(false);
+        docGO.SetActive(false);
+        scannerGO.SetActive(false);
+        acceptButton.SetActive(false);
+        declineButton.SetActive(false);
         if (actualPass == isApt)
         {
             //Debug.Log("Acertaste");
@@ -332,21 +337,24 @@ public class NightProgress : MonoBehaviour
     #region EndDialogue
     private void StartEndDialogue()
     {
-        tmpStartWait = Time.time;
         if (actualPass)
         {
             //Animacion y dialogos de Sí
+            DialogManager.Instance.SetLines(currentCustomer.GetAcceptDialogLines);
+            DialogManager.Instance.startDialogLines();
         }
         else
         {
             //Animacion y dialogos de No
+            DialogManager.Instance.SetLines(currentCustomer.GetDeclineDialogLines);
+            DialogManager.Instance.startDialogLines();
         }
     }
     private void UpdateEndDialogue()
     {
         //Animacion y dialogo resultado
         //Al acabar:
-        if (Time.time >= tmpWaitTime + tmpStartWait)
+        if (DialogManager.Instance.hasEnded)
         {
             _currentClientNumber++;
             if (_currentClientNumber <= maxClients)
@@ -366,6 +374,10 @@ public class NightProgress : MonoBehaviour
     {
         //Desactivar cosas
         DNIGameObject.SetActive(false);
+        docGO.SetActive(false);
+        scannerGO.SetActive(false);
+        acceptButton.SetActive(false);
+        declineButton.SetActive(false);
         buttonCP.SetActive(false);
         UIManager.Instance.ResetPages();
         UIManager.Instance.updateUI();
@@ -399,7 +411,7 @@ public class NightProgress : MonoBehaviour
     public void InMiddleTransition()
     {
 
-        //BORRAR CLIENTE (imagen y botones)
+        //TODO: BORRAR CLIENTE (imagen y botones)
     }
     public void TransitionHasToEnd()
     {
@@ -432,6 +444,7 @@ public class NightProgress : MonoBehaviour
     {
         return inTransition;
     }
+
 
     private void SwitchState(State state)
     {

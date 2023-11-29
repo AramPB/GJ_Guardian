@@ -7,6 +7,8 @@ using System;
 
 public class NightSystem : MonoBehaviour
 {
+    [SerializeField] private List<string> reflectionDialogLines;
+
     [SerializeField] private TextMeshPro nightDialog;
 
     [SerializeField] private string currentDate;
@@ -30,10 +32,14 @@ public class NightSystem : MonoBehaviour
 
     [SerializeField] private int moneyEarned;
 
+    private float firstTransStartTime;
+    private float firstTransStartTime2;
     private float transitionStartTime;
     private float transitionStartTime2;
     private float transitionClientStartTime;
     private float transitionClientStartTime2;
+    [SerializeField] private float firstTransTime;
+    [SerializeField] private float firstTransTime2;
     [SerializeField] private float transitionClientTime;
     [SerializeField] private float transitionClientTime2;
     [SerializeField] private float transitionDuration;
@@ -43,6 +49,7 @@ public class NightSystem : MonoBehaviour
     private bool endLoopTrigger = false;
     private bool endLoopTrigger2 = false;
     private bool endLoopTrigger3 = false;
+    private bool dialogueTrigger = false;
 
     public TextMeshPro NightDialog { get => NightDialog; set => NightDialog = value; }
     public GameObject UIInspect { get => uiInspect; set => uiInspect = value; }
@@ -80,6 +87,8 @@ public class NightSystem : MonoBehaviour
         currentNightNumber = 0;
         currentDate = "27/11/2076";
         Debug.Log("START");
+        firstTransStartTime = Time.time;
+        endLoopTrigger3 = true;
     }
     private void Update()
     {
@@ -108,8 +117,8 @@ public class NightSystem : MonoBehaviour
         }
         else
         {
-            currentNightNumber++;
-            NextNight();
+            FirstTransitionControler();
+
         }
     }
 
@@ -280,13 +289,20 @@ public class NightSystem : MonoBehaviour
         {
             int a = NightResume();
             endLoopTrigger = false;
+            dialogueTrigger = true;
         }
         NightTransition();
         if (Time.time >= transitionStartTime + transitionDuration)
         {
             //city
+            if (dialogueTrigger)
+            {
+                DialogManager.Instance.SetLines(reflectionDialogLines); //TODO: AFEGIR QUANTITAT DE PASTA EN EL TEXT
+                DialogManager.Instance.startDialogLines();
+                dialogueTrigger = false;
+            }
 
-            if (Time.time >= transitionStartTime + transitionDuration + cityDuration)
+            if (DialogManager.Instance.hasEnded)
             {
                 //nextnight
                 if (endLoopTrigger2)
@@ -369,7 +385,6 @@ public class NightSystem : MonoBehaviour
         if (Time.time >= transitionClientStartTime + transitionClientTime)
         {
             //Queue
-
             if (Time.time >= transitionClientStartTime + transitionClientTime + queueDuration)
             {
                 //nextcustomer
@@ -442,5 +457,86 @@ public class NightSystem : MonoBehaviour
 
 
     }
+    #endregion
+
+    #region FirstTransition
+    private void FirstTransitionControler()
+    {
+        FirstTransition();
+
+        if (Time.time >= firstTransStartTime + firstTransTime)
+        {
+
+            //Queue
+
+            if (Time.time >= firstTransStartTime + firstTransTime + queueDuration)
+            {
+                //nextcustomer
+                if (endLoopTrigger3)
+                {
+                    firstTransStartTime2 = Time.time;
+                    endLoopTrigger3 = false;
+                    nightProgress.InMiddleTransition();
+                }
+
+                FirstCustomerTransition();
+                if (Time.time >= firstTransStartTime2 + firstTransTime2)
+                {
+                    currentNightNumber++;
+                    NextNight();
+                }
+            }
+        }
+    }
+    private void FirstTransition()
+    {
+        Color aux = fadeOut.color;
+        fadeOut.gameObject.SetActive(true);
+
+
+        if (Time.time >= firstTransStartTime + firstTransTime)
+        {
+            fadeOut.gameObject.SetActive(false);
+        }
+        else
+        {
+            aux.a = LerpFunction.Lerp(1, 0, firstTransStartTime, firstTransTime);
+
+            UIManager.Instance.ActivateInspectUI(false);
+            nightProgress.ResetCustomer();
+            UIManager.Instance.ActivateQueueUI(true);
+
+        }
+
+        fadeOut.color = aux;
+    }
+
+    private void FirstCustomerTransition()
+    {
+        Color aux = fadeOut.color;
+        fadeOut.gameObject.SetActive(true);
+
+        if (Time.time >= firstTransStartTime2 + firstTransTime2 / 2)
+        {
+            if (Time.time >= firstTransStartTime2 + firstTransTime2)
+            {
+                fadeOut.gameObject.SetActive(false);
+            }
+            else
+            {
+                aux.a = LerpFunction.Lerp(1, 0, firstTransStartTime2 + firstTransTime2 / 2, firstTransTime2 / 2);
+                UIManager.Instance.ActivateInspectUI(true);
+                UIManager.Instance.ActivateQueueUI(false);
+            }
+        }
+        else
+        {
+            aux.a = LerpFunction.Lerp(0, 1, firstTransStartTime2, firstTransTime2 / 2);
+        }
+        fadeOut.color = aux;
+
+
+    }
+
     #endregion
 }

@@ -45,6 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7594ac811cdff5042aa57b6ed927f518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reflectionDialogLines:
+  - Bonita
+  - Noche
+  - Cagaste
   nightDialog: {fileID: 0}
   currentDate: 
   uiQueue: {fileID: 0}
@@ -60,12 +64,14 @@ MonoBehaviour:
   nightProgress: {fileID: 0}
   customerContol: {fileID: 2897416375730195822}
   moneyEarned: 0
+  firstTransTime: 1
+  firstTransTime2: 2
   transitionClientTime: 2
   transitionClientTime2: 2
-  transitionDuration: 4
-  transitionDuration2: 4
-  cityDuration: 3
-  queueDuration: 3
+  transitionDuration: 2
+  transitionDuration2: 2
+  cityDuration: 1
+  queueDuration: 1
 --- !u!114 &2897416375730195822
 MonoBehaviour:
   m_ObjectHideFlags: 0
