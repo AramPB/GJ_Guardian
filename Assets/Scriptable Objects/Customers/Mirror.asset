@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Mirror
+  m_EditorClassIdentifier: 
+  customerName: Mirror
+  customerId: 5B-23-LK
+  customerPhoto: {fileID: 0}
+  customerAge: 27
+  customerDistricNumber: 3
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes:
+  - {fileID: 11400000, guid: d59c7534596565448a42ef2a69f1809c, type: 2}
+  customerDialogLines:
+  - "Ei, aqu\xED tienes..."
+  - "\xBFTodo correcto?"
+  - "Alg\xFAn d\xEDa me ascender\xE1n, maldito trabajo..."
+  - "\xBFSabes si hoy actua Disk? Me gusta bastante su m\xFAsica"
+  customerAcceptDialogLines:
+  - Que tengas buena noche...
+  customerDeclineDialogLines:
+  - Joder, no me sale nada bien nunca...
+  customerDialogType: 2
+  customerMoney: 0
+  customerNightApparition: 0
+  customerImplants:
+  - {fileID: 11400000, guid: 606ea9be4cfd7fc44b2950e4cbd411d6, type: 2}
+  customerImplantsRegistered: []
+  customerDocumentExpiryDate: 15/04/2077
+  customerHasJustificant: 1
