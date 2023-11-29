@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Click
+  m_EditorClassIdentifier: 
+  customerName: Click
+  customerId: 3B-29-LP
+  customerPhoto: {fileID: 0}
+  customerAge: 16
+  customerDistricNumber: 4
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes: []
+  customerDialogLines:
+  - "\xA1Ey Tronco! \xBFComo va la noche?"
+  - "Que ganas de entrar, suena super bien la m\xFAsica, simplemente soy un chico
+    que quiere entrar, 18 reci\xE9n cumplidos."
+  - "\xBFA que sabr\xE1 el alcohol? Digo, ya lo he probado pero tal vez el de aqu\xED
+    es diferente\u2026"
+  - "No te preocupes que todo est\xE1 en orden toma mi documentaci\xF3n, completamente
+    legal y sin ninguna cosa rara."
+  customerAcceptDialogLines:
+  - "\xA1Toma ya! \xA1Ha colado, ya ver\xE1s cuando ma\xF1ana se lo cuente a mis
+    colegas en el recreo!"
+  customerDeclineDialogLines:
+  - "Jopetas, no ha colado, espero que mi madre nunca se entere\u2026"
+  customerDialogType: 2
+  customerMoney: 0
+  customerNightApparition: 0
+  customerImplants: []
+  customerImplantsRegistered: []
+  customerDocumentExpiryDate: 15/12/2098
+  customerHasJustificant: 0

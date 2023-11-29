@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Doc
+  m_EditorClassIdentifier: 
+  customerName: Doc
+  customerId: 2X-41-QE
+  customerPhoto: {fileID: 0}
+  customerAge: 38
+  customerDistricNumber: 5
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes:
+  - {fileID: 11400000, guid: 2dce28afa09ffe74fb66177729bcbe20, type: 2}
+  customerDialogLines:
+  - "Buenas, \xBFc\xF3mo va la noche?"
+  - "Vengo por trabajo, uno de mis clientes quiere\u2026mejorar. Se puede decir que
+    soy una especie de psic\xF3logo, ayudo que la gente se sienta mejor."
+  - "En todo caso, si en algun momento quieres mejorar tus capacidades, toma mi tarjeta,
+    pero ten en cuenta que soy bueno, lo que significa que tendr\xE1s que llevar
+    un buen pago jeje."
+  - "Bueno aqu\xED tienes la documentaci\xF3n, todo en orden."
+  customerAcceptDialogLines:
+  - "Bueno, pi\xE9nsatelo, si me necesitas ll\xE1mame. Yo hoy voy a pasarlo bien. "
+  customerDeclineDialogLines:
+  - "Mierda, \xBFy como le explico a mi cliente que no puedo hacerlo esta noche?
+    Mi reputaci\xF3n se puede ir a la mierda\u2026."
+  customerDialogType: 2
+  customerMoney: 0
+  customerNightApparition: 0
+  customerImplants:
+  - {fileID: 11400000, guid: 884096f7c7ba47746abefcb28af85cde, type: 2}
+  - {fileID: 11400000, guid: 3025113b870b1ef4cb9183dca0ca8c5e, type: 2}
+  customerImplantsRegistered:
+  - {fileID: 11400000, guid: 3025113b870b1ef4cb9183dca0ca8c5e, type: 2}
+  customerDocumentExpiryDate: 14/10/2078
+  customerHasJustificant: 1
