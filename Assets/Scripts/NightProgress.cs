@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class NightProgress : MonoBehaviour
 {
-
-    [SerializeField] private GameObject clientImage;
     [SerializeField] private GameObject dialogGameObject;
     [SerializeField] private GameObject DNIGameObject;
     [SerializeField] private GameObject buttonCP;
@@ -49,28 +47,21 @@ public class NightProgress : MonoBehaviour
     void Start()
     {
 
-        if (clientImage.GetComponent<Image>())
-        {
-            if (dialogGameObject) {
-                if (DNIGameObject) {
 
-                    SwitchState(State.Waiting);
-                }
-                else
-                {
-                    Debug.Log("No encuentra el DNI GO");
-                }
+        if (dialogGameObject) {
+            if (DNIGameObject) {
+
+                SwitchState(State.Waiting);
             }
             else
             {
-                Debug.Log("No encuentra el Dialog GO");
+                Debug.Log("No encuentra el DNI GO");
             }
         }
         else
         {
-            Debug.Log("No encuentra sprite de Cliente");
+            Debug.Log("No encuentra el Dialog GO");
         }
-
     }
 
     // Update is called once per frame
@@ -126,7 +117,7 @@ public class NightProgress : MonoBehaviour
         Debug.Log("NEW CLIENT!!");
         ScannerController.Instance.hideScannerUI();
         CurrentCustomer = clientsList[_currentClientNumber - 1];
-        clientImage.GetComponent<Image>().sprite = CurrentCustomer.GetSprite;
+
         //INSTANCIAR CLIENTE (imagen y botones)
 
         tmpStartWait = Time.time;
@@ -160,16 +151,6 @@ public class NightProgress : MonoBehaviour
             DNIGameObject.SetActive(false);
             buttonCP.SetActive(false);
             UIManager.Instance.ResetPages();
-            UIManager.Instance.SwapDeclineButton(false);
-            UIManager.Instance.SwapPassButton(false);
-            UIManager.Instance.SwapCraniumButton(false);
-            UIManager.Instance.SwapNoseButton(false);
-            UIManager.Instance.SwapEyeRButton(false);
-            UIManager.Instance.SwapEyeLButton(false);
-            UIManager.Instance.SwapJawButton(false);
-            UIManager.Instance.SwapArmRButton(false);
-            UIManager.Instance.SwapArmLButton(false);
-            UIManager.Instance.SwapBodyButton(false);
             UIManager.Instance.updateUI();
             SwitchState(State.Apparition);
         }
@@ -189,16 +170,6 @@ public class NightProgress : MonoBehaviour
         if (Time.time >= tmpWaitTime + tmpStartWait)
         {
             SwitchState(State.DNI);
-            UIManager.Instance.SwapDeclineButton(true);
-            UIManager.Instance.SwapPassButton(true);
-            UIManager.Instance.SwapCraniumButton(true);
-            UIManager.Instance.SwapNoseButton(true);
-            UIManager.Instance.SwapEyeRButton(true);
-            UIManager.Instance.SwapEyeLButton(true);
-            UIManager.Instance.SwapJawButton(true);
-            UIManager.Instance.SwapArmRButton(true);
-            UIManager.Instance.SwapArmLButton(true);
-            UIManager.Instance.SwapBodyButton(true);
         }
         //
     }
@@ -396,16 +367,6 @@ public class NightProgress : MonoBehaviour
         //Desactivar cosas
         DNIGameObject.SetActive(false);
         buttonCP.SetActive(false);
-        UIManager.Instance.SwapDeclineButton(false);
-        UIManager.Instance.SwapPassButton(false);
-        UIManager.Instance.SwapCraniumButton(false);
-        UIManager.Instance.SwapNoseButton(false);
-        UIManager.Instance.SwapEyeRButton(false);
-        UIManager.Instance.SwapEyeLButton(false);
-        UIManager.Instance.SwapJawButton(false);
-        UIManager.Instance.SwapArmRButton(false);
-        UIManager.Instance.SwapArmLButton(false);
-        UIManager.Instance.SwapBodyButton(false);
         UIManager.Instance.ResetPages();
         UIManager.Instance.updateUI();
     }
@@ -437,7 +398,7 @@ public class NightProgress : MonoBehaviour
     }
     public void InMiddleTransition()
     {
-        clientImage.GetComponent<Image>().sprite = null;
+
         //BORRAR CLIENTE (imagen y botones)
     }
     public void TransitionHasToEnd()

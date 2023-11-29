@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7491970570750273897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7916501055354286263}
+  - component: {fileID: 1522305949997676958}
+  - component: {fileID: 2897416375730195822}
+  m_Layer: 0
+  m_Name: NightSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7916501055354286263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491970570750273897}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1059.194, y: 530.02435, z: -13.57979}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1522305949997676958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491970570750273897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7594ac811cdff5042aa57b6ed927f518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nightDialog: {fileID: 0}
+  currentDate: 
+  uiQueue: {fileID: 0}
+  uiInspect: {fileID: 0}
+  uiCity: {fileID: 0}
+  fadeOut: {fileID: 0}
+  night1: {fileID: 11400000, guid: 5d63cc4611460674897f4665cfb3442a, type: 2}
+  night2: {fileID: 11400000, guid: 2427cdc8011d03641815821c6ab1fed1, type: 2}
+  night3: {fileID: 11400000, guid: 624ce76cd52ba3949a81b45d3e26ebcf, type: 2}
+  night4: {fileID: 11400000, guid: fb530da8713cff345bfbbd7e3d1346ab, type: 2}
+  currentNight: {fileID: 11400000, guid: 5d63cc4611460674897f4665cfb3442a, type: 2}
+  currentNightNumber: 1
+  nightProgress: {fileID: 0}
+  customerContol: {fileID: 2897416375730195822}
+  moneyEarned: 0
+  transitionClientTime: 2
+  transitionClientTime2: 2
+  transitionDuration: 4
+  transitionDuration2: 4
+  cityDuration: 3
+  queueDuration: 3
+--- !u!114 &2897416375730195822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491970570750273897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd6dcfb1177f344f8b7f1c95bcc882b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentNightSpecifications: {fileID: 0}
+  currentCustomerToControl: {fileID: 0}
