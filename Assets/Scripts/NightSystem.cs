@@ -360,12 +360,18 @@ public class NightSystem : MonoBehaviour
                             if (moneyEarned >= goalMoney)
                             {
                                 //Play Good Ending Animation & Return to Menu
-                                reflectionDialogLines.Add("");
+                                reflectionDialogLines.Add("Al final, he conseguido el dinero para enviar a Spark a la universidad...");
+                                reflectionDialogLines.Add("Al menos espero que que esto le sirva para tener un futuro brillante.");
+                                reflectionDialogLines.Add("Con estos " + moneyEarned + "€ Spark podrá vivir tranquila al menos un tiempo, parece ser que mis días de portero han acabado.");
+                                reflectionDialogLines.Add("Al menos de momento…");
                             }
                             else
                             {
                                 //Play Bad Ending Animation & Return to Menu
-                                reflectionDialogLines.Add("");
+                                reflectionDialogLines.Add("Mierda, solo con " + moneyEarned + "€ no me da para pagar la universidad a Spark.");
+                                reflectionDialogLines.Add("Joder solo si hubiera sido mejor, o estado más atento...");
+                                reflectionDialogLines.Add("Mierda, Mierda, no quiero condenarla a esta vida, rebuscando por las esquinas cualquier trabajo...");
+                                reflectionDialogLines.Add("Parece ser que aun no puedo descansar...");
                             }
                             DialogManager.Instance.SetLines(reflectionDialogLines);
                             DialogManager.Instance.startDialogLines();
