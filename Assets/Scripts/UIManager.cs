@@ -258,6 +258,10 @@ public class UIManager : MonoBehaviour
         {
             UpdatePage(currentPage - 1);
         }
+        else
+        {
+            SoundsController.Instance.declineSoundPlay();
+        }
     }
 
     public void NextPage()
@@ -270,6 +274,7 @@ public class UIManager : MonoBehaviour
         else
         {
             //So de negar passar pagina
+            SoundsController.Instance.declineSoundPlay();
         }
     }
 
@@ -284,6 +289,7 @@ public class UIManager : MonoBehaviour
 
     private void UpdatePage(int newPage)
     {
+        SoundsController.Instance.buttonSoundPlay();
         switch (currentPage)
         {
             case 1:
