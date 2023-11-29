@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nightNumber: 2
   nightsCustomers:
-  - {fileID: 11400000, guid: f5ecdccd9beecc34786fac31ddd4984d, type: 2}
-  - {fileID: 11400000, guid: 3541f7b076111004d968d1a19723e7f2, type: 2}
-  - {fileID: 11400000, guid: 5251d8da7d19a394b810f957d646e2e0, type: 2}
+  - {fileID: 11400000, guid: 1edc9546e0a12524795a506765f8ca3d, type: 2}
+  - {fileID: 11400000, guid: 25e86a78a1f028d42ae6980a3fca279a, type: 2}
+  - {fileID: 11400000, guid: c2d32a491c162bd449aa2775b83d46d6, type: 2}
   nightSpecifications: {fileID: 11400000, guid: 6a25b39e00cd92c4fba0dcfee531aab4, type: 2}
   successes: 0
   fails: 0
