@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueTextComponent: {fileID: 0}
+  DialogPanel: {fileID: 0}
   lines: []
-  textSpeed: 0.07
+  textSpeed: 0.03
   hasEnded: 0

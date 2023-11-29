@@ -49,20 +49,24 @@ MonoBehaviour:
   - Bonita
   - Noche
   - Cagaste
+  musicController: {fileID: 0}
   nightDialog: {fileID: 0}
   currentDate: 
   uiQueue: {fileID: 0}
   uiInspect: {fileID: 0}
+  characterContainer: {fileID: 0}
   uiCity: {fileID: 0}
   fadeOut: {fileID: 0}
-  night1: {fileID: 11400000, guid: 5d63cc4611460674897f4665cfb3442a, type: 2}
-  night2: {fileID: 11400000, guid: 2427cdc8011d03641815821c6ab1fed1, type: 2}
-  night3: {fileID: 11400000, guid: 624ce76cd52ba3949a81b45d3e26ebcf, type: 2}
-  night4: {fileID: 11400000, guid: fb530da8713cff345bfbbd7e3d1346ab, type: 2}
-  currentNight: {fileID: 11400000, guid: 5d63cc4611460674897f4665cfb3442a, type: 2}
+  night1: {fileID: 11400000, guid: d1a763a7c08b2ea4ab802f1f51a8e116, type: 2}
+  night2: {fileID: 11400000, guid: c6d6917f2eede4f458168ef9478bf451, type: 2}
+  night3: {fileID: 11400000, guid: 2429f6c3703c07842a836f344abedf51, type: 2}
+  night4: {fileID: 11400000, guid: fee6c1aa6e0866f48a824e30265dd60d, type: 2}
+  night5: {fileID: 11400000, guid: 3f838bea9d075fd44bd13b782e791f64, type: 2}
+  currentNight: {fileID: 11400000, guid: d1a763a7c08b2ea4ab802f1f51a8e116, type: 2}
   currentNightNumber: 1
   nightProgress: {fileID: 0}
   customerContol: {fileID: 2897416375730195822}
+  goalMoney: 0
   moneyEarned: 0
   firstTransTime: 1
   firstTransTime2: 2
@@ -72,6 +76,8 @@ MonoBehaviour:
   transitionDuration2: 2
   cityDuration: 1
   queueDuration: 1
+  currentSelectedImplant: {fileID: 0}
+  scanner: {fileID: 0}
 --- !u!114 &2897416375730195822
 MonoBehaviour:
   m_ObjectHideFlags: 0
