@@ -437,7 +437,7 @@ public class NightSystem : MonoBehaviour
                 else
                 {
                     //Activar final
-                    UIManager.Instance.ActivateCityUI(true);
+                    UIManager.Instance.ActivateGameOverUI();
                 }
             }
         }

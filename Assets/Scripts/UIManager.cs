@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject cityUI;//"Escena" de inspeccionar
     [SerializeField] GameObject queueUI;//"Escena" transició client
     [SerializeField] GameObject InspectUI;//"Escena" transició nit
+    [SerializeField] GameObject gameOverUI;//"Escena" Final
     public ScannerController scannerController;
 
     //--- CIUTAT ---
@@ -263,6 +264,11 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("MAX PAGE");
         }
+    }
+
+    public void ActivateGameOverUI()
+    {
+        gameOverUI.SetActive(true);
     }
 
     private void UpdatePage(int newPage)
