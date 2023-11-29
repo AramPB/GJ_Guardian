@@ -18,6 +18,8 @@ public class Customer : ScriptableObject
     [SerializeField] private Sprite customerSprite;
     [SerializeField] private List<Crimes> customerCrimes;
     [SerializeField] private List<string> customerDialogLines;
+    [SerializeField] private List<string> customerAcceptDialogLines;
+    [SerializeField] private List<string> customerDeclineDialogLines;
     [SerializeField] private DialogType customerDialogType;
     [SerializeField] private int customerMoney;
     [SerializeField] private bool customerNightApparition;
@@ -43,4 +45,6 @@ public class Customer : ScriptableObject
     public List<Implant> GetImplantsRegistered { get { return customerImplantsRegistered; } }
     public string GetDocumentExpiryDate { get { return customerDocumentExpiryDate; } }
     public bool CustomerHasJustificant { get => customerHasJustificant; set => customerHasJustificant = value; }
+    public List<string> CustomerDeclineDialogLines { get => customerDeclineDialogLines; set => customerDeclineDialogLines = value; }
+    public List<string> CustomerAcceptDialogLines { get => customerAcceptDialogLines; set => customerAcceptDialogLines = value; }
 }
