@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Gene
+  m_EditorClassIdentifier: 
+  customerName: Gene
+  customerId: 3Q-29-AB
+  customerPhoto: {fileID: 0}
+  customerAge: 20
+  customerDistricNumber: 3
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes: []
+  customerDialogLines:
+  - "Buenas noches. \xBFComo estas?  "
+  - "Escucha, s\xE9 que es raro, \xBFpero tienes 20\u20AC? Es que mi chico me ha
+    tra\xEDdo aqu\xED y quiero darle algo de dinero para que se compre algo de beber,
+    siempre se gasta su dinero en mi y me sabe mal."
+  - Ahora misma voy corta de dinero, pero es una oportunidad perfecta para darle
+    un regalito.
+  - "Toma mi documentaci\xF3n, espero que seas buena persona."
+  customerAcceptDialogLines:
+  - "\xA1Perfecto! Piensa que hoy has hecho una buena acci\xF3n, \xA1ya te invitaremos
+    a la boda!"
+  customerDeclineDialogLines:
+  - "Mierda no ha colado, bueno no pasa nada, me voy para casa, ya se apa\xF1ar\xE1."
+  customerDialogType: 0
+  customerMoney: 20
+  customerNightApparition: 0
+  customerImplants:
+  - {fileID: 11400000, guid: b43a4267b1802b4408efeef48952b1b5, type: 2}
+  customerImplantsRegistered:
+  - {fileID: 11400000, guid: b43a4267b1802b4408efeef48952b1b5, type: 2}
+  customerDocumentExpiryDate: 18/09/2079
+  customerHasJustificant: 0

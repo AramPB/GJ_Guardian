@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Zone
+  m_EditorClassIdentifier: 
+  customerName: Zone
+  customerId: 4P-28-FL
+  customerPhoto: {fileID: 0}
+  customerAge: 23
+  customerDistricNumber: 3
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes: []
+  customerDialogLines:
+  - Buenas noches estimado portero de discoteca.
+  - "\xBFSabe que la gente con implantes tiene un 149% de probabilidades de contraer
+    una enfermedad terminal? \xBFEs que quieren morir? A mi parecer les han vaciado
+    el cerebro."
+  - "Aparte, la gente con implantes es estad\xEDsticamente mas propensa a cometer
+    cr\xEDmenes, estaba claro que era una decisi\xF3n solo de desequilibrados mentales."
+  - "Bueno aqu\xED tiene mi documentaci\xF3n, por mi podr\xEDan sacar la parte de
+    implantes, nunca llevar\xE9 ninguno igualmente."
+  customerAcceptDialogLines:
+  - Muchas gracias estimado portero de discoteca, voy a disfrutar de una bebida en
+    este antro de gente desequilibrada.
+  customerDeclineDialogLines:
+  - "Bueno supongo que al ser diferentes al resto no me quieren aqu\xED, vosotros
+    os lo perd\xE9is, vais acabar todos a 3 metros bajo tierra y me encargar\xE9
+    de bailar sobre vuestras tumbas. Buenas noches."
+  customerDialogType: 2
+  customerMoney: 0
+  customerNightApparition: 0
+  customerImplants: []
+  customerImplantsRegistered: []
+  customerDocumentExpiryDate: 10/12/2078
+  customerHasJustificant: 0

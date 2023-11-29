@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Aero
+  m_EditorClassIdentifier: 
+  customerName: Aero
+  customerId: 2S-32-BV
+  customerPhoto: {fileID: 0}
+  customerAge: 34
+  customerDistricNumber: 5
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes: []
+  customerDialogLines:
+  - Aero a Gorila, me recibe? JAJAJA broma de piloto, no le des importancia.
+  - "Acabo de llegar de cruzar el atl\xE1ntico, estoy muerto. \xA1Espero que tengan
+    bebidas refrescantes y a ver si encuentro compa\xF1\xEDa para contarle mis viajes!"
+  - "\xBFSabes que en Jap\xF3n han prohibido los aviones de gasolina? Solo puedes
+    volar con los electicos, es una mierda. Mira que creen en el cambio clim\xE1tico,
+    estos son raros."
+  - "Aqu\xED tiene mi identificaci\xF3n se\xF1or."
+  customerAcceptDialogLines:
+  - "\xA1Aero despegando destino pista de baile!"
+  customerDeclineDialogLines:
+  - "Aero volviendo a pista de aterrizaje\u2026"
+  customerDialogType: 2
+  customerMoney: 0
+  customerNightApparition: 0
+  customerImplants:
+  - {fileID: 11400000, guid: b6192708548005f4ca28d33d26c4fdbd, type: 2}
+  customerImplantsRegistered:
+  - {fileID: 11400000, guid: b6192708548005f4ca28d33d26c4fdbd, type: 2}
+  customerDocumentExpiryDate: 01/03/2079
+  customerHasJustificant: 0

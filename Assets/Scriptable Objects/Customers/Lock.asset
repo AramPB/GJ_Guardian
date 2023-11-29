@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc530bca2f02b84dbcb4e7d3059a886, type: 3}
+  m_Name: Lock
+  m_EditorClassIdentifier: 
+  customerName: Lock
+  customerId: 6F-45-RT
+  customerPhoto: {fileID: 0}
+  customerAge: 29
+  customerDistricNumber: 5
+  customerDNIToGive: 1
+  customerSprite: {fileID: 0}
+  customerCrimes: []
+  customerDialogLines:
+  - "Buenas noches, se\xF1or. "
+  - "\xA1Hoy ha sido un buen d\xEDa, me han ascendido! \xA1Vengo a gastar mi futuro
+    sueldo! "
+  - "En todo caso, tengo que comprarle algo a mi mujer, que si me lo gasto todo aqu\xED
+    me voy directo a dormir al sof\xE1 JAJAJA."
+  - "Toma, aqu\xED tienes mi documentaci\xF3n, espero que todo est\xE9 bien."
+  customerAcceptDialogLines:
+  - "\xA1Vamos a quemar la pista de baile y a joderme el h\xEDgado! \xA1\xA1A tope!!"
+  customerDeclineDialogLines:
+  - "Mierda, \xBFy ahora que hago yo con el adelanto que he pedido?"
+  customerDialogType: 2
+  customerMoney: 0
+  customerNightApparition: 0
+  customerImplants: []
+  customerImplantsRegistered: []
+  customerDocumentExpiryDate: 15/08/2077
+  customerHasJustificant: 0
