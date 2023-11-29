@@ -19,6 +19,7 @@ public class NightProgress : MonoBehaviour
     private int _currentClientNumber;
 
     private Customer currentCustomer;
+    private GameObject instantiatedCustomer;
 
     private bool actualPass;
 
@@ -28,6 +29,7 @@ public class NightProgress : MonoBehaviour
     private bool inProgress = false;
     private bool inTransition = false;
     private bool transitionHasToEnd = false;
+    private bool isInInspect = false;
 
 
     private enum State
@@ -60,6 +62,14 @@ public class NightProgress : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (UIManager.Instance.scannerController)
+        {
+            if (!isInInspect)
+            {
+                UIManager.Instance.scannerController.changeButtonVisibility(false);
+            }
+        }
+
         //NIGHT LOOP
         switch (currentState)
         {
@@ -108,10 +118,9 @@ public class NightProgress : MonoBehaviour
     private void StartClientApparition()
     {
         Debug.Log("NEW CLIENT!!");
-        UIManager.Instance.scannerController.hideScannerUI();
         CurrentCustomer = clientsList[_currentClientNumber - 1];
-
-        //TODO: INSTANCIAR CLIENTE (imagen y botones)
+        instantiatedCustomer = Instantiate(currentCustomer.GetCustomerPrefab, NightSystem.Instance.CharacterContainer.transform);
+        UIManager.Instance.scannerController.hideScannerUI();
 
         tmpStartWait = Time.time;
     }
@@ -147,6 +156,7 @@ public class NightProgress : MonoBehaviour
             acceptButton.SetActive(false);
             declineButton.SetActive(false);
             buttonCP.SetActive(false);
+            isInInspect = false;
             UIManager.Instance.ResetPages();
             UIManager.Instance.updateUI();
             SwitchState(State.Apparition);
@@ -183,6 +193,8 @@ public class NightProgress : MonoBehaviour
         if (CurrentCustomer.GetDNIToGive)
         {
             //Setear la nueva info de DNI
+            isInInspect = true;
+            UIManager.Instance.scannerController.changeButtonVisibility(true);
             DNIUpdateInfo();
         }
         else
@@ -209,7 +221,6 @@ public class NightProgress : MonoBehaviour
     {
         DNIGameObject.SetActive(true);
         docGO.SetActive(true);
-        scannerGO.SetActive(true);
         acceptButton.SetActive(true);
         declineButton.SetActive(true);
         UIManager.Instance.Dni_Age_String = CurrentCustomer.GetAge.ToString();
@@ -319,6 +330,7 @@ public class NightProgress : MonoBehaviour
         scannerGO.SetActive(false);
         acceptButton.SetActive(false);
         declineButton.SetActive(false);
+        isInInspect = false;
         if (actualPass == isApt)
         {
             Debug.Log("Acertaste");
@@ -387,6 +399,7 @@ public class NightProgress : MonoBehaviour
         acceptButton.SetActive(false);
         declineButton.SetActive(false);
         buttonCP.SetActive(false);
+        isInInspect = false;
         UIManager.Instance.ResetPages();
         UIManager.Instance.updateUI();
     }
@@ -418,8 +431,8 @@ public class NightProgress : MonoBehaviour
     }
     public void InMiddleTransition()
     {
-
         //TODO: BORRAR CLIENTE (imagen y botones)
+        Destroy(instantiatedCustomer);
     }
     public void TransitionHasToEnd()
     {

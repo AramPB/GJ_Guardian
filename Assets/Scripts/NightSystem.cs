@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using UnityEngine.EventSystems;
 
 public class NightSystem : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class NightSystem : MonoBehaviour
 
     [SerializeField] private GameObject uiQueue;
     [SerializeField] private GameObject uiInspect;
+    [SerializeField] private GameObject characterContainer;
     [SerializeField] private GameObject uiCity;
 
     [SerializeField] private Image fadeOut;
@@ -59,6 +61,7 @@ public class NightSystem : MonoBehaviour
     private string endGameMessage;
 
     public Implant currentSelectedImplant;
+    public GameObject scanner;
 
     public TextMeshPro NightDialog { get => NightDialog; set => NightDialog = value; }
     public GameObject UIInspect { get => uiInspect; set => uiInspect = value; }
@@ -75,6 +78,7 @@ public class NightSystem : MonoBehaviour
     public NightProgress NightProgress { get => nightProgress; set => nightProgress = value; }
     public CustomerControl CustomerContol { get => customerContol; set => customerContol = value; }
     public int MoneyEarned { get => moneyEarned; set => moneyEarned = value; }
+    public GameObject CharacterContainer { get => characterContainer; set => characterContainer = value; }
 
     #region Singleton
     private void Awake()
@@ -601,4 +605,5 @@ public class NightSystem : MonoBehaviour
     }
 
     #endregion
+
 }

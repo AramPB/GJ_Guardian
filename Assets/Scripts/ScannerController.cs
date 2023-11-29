@@ -17,19 +17,42 @@ public class ScannerController : MonoBehaviour
 
     private bool found = false;
 
-    #region Singleton
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-            return;
-        }
-        Instance = this;
+        scannerUI = NightSystem.Instance.scanner;
+        UIManager.Instance.scannerController = this;
+        scannerUI.SetActive(false);
     }
-    #endregion
 
-    public static ScannerController Instance { get; private set; }
+    private void OnEnable()
+    {
+        scannerUI = NightSystem.Instance.scanner;
+        UIManager.Instance.scannerController = this;
+        scannerUI.SetActive(false);
+    }
+
+    private void Start()
+    {
+        scannerUI = NightSystem.Instance.scanner;
+        UIManager.Instance.scannerController = this;
+        scannerUI.SetActive(false);
+    }
+
+    public void changeButtonVisibility(bool visibility)
+    {
+        if (!visibility)
+        {
+            scannerUI.SetActive(visibility);
+        }
+        if(eyeRButton) eyeRButton.SetActive(visibility);
+        if (eyeLButton) eyeLButton.SetActive(visibility);
+        if (armRButton) armRButton.SetActive(visibility);
+        if (armLButton) armLButton.SetActive(visibility);
+        if (jawButton) jawButton.SetActive(visibility);
+        if (noseButton) noseButton.SetActive(visibility);
+        if (bodyButton) bodyButton.SetActive(visibility);
+        if (craniumButton) craniumButton.SetActive(visibility);
+    }
 
     public void hideScannerUI()
     {

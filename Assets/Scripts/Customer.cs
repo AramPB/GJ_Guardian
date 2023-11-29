@@ -27,7 +27,7 @@ public class Customer : ScriptableObject
     [SerializeField] private List<Implant> customerImplantsRegistered;
     [SerializeField] private string customerDocumentExpiryDate;
     [SerializeField] private bool customerHasJustificant;
-
+    [SerializeField] private GameObject customerPrefab;
 
     public string GetName { get { return customerName; } }
     public string GetId { get { return customerId; } }
@@ -49,4 +49,5 @@ public class Customer : ScriptableObject
     public bool CustomerHasJustificant { get => customerHasJustificant; set => customerHasJustificant = value; }
     public List<string> CustomerDeclineDialogLines { get => customerDeclineDialogLines; set => customerDeclineDialogLines = value; }
     public List<string> CustomerAcceptDialogLines { get => customerAcceptDialogLines; set => customerAcceptDialogLines = value; }
+    public GameObject GetCustomerPrefab { get => customerPrefab; set => customerPrefab = value; }
 }

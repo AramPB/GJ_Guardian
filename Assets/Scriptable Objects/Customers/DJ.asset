@@ -36,14 +36,14 @@ MonoBehaviour:
   customerMoney: 0
   customerNightApparition: 0
   customerImplants:
-  - {fileID: 11400000, guid: f9bce2b01e1c23049af23539da23c92f, type: 2}
-  - {fileID: 11400000, guid: 72512ad662121fe41be189faf862f1e6, type: 2}
-  - {fileID: 11400000, guid: 74b8d40b598d27d4b84a31cfc45de368, type: 2}
-  - {fileID: 11400000, guid: b6192708548005f4ca28d33d26c4fdbd, type: 2}
-  - {fileID: 11400000, guid: ae103f49dd2e271418bf2612dff868bc, type: 2}
-  - {fileID: 11400000, guid: 3025113b870b1ef4cb9183dca0ca8c5e, type: 2}
-  customerImplantsRegistered:
   - {fileID: 11400000, guid: b43a4267b1802b4408efeef48952b1b5, type: 2}
+  - {fileID: 11400000, guid: b7a6a4b4a4d5b264baf895a32d822cd0, type: 2}
+  - {fileID: 11400000, guid: 74b8d40b598d27d4b84a31cfc45de368, type: 2}
+  - {fileID: 11400000, guid: 3025113b870b1ef4cb9183dca0ca8c5e, type: 2}
+  - {fileID: 11400000, guid: c8de9d27fb367d64d8a02c31ca779e89, type: 2}
   - {fileID: 11400000, guid: 72512ad662121fe41be189faf862f1e6, type: 2}
+  - {fileID: 11400000, guid: ae103f49dd2e271418bf2612dff868bc, type: 2}
+  customerImplantsRegistered: []
   customerDocumentExpiryDate: 19/04/2079
   customerHasJustificant: 0
+  customerPrefab: {fileID: 1005021252392794392, guid: 2ab8b3b4c2534ee46892870592f16978, type: 3}
