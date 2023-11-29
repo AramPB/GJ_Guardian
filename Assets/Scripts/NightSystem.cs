@@ -51,6 +51,8 @@ public class NightSystem : MonoBehaviour
     private bool endLoopTrigger3 = false;
     private bool dialogueTrigger = false;
 
+    public Implant currentSelectedImplant;
+
     public TextMeshPro NightDialog { get => NightDialog; set => NightDialog = value; }
     public GameObject UIInspect { get => uiInspect; set => uiInspect = value; }
     public GameObject UIQueue { get => UIQueue; set => UIQueue = value; }

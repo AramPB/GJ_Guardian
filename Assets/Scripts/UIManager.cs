@@ -157,10 +157,20 @@ public class UIManager : MonoBehaviour
             {
                 implants_Foto_Image.sprite = implants_Foto_Sprite;
                 implants_Foto_Image.SetNativeSize();
-                implants_Foto_Image.gameObject.GetComponent<RectTransform>().sizeDelta /= new Vector2(1.6f, 1.6f);
+                
 
                 //Ficar variable al night system per veure quin implante tenim seleccionat actualemnt
-                implants_Foto_Image.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 45));
+                if(NightSystem.Instance.currentSelectedImplant.ImplantType == ImplantType.ArmL || NightSystem.Instance.currentSelectedImplant.ImplantType == ImplantType.ArmR)
+                {
+                    implants_Foto_Image.gameObject.GetComponent<RectTransform>().sizeDelta /= new Vector2(1.6f, 1.6f);
+                    implants_Foto_Image.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 45));
+                }
+                else
+                {
+                    implants_Foto_Image.gameObject.GetComponent<RectTransform>().sizeDelta /= new Vector2(1.3f, 1.3f);
+                    implants_Foto_Image.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                }
+                
             }
             catch (Exception e)
             {

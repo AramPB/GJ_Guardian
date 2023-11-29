@@ -16,4 +16,4 @@ MonoBehaviour:
   implantImage: {fileID: 21300000, guid: 493293b64b776c24b93c492ab8377e44, type: 3}
   implantManufacterNumber: 4R-T6
   isLegal: 0
-  implantType: 0
+  implantType: 4
