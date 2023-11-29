@@ -16,7 +16,7 @@ MonoBehaviour:
   customerId: 1G-33-WQ
   customerPhoto: {fileID: 0}
   customerAge: 20
-  customerDistricNumber: 2
+  customerDistricNumber: 3
   customerDNIToGive: 1
   customerSprite: {fileID: 0}
   customerCrimes:

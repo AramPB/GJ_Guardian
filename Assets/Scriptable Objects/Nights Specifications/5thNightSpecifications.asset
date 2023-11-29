@@ -10,15 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27ab56ea2f10c054b9092f094bf263e5, type: 3}
-  m_Name: FirstNightSpecification
+  m_Name: 5thNightSpecifications
   m_EditorClassIdentifier: 
-  specificationDistricNumber: 02000000
+  specificationDistricNumber: 04000000
   specificationRegisteredImplants: 1
-  specificationUnregisteredImplants: 1
+  specificationUnregisteredImplants: 0
   specificationNoImplants: 1
   specificationIlegalImplants: 0
   specificationMinimumAge: 18
   specificationNoCrime: 1
   specificationJustifiedCrime: 1
   specificationUnjustifiedCrime: 0
-  specificationsPermitedCrimes: []
+  specificationsPermitedCrimes:
+  - {fileID: 11400000, guid: afbed2d2dcc52374b9eab5c506b7633b, type: 2}
+  - {fileID: 11400000, guid: ec52f6dc74320444885f0ddf7af8f4f3, type: 2}
+  - {fileID: 11400000, guid: 5c477c7fcae25884da700b801ce47689, type: 2}
+  - {fileID: 11400000, guid: 0ea91fa690fc1344db83810bb3737367, type: 2}
+  - {fileID: 11400000, guid: 407ec33ce6fdf14409b440ed48b3dbf6, type: 2}
+  - {fileID: 11400000, guid: 6356b3e4b3462e84f891e21da22d174f, type: 2}

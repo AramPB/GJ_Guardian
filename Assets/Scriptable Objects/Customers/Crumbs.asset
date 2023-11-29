@@ -16,7 +16,7 @@ MonoBehaviour:
   customerId: 2T-40-ER
   customerPhoto: {fileID: 0}
   customerAge: 63
-  customerDistricNumber: 2
+  customerDistricNumber: 3
   customerDNIToGive: 1
   customerSprite: {fileID: 0}
   customerCrimes:

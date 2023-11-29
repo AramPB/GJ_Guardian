@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e1caa72589b9d347b2be10c8d9a5645, type: 3}
+  m_Name: 3rdNight
+  m_EditorClassIdentifier: 
+  nightNumber: 3
+  nightsCustomers:
+  - {fileID: 11400000, guid: 4dd848699e19cfa4aa60bea8a8d13e9a, type: 2}
+  - {fileID: 11400000, guid: eea356e4c9bb69d4dbdb54cf5d27a74a, type: 2}
+  - {fileID: 11400000, guid: 81ad9fb8e632f2a458b26abb115cea9b, type: 2}
+  - {fileID: 11400000, guid: 7f96388d53bb2194881b337276fe385f, type: 2}
+  - {fileID: 11400000, guid: b483a8f51c6c2fe48a27fb717027bf52, type: 2}
+  nightSpecifications: {fileID: 11400000, guid: 212f429424498c44c970e88eda784238, type: 2}
+  successes: 0
+  fails: 0

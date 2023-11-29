@@ -19,7 +19,8 @@ MonoBehaviour:
   customerDistricNumber: 3
   customerDNIToGive: 1
   customerSprite: {fileID: 21300000, guid: 541067fbba128ce4bb3612c5eef081f8, type: 3}
-  customerCrimes: []
+  customerCrimes:
+  - {fileID: 11400000, guid: 50afb387bc1201e4f94f5a4d5a42042b, type: 2}
   customerDialogLines:
   - "\xA1Buenas noches t\xEDo!"
   - "Creo que antes ha pasado mi\u2026 amiga. Joder estoy muy nervioso, no se ni
@@ -37,4 +38,4 @@ MonoBehaviour:
   customerImplants: []
   customerImplantsRegistered: []
   customerDocumentExpiryDate: 20/11/2078
-  customerHasJustificant: 0
+  customerHasJustificant: 1

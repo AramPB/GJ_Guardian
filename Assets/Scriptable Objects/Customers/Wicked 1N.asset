@@ -30,7 +30,7 @@ MonoBehaviour:
   - "Gracias caballero, acaba de contribuir a que mi d\xEDa mejore un poco. \xA1Buenas
     noches!"
   customerDeclineDialogLines:
-  - "Bueno, definitivamente hoy no es mi d\xEDa, ma\xF1ana volver\xE9 a intentarlo\u2026"
+  - "Bueno, definitivamente hoy no es mi d\xEDa, ya volver\xE9 a intentarlo\u2026"
   customerDialogType: 2
   customerMoney: 0
   customerNightApparition: 0
