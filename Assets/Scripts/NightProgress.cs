@@ -5,20 +5,21 @@ using UnityEngine.UI;
 
 public class NightProgress : MonoBehaviour
 {
-
-    [SerializeField] private GameObject clientImage;
-    [SerializeField] private GameObject dialogGameObject;
     [SerializeField] private GameObject DNIGameObject;
+    [SerializeField] private GameObject docGO;
+    [SerializeField] private GameObject scannerGO;
+    [SerializeField] private GameObject acceptButton;
+    [SerializeField] private GameObject declineButton;
     [SerializeField] private GameObject buttonCP;
     
     [SerializeField] private float tmpWaitTime;
+
     private float tmpStartWait;
 
     private int _currentClientNumber;
 
     private Customer currentCustomer;
-
-    private bool isClientApt;
+    private GameObject instantiatedCustomer;
 
     private bool actualPass;
 
@@ -26,6 +27,9 @@ public class NightProgress : MonoBehaviour
     private List<Customer> clientsList;
 
     private bool inProgress = false;
+    private bool inTransition = false;
+    private bool transitionHasToEnd = false;
+    private bool isInInspect = false;
 
 
     private enum State
@@ -37,6 +41,7 @@ public class NightProgress : MonoBehaviour
         CriminalProof,
         FinalDecision,
         EndDialogue,
+        Transition,
         Waiting
     }
     private State currentState = State.Waiting;
@@ -47,33 +52,24 @@ public class NightProgress : MonoBehaviour
     void Start()
     {
 
-        if (clientImage.GetComponent<Image>())
-        {
-            if (dialogGameObject) {
-                if (DNIGameObject) {
 
-                    SwitchState(State.Waiting);
-                }
-                else
-                {
-                    Debug.Log("No encuentra el DNI GO");
-                }
-            }
-            else
-            {
-                Debug.Log("No encuentra el Dialog GO");
-            }
-        }
-        else
-        {
-            Debug.Log("No encuentra sprite de Cliente");
-        }
+
+       SwitchState(State.Waiting);
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (UIManager.Instance.scannerController)
+        {
+            if (!isInInspect)
+            {
+                UIManager.Instance.scannerController.changeButtonVisibility(false);
+            }
+        }
+
         //NIGHT LOOP
         switch (currentState)
         {
@@ -105,34 +101,29 @@ public class NightProgress : MonoBehaviour
             case State.EndDialogue:
                 UpdateEndDialogue();
                 break;
-             //waiting
+            //Transicion entre clientes
+            case State.Transition:
+                UpdateTransition();
+                break;
+            //waiting
             case State.Waiting:
                 UpdateWaiting();
                 break;
         }
-        
     }
 
     //------------CLIENT APPARITION-----------
     #region ClientApparition
     private void StartClientApparition()
     {
-
-        ScannerController.Instance.hideScannerUI();
+        Debug.Log("NEW CLIENT!!");
+        if (NightSystem.Instance.MusicController.State == "Normal") {
+            NightSystem.Instance.MusicController.startFilteredMusic();
+        }
         CurrentCustomer = clientsList[_currentClientNumber - 1];
-        clientImage.GetComponent<Image>().sprite = CurrentCustomer.GetSprite;
+        instantiatedCustomer = Instantiate(currentCustomer.GetCustomerPrefab, NightSystem.Instance.CharacterContainer.transform);
+        UIManager.Instance.scannerController.hideScannerUI();
 
-        isClientApt = NightSystem.Instance.CustomerContol.ControlOneCustomer(currentCustomer);
-        UIManager.Instance.SwapDeclineButton(false);
-        UIManager.Instance.SwapPassButton(false);
-        UIManager.Instance.SwapCraniumButton(false);
-        UIManager.Instance.SwapNoseButton(false);
-        UIManager.Instance.SwapEyeRButton(false);
-        UIManager.Instance.SwapEyeLButton(false);
-        UIManager.Instance.SwapJawButton(false);
-        UIManager.Instance.SwapArmRButton(false);
-        UIManager.Instance.SwapArmLButton(false);
-        UIManager.Instance.SwapBodyButton(false);
         tmpStartWait = Time.time;
     }
     private void UpdateClientApparition()
@@ -162,7 +153,12 @@ public class NightProgress : MonoBehaviour
         {
             inProgress = true;
             DNIGameObject.SetActive(false);
+            docGO.SetActive(false);
+            scannerGO.SetActive(false);
+            acceptButton.SetActive(false);
+            declineButton.SetActive(false);
             buttonCP.SetActive(false);
+            isInInspect = false;
             UIManager.Instance.ResetPages();
             UIManager.Instance.updateUI();
             SwitchState(State.Apparition);
@@ -174,27 +170,17 @@ public class NightProgress : MonoBehaviour
     #region Documentation
     private void StartDocumentationAsk()
     {
-        tmpStartWait = Time.time;
+        DialogManager.Instance.SetLines(currentCustomer.GetDialogLines);
+        DialogManager.Instance.startDialogLines();
     }
     private void UpdateDocumentationAsk()
     {
         //Animaión de la documentación y dialogos
         //Al acabar:
-        if (Time.time >= tmpWaitTime + tmpStartWait)
+        if (DialogManager.Instance.hasEnded)
         {
             SwitchState(State.DNI);
-            UIManager.Instance.SwapDeclineButton(true);
-            UIManager.Instance.SwapPassButton(true);
-            UIManager.Instance.SwapCraniumButton(true);
-            UIManager.Instance.SwapNoseButton(true);
-            UIManager.Instance.SwapEyeRButton(true);
-            UIManager.Instance.SwapEyeLButton(true);
-            UIManager.Instance.SwapJawButton(true);
-            UIManager.Instance.SwapArmRButton(true);
-            UIManager.Instance.SwapArmLButton(true);
-            UIManager.Instance.SwapBodyButton(true);
         }
-        //
     }
     private void EndDocumentationAsk()
     {
@@ -209,6 +195,8 @@ public class NightProgress : MonoBehaviour
         if (CurrentCustomer.GetDNIToGive)
         {
             //Setear la nueva info de DNI
+            isInInspect = true;
+            UIManager.Instance.scannerController.changeButtonVisibility(true);
             DNIUpdateInfo();
         }
         else
@@ -234,6 +222,9 @@ public class NightProgress : MonoBehaviour
     private void DNIUpdateInfo()
     {
         DNIGameObject.SetActive(true);
+        docGO.SetActive(true);
+        acceptButton.SetActive(true);
+        declineButton.SetActive(true);
         UIManager.Instance.Dni_Age_String = CurrentCustomer.GetAge.ToString();
         UIManager.Instance.Dni_Name_String = CurrentCustomer.GetName;
         UIManager.Instance.Dni_Serial_String = CurrentCustomer.GetId;
@@ -336,6 +327,12 @@ public class NightProgress : MonoBehaviour
     {
         actualPass = pass;
         bool isApt = NightSystem.Instance.CustomerContol.ControlOneCustomer(currentCustomer);
+        DNIGameObject.SetActive(false);
+        docGO.SetActive(false);
+        scannerGO.SetActive(false);
+        acceptButton.SetActive(false);
+        declineButton.SetActive(false);
+        isInInspect = false;
 
         if (actualPass == isApt)
         {
@@ -344,7 +341,7 @@ public class NightProgress : MonoBehaviour
         }
         else
         {
-            Debug.Log("Cagtaste");
+            Debug.Log("Cagaste");
             NightSystem.Instance.CurrentNight.Fails++;
         }
         SwitchState(State.EndDialogue);
@@ -355,27 +352,42 @@ public class NightProgress : MonoBehaviour
     #region EndDialogue
     private void StartEndDialogue()
     {
-        tmpStartWait = Time.time;
         if (actualPass)
         {
             //Animacion y dialogos de Sí
+            if (NightSystem.Instance.MusicController.State == "Filtered")
+            {
+                NightSystem.Instance.MusicController.startNormalMusic();
+            }
+            DialogManager.Instance.SetLines(currentCustomer.GetAcceptDialogLines);
+            DialogManager.Instance.startDialogLines();
+            if (currentCustomer.GetDialogType.Equals(DialogType.Beg))
+            {
+                NightSystem.Instance.ModifyMoneyNight(-currentCustomer.GetMoney);
+            }
+            if (currentCustomer.GetDialogType.Equals(DialogType.Bribe))
+            {
+                NightSystem.Instance.ModifyMoneyNight(+currentCustomer.GetMoney);
+            }
         }
         else
         {
             //Animacion y dialogos de No
+            DialogManager.Instance.SetLines(currentCustomer.GetDeclineDialogLines);
+            DialogManager.Instance.startDialogLines();
         }
     }
     private void UpdateEndDialogue()
     {
         //Animacion y dialogo resultado
         //Al acabar:
-        if (Time.time >= tmpWaitTime + tmpStartWait)
+        if (DialogManager.Instance.hasEnded)
         {
             _currentClientNumber++;
             if (_currentClientNumber <= maxClients)
             {
                 CurrentCustomer = clientsList[_currentClientNumber - 1];
-                SwitchState(State.Apparition);
+                SwitchState(State.Transition);
             }
             else
             {
@@ -389,12 +401,49 @@ public class NightProgress : MonoBehaviour
     {
         //Desactivar cosas
         DNIGameObject.SetActive(false);
+        docGO.SetActive(false);
+        scannerGO.SetActive(false);
+        acceptButton.SetActive(false);
+        declineButton.SetActive(false);
         buttonCP.SetActive(false);
+        isInInspect = false;
         UIManager.Instance.ResetPages();
+        UIManager.Instance.updateUI();
     }
     public void ResetCustomer()
     {
-        clientImage.GetComponent<Image>().sprite = null;
+
+    }
+    #endregion
+
+    //--------TRANSITION-----
+    #region Transition
+    private void StartTransition()
+    {
+        inTransition = true;
+        transitionHasToEnd = false;
+    }
+    private void UpdateTransition()
+    {
+        if (transitionHasToEnd)
+        {
+
+            SwitchState(State.Apparition);
+
+        }
+    }
+    private void EndTransition()
+    {
+        inTransition = false;
+    }
+    public void InMiddleTransition()
+    {
+        //TODO: BORRAR CLIENTE (imagen y botones)
+        Destroy(instantiatedCustomer);
+    }
+    public void TransitionHasToEnd()
+    {
+        transitionHasToEnd = true;
     }
     #endregion
 
@@ -414,10 +463,16 @@ public class NightProgress : MonoBehaviour
     }
     #endregion
 
-    public bool isInProgress()
+    public bool IsInProgress()
     {
         return inProgress;
     }
+
+    public bool IsInTransition()
+    {
+        return inTransition;
+    }
+
 
     private void SwitchState(State state)
     {
@@ -443,6 +498,9 @@ public class NightProgress : MonoBehaviour
                 break;
             case State.EndDialogue:
                 EndEndDialogue();
+                break;
+            case State.Transition:
+                EndTransition();
                 break;
             case State.Waiting:
                 EndWaiting();
@@ -471,6 +529,9 @@ public class NightProgress : MonoBehaviour
                 break;
             case State.EndDialogue:
                 StartEndDialogue();
+                break;
+            case State.Transition:
+                StartTransition();
                 break;
             case State.Waiting:
                 StartWaiting();

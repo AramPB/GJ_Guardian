@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject cityUI;//"Escena" de inspeccionar
     [SerializeField] GameObject queueUI;//"Escena" transició client
     [SerializeField] GameObject InspectUI;//"Escena" transició nit
+    public ScannerController scannerController;
 
     //--- CIUTAT ---
     [SerializeField] GameObject dialogBackgroundPanel;
@@ -88,18 +89,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject docImplant;
     [SerializeField] private GameObject docCriminalProof;
 
-    //---- Pass Buttons ----
-    [SerializeField] private GameObject passButton;
-    [SerializeField] private GameObject declineButton;
-    [SerializeField] private GameObject craniumButton;
-    [SerializeField] private GameObject noseButton;
-    [SerializeField] private GameObject eyeRButton;
-    [SerializeField] private GameObject eyeLButton;
-    [SerializeField] private GameObject jawButton;
-    [SerializeField] private GameObject armRButton;
-    [SerializeField] private GameObject armLButton;
-    [SerializeField] private GameObject bodyButton;
-
     #region Getters & Setters
     public static UIManager Instance { get; private set; }
     public string CityDialog_String { get => cityDialog_String; set => cityDialog_String = value; }
@@ -167,6 +156,21 @@ public class UIManager : MonoBehaviour
             try
             {
                 implants_Foto_Image.sprite = implants_Foto_Sprite;
+                implants_Foto_Image.SetNativeSize();
+                
+
+                //Ficar variable al night system per veure quin implante tenim seleccionat actualemnt
+                if(NightSystem.Instance.currentSelectedImplant.ImplantType == ImplantType.ArmL || NightSystem.Instance.currentSelectedImplant.ImplantType == ImplantType.ArmR)
+                {
+                    implants_Foto_Image.gameObject.GetComponent<RectTransform>().sizeDelta /= new Vector2(1.6f, 1.6f);
+                    implants_Foto_Image.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 45));
+                }
+                else
+                {
+                    implants_Foto_Image.gameObject.GetComponent<RectTransform>().sizeDelta /= new Vector2(1.3f, 1.3f);
+                    implants_Foto_Image.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+                }
+                
             }
             catch (Exception e)
             {
@@ -223,54 +227,6 @@ public class UIManager : MonoBehaviour
         }
         crimes_Serial_Text.SetText(crimes_Serial_String);
         crimes_Text.SetText(crimes_String);
-    }
-
-    public void SwapPassButton(bool hide)
-    {
-        passButton.SetActive(hide);
-    }
-    public void SwapDeclineButton(bool hide)
-    {
-        declineButton.SetActive(hide);
-    }
-    public void SwapCraniumButton(bool hide)
-    {
-        craniumButton.SetActive(hide);
-    }
-
-    public void SwapNoseButton(bool hide)
-    {
-        noseButton.SetActive(hide);
-    }
-
-    public void SwapEyeRButton(bool hide)
-    {
-        eyeRButton.SetActive(hide);
-    }
-
-    public void SwapEyeLButton(bool hide)
-    {
-        eyeLButton.SetActive(hide);
-    }
-
-    public void SwapJawButton(bool hide)
-    {
-        jawButton.SetActive(hide);
-    }
-
-    public void SwapArmRButton(bool hide)
-    {
-        armRButton.SetActive(hide);
-    }
-
-    public void SwapArmLButton(bool hide)
-    {
-        armLButton.SetActive(hide);
-    }
-
-    public void SwapBodyButton(bool hide)
-    {
-        bodyButton.SetActive(hide);
     }
 
     #region Pages
