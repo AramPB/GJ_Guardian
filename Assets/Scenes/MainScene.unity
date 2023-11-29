@@ -139,10 +139,25 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8553077258350557455, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
   m_PrefabInstance: {fileID: 6492660701494029437}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &281321658 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 753002050135203177, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+  m_PrefabInstance: {fileID: 6722303006254421708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &337439199 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3374070949432157295, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
   m_PrefabInstance: {fileID: 6492660701494029437}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &480984077 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4593706061434275531, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+  m_PrefabInstance: {fileID: 6722303006254421708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &879745183 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6825722059863803175, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+  m_PrefabInstance: {fileID: 6722303006254421708}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1133928651 stripped
 Animator:
@@ -153,6 +168,11 @@ Animator:
 Animator:
   m_CorrespondingSourceObject: {fileID: 2700094266163437673, guid: 35cad3929206fb746a5c684b8ac6d71a, type: 3}
   m_PrefabInstance: {fileID: 2500842206118494087}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1320305224 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3059661667420628895, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+  m_PrefabInstance: {fileID: 6722303006254421708}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1420201165
 GameObject:
@@ -359,6 +379,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1961388829 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3229160646374810964, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+  m_PrefabInstance: {fileID: 6722303006254421708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1973180650 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4884660152655853521, guid: d938c6c93e7f3e24d986818d7ace6af9, type: 3}
@@ -975,10 +1000,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 753002050135203177, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 820f73247d3a89b42bbc1764d2e9f1b2, type: 3}
+    - target: {fileID: 3059661667420628895, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e6e54d08d6212424d8cb641e2d03836d, type: 3}
+    - target: {fileID: 3229160646374810964, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ae6a2dd8f690e5e409942ae6fca9e8a9, type: 3}
+    - target: {fileID: 4593706061434275531, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c6d4665fa24031429ad03d580db62f2, type: 3}
     - target: {fileID: 4671291677609990266, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
       propertyPath: m_Name
       value: SoundsController
       objectReference: {fileID: 0}
+    - target: {fileID: 5200850305852022267, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: scannSound
+      value: 
+      objectReference: {fileID: 879745183}
+    - target: {fileID: 5200850305852022267, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: acceptSound
+      value: 
+      objectReference: {fileID: 281321658}
+    - target: {fileID: 5200850305852022267, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: buttonSound
+      value: 
+      objectReference: {fileID: 480984077}
+    - target: {fileID: 5200850305852022267, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: declineSound
+      value: 
+      objectReference: {fileID: 1961388829}
+    - target: {fileID: 5200850305852022267, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: criminalSound
+      value: 
+      objectReference: {fileID: 1320305224}
+    - target: {fileID: 6825722059863803175, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a279fbb18cea76c438e0ffe671714227, type: 3}
     - target: {fileID: 8087700334618084327, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 864.32965

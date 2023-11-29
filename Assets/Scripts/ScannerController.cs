@@ -183,6 +183,7 @@ public class ScannerController : MonoBehaviour
 
     private void updateUIInfo(Implant implant)
     {
+        SoundsController.Instance.scannSoundPlay();
         NightSystem.Instance.currentSelectedImplant = implant;
         UIManager.Instance.Implants_Name_String = implant.ImplantName;
         UIManager.Instance.Implants_Number_String = implant.ImplantManufacterNumber;
