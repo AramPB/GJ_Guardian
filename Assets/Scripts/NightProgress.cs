@@ -370,12 +370,15 @@ public class NightProgress : MonoBehaviour
             {
                 NightSystem.Instance.ModifyMoneyNight(+currentCustomer.GetMoney);
             }
+            QueueController.Instance.AcceptCustomer();
         }
         else
         {
             //Animacion y dialogos de No
             DialogManager.Instance.SetLines(currentCustomer.GetDeclineDialogLines);
             DialogManager.Instance.startDialogLines();
+            QueueController.Instance.DeclineCustomer();
+
         }
     }
     private void UpdateEndDialogue()
