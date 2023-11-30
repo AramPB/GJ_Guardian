@@ -144,6 +144,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3374070949432157295, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
   m_PrefabInstance: {fileID: 6492660701494029437}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &445832818 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6168510934725650359, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+  m_PrefabInstance: {fileID: 6722303006254421708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1105928947 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9195877858429372032, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+  m_PrefabInstance: {fileID: 6722303006254421708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1133928651 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9053081730812240557, guid: c7c856a4f0ff55f4f9da8b846ae4c873, type: 3}
@@ -977,9 +987,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 753002050135203177, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3059661667420628895, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229160646374810964, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4593706061434275531, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4671291677609990266, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
       propertyPath: m_Name
       value: SoundsController
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200850305852022267, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: openDoorSound
+      value: 
+      objectReference: {fileID: 1105928947}
+    - target: {fileID: 5200850305852022267, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: closeDoorSound
+      value: 
+      objectReference: {fileID: 445832818}
+    - target: {fileID: 6168510934725650359, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825722059863803175, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8087700334618084327, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1019,6 +1061,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8087700334618084327, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195877858429372032, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

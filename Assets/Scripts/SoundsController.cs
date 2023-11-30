@@ -9,6 +9,8 @@ public class SoundsController : MonoBehaviour
     [SerializeField] public AudioSource declineSound;
     [SerializeField] public AudioSource criminalSound;
     [SerializeField] public AudioSource scannSound;
+    [SerializeField] public AudioSource openDoorSound;
+    [SerializeField] public AudioSource closeDoorSound;
 
     public static SoundsController Instance { get; private set; }
 
@@ -47,5 +49,15 @@ public class SoundsController : MonoBehaviour
     public void scannSoundPlay()
     {
         scannSound.Play();
+    }
+
+    public void openDoorSoundPlay()
+    {
+        openDoorSound.Play();
+    }
+
+    public void closeDoorSoundPlay()
+    {
+        closeDoorSound.Play();
     }
 }
