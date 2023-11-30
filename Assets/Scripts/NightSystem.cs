@@ -391,6 +391,7 @@ public class NightSystem : MonoBehaviour
                         if (DialogManager.Instance.hasEnded)
                         {
                             Debug.Log("Scene");
+                            MusicController.Instance.EndSong();
                             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
                             endLoopGame = true;
                         }

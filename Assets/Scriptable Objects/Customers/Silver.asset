@@ -44,7 +44,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 72512ad662121fe41be189faf862f1e6, type: 2}
   customerImplantsRegistered:
   - {fileID: 11400000, guid: b7a6a4b4a4d5b264baf895a32d822cd0, type: 2}
-  - {fileID: 11400000, guid: c8de9d27fb367d64d8a02c31ca779e89, type: 2}
+  - {fileID: 11400000, guid: 72512ad662121fe41be189faf862f1e6, type: 2}
   customerDocumentExpiryDate: 14/08/2078
   customerHasJustificant: 1
   customerPrefab: {fileID: 1005021252392794392, guid: a4e1f0008fc70f047941364411cd1762, type: 3}

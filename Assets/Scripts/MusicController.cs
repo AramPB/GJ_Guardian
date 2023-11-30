@@ -36,7 +36,7 @@ public class MusicController : MonoBehaviour
     {
         Debug.Log("Changin music, " + state + " to night " + night);
         newNight = night;
-        if (newNight < 5)
+        if (newNight < 6)
         {
             if (state == "Filtered")
             {
@@ -50,8 +50,22 @@ public class MusicController : MonoBehaviour
         }
     }
 
+    public void EndSong()
+    {
+        if (state == "Filtered")
+        {
+            filteredMusicAnimator.Play("FilteredMusicFadeOut");
+        }
+        else
+        {
+            normalMusicAnimator.Play("NormalMusicFadeOut");
+        }
+    }
+
     private void StartNewSong()
     {
+
+        Debug.Log("START music, " + newNight);
         filteredMusicAS.clip = FilteredMusics[newNight - 1];
         normalMusicAS.clip = NormalMusics[newNight - 1];
         filteredMusicAS.Play();

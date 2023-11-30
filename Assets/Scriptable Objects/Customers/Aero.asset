@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerName: Aero
   customerId: 2S-32-BV
-  customerPhoto: {fileID: 0}
+  customerPhoto: {fileID: 21300000, guid: e6e2271fd7abb0a4ebc5a80b88f2ea33, type: 3}
   customerAge: 34
   customerDistricNumber: 5
   customerDNIToGive: 1
-  customerSprite: {fileID: 0}
+  customerSprite: {fileID: 21300000, guid: e6e2271fd7abb0a4ebc5a80b88f2ea33, type: 3}
   customerCrimes: []
   customerDialogLines:
   - Aero a Gorila, me recibe? JAJAJA broma de piloto, no le des importancia.

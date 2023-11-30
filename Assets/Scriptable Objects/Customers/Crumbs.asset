@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerName: Crumbs
   customerId: 2T-40-ER
-  customerPhoto: {fileID: 0}
+  customerPhoto: {fileID: 21300000, guid: e097d8a20690dba4e974bbf1ccc9eab7, type: 3}
   customerAge: 63
   customerDistricNumber: 3
   customerDNIToGive: 1
-  customerSprite: {fileID: 0}
+  customerSprite: {fileID: 21300000, guid: e097d8a20690dba4e974bbf1ccc9eab7, type: 3}
   customerCrimes:
   - {fileID: 11400000, guid: 23d3805d97126b74faffc4c4a73c07b6, type: 2}
   customerDialogLines:
