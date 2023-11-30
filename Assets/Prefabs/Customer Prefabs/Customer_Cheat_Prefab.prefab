@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6306853647606417983}
   - component: {fileID: 7952484739126205300}
   m_Layer: 5
-  m_Name: Arm R
+  m_Name: Eye R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -192.19, y: -167.65}
-  m_SizeDelta: {x: 189.717, y: 176.33}
+  m_AnchoredPosition: {x: -122, y: 160}
+  m_SizeDelta: {x: 74.4998, y: 69.2429}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5026869181979945697
 CanvasRenderer:
@@ -123,7 +123,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1411230601805289733}
         m_TargetAssemblyTypeName: ScannerController, Assembly-CSharp
-        m_MethodName: ClickArmRButton
+        m_MethodName: ClickEyeRButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 246bec09f959bbe488e14db1afb6e89e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4695204bb7200414180e2233ce2668c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -379,8 +379,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31, y: -168.45502}
-  m_SizeDelta: {x: 256.6644, y: 235.7543}
+  m_AnchoredPosition: {x: -49, y: -340}
+  m_SizeDelta: {x: 331.7873, y: 304.757}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2169229811673469786
 CanvasRenderer:

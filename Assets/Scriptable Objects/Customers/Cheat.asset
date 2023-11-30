@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerName: Cheat
   customerId: 1Z-36-XC
-  customerPhoto: {fileID: 0}
+  customerPhoto: {fileID: 21300000, guid: 4695204bb7200414180e2233ce2668c7, type: 3}
   customerAge: 25
   customerDistricNumber: 3
   customerDNIToGive: 1
-  customerSprite: {fileID: 0}
+  customerSprite: {fileID: 21300000, guid: 4695204bb7200414180e2233ce2668c7, type: 3}
   customerCrimes:
   - {fileID: 11400000, guid: 103bd30d0b2169b4baf4643fb3008687, type: 2}
   - {fileID: 11400000, guid: d2cc698e68058da42a21d9d7b76db245, type: 2}
@@ -43,7 +43,7 @@ MonoBehaviour:
   customerNightApparition: 0
   customerImplants:
   - {fileID: 11400000, guid: 06d5360efc3e0f14c951d14fa0520e5f, type: 2}
-  - {fileID: 11400000, guid: 749e035ad75d45f47a0267d96a741a95, type: 2}
+  - {fileID: 11400000, guid: 606ea9be4cfd7fc44b2950e4cbd411d6, type: 2}
   customerImplantsRegistered: []
   customerDocumentExpiryDate: 23/04/2078
   customerHasJustificant: 0
