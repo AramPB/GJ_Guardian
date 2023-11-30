@@ -34,7 +34,6 @@ public class MusicController : MonoBehaviour
 
     public void ChangeSong(int night)
     {
-        Debug.Log("Changin music, " + state + " to night " + night);
         newNight = night;
         if (newNight < 6)
         {
@@ -64,8 +63,6 @@ public class MusicController : MonoBehaviour
 
     private void StartNewSong()
     {
-
-        Debug.Log("START music, " + newNight);
         filteredMusicAS.clip = FilteredMusics[newNight - 1];
         normalMusicAS.clip = NormalMusics[newNight - 1];
         filteredMusicAS.Play();

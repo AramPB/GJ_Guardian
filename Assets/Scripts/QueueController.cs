@@ -69,7 +69,6 @@ public class QueueController : MonoBehaviour
     {
         keeper.sprite = keeperSprite2;
         fence.sprite = fenceSprite2;
-        Debug.Log("position:" + position);
         for (int i = position; i < customers.Count; i++)
         {
             customers[i].SetActive(true);
@@ -106,6 +105,5 @@ public class QueueController : MonoBehaviour
         {
             customer.GetComponent<CustomerQueueMovement>().StartMove();
         }
-        Debug.Log("START MOVE");
     }
 }

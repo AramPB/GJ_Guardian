@@ -148,7 +148,7 @@ public class NightProgress : MonoBehaviour
         clientsList = customersList;
         if (clientsList.Count <= 0)
         {
-            Debug.Log("Clients List Empty");
+
         }
         else
         {
@@ -200,10 +200,7 @@ public class NightProgress : MonoBehaviour
             UIManager.Instance.scannerController.changeButtonVisibility(true);
             DNIUpdateInfo();
         }
-        else
-        {
-            Debug.Log("No DNI");
-        }
+
         tmpStartWait = Time.time;
     }
     private void UpdateObtainingDNI()
@@ -340,12 +337,10 @@ public class NightProgress : MonoBehaviour
 
         if (actualPass == isApt)
         {
-            //Debug.Log("Acertaste");
             NightSystem.Instance.CurrentNight.Successes++;
         }
         else
         {
-            //Debug.Log("Cagaste");
             NightSystem.Instance.CurrentNight.Fails++;
         }
         SwitchState(State.EndDialogue);

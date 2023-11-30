@@ -71,27 +71,22 @@ public class CustomerControl : MonoBehaviour
 
         if (!isDistrictAllowed(currentCustomerToControl.GetDistrictNumber))
         {
-            Debug.Log("District");
             return false;
         }
         else if (!isImplantAllowed(currentCustomerToControl.GetImplants, currentCustomerToControl.GetImplantsRegistered))
         {
-            Debug.Log("Implants");
             return false;
         }
         else if (!isInAge(currentCustomerToControl.GetAge))
         {
-            Debug.Log("Age");
             return false;
         }
         else if (!isCriminal(currentCustomerToControl.GetCrimes, currentCustomerToControl.CustomerHasJustificant))
         {
-            Debug.Log("Crimes");
             return false;
         }
         else if (isDocumentExpired(currentCustomerToControl.GetDocumentExpiryDate, NightSystem.Instance.CurrentDate))
         {
-            Debug.Log("Date");
             return false;
         }
         else

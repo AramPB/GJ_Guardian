@@ -160,7 +160,6 @@ public class NightSystem : MonoBehaviour
 
     public int NightResume()
     {
-        //Debug.Log("RESUME");
         currentNightNumber++; //endGame?
 
         //Player Goal = 1000€
@@ -380,13 +379,9 @@ public class NightSystem : MonoBehaviour
                     else
                     {
                         //Dialeg final
-                        Debug.Log("!!!FINAL!!!");
                         if (dialogueTrigger2) {
-                            Debug.Log("Trigger");
                             if (moneyEarned >= goalMoney)
                             {
-                                Debug.Log("Good");
-
                                 //Play Good Ending Animation & Return to Menu
                                 reflectionDialogLines.Add("Al final, he conseguido el dinero para enviar a Spark a la universidad...");
                                 reflectionDialogLines.Add("Al menos espero que que esto le sirva para tener un futuro brillante.");
@@ -401,8 +396,6 @@ public class NightSystem : MonoBehaviour
                             }
                             else
                             {
-                                Debug.Log("Bad");
-
                                 //Play Bad Ending Animation & Return to Menu
                                 reflectionDialogLines.Add("Mierda, solo con " + moneyEarned + "€ no me da para pagar la universidad a Spark.");
                                 reflectionDialogLines.Add("Joder solo si hubiera sido mejor, o estado más atento...");
@@ -415,7 +408,6 @@ public class NightSystem : MonoBehaviour
                         }
                         if (DialogManager.Instance.hasEnded)
                         {
-                            Debug.Log("Scene");
                             MusicController.Instance.EndSong();
                             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
                             endLoopGame = true;
