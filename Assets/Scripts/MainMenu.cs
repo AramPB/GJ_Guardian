@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private List<Sprite> sprites;
     [SerializeField] private Image character;
+    [SerializeField] private GameObject credits;
 
     private void Start()
     {
@@ -19,7 +20,17 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-    
+
+    public void ShowCredits()
+    {
+        credits.SetActive(true);
+    }
+
+    public void HideCredits()
+    {
+        credits.SetActive(false);
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quitted");
