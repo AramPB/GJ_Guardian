@@ -118,6 +118,7 @@ public class NightProgress : MonoBehaviour
     {
         if (NightSystem.Instance.MusicController.State == "Normal") {
             NightSystem.Instance.MusicController.startFilteredMusic();
+            SoundsController.Instance.closeDoorSoundPlay();
         }
         CurrentCustomer = clientsList[_currentClientNumber - 1];
         instantiatedCustomer = Instantiate(currentCustomer.GetCustomerPrefab, NightSystem.Instance.CharacterContainer.transform);
@@ -360,6 +361,7 @@ public class NightProgress : MonoBehaviour
             if (NightSystem.Instance.MusicController.State == "Filtered")
             {
                 NightSystem.Instance.MusicController.startNormalMusic();
+                SoundsController.Instance.openDoorSoundPlay();
             }
             DialogManager.Instance.SetLines(currentCustomer.GetAcceptDialogLines);
             DialogManager.Instance.startDialogLines();

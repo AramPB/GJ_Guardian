@@ -546,6 +546,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35cad3929206fb746a5c684b8ac6d71a, type: 3}
+--- !u!82 &2500842206118494088 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 920856409171628236, guid: 35cad3929206fb746a5c684b8ac6d71a, type: 3}
+  m_PrefabInstance: {fileID: 2500842206118494087}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2531160731443457453 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7675701297905354159, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
@@ -699,6 +704,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7c856a4f0ff55f4f9da8b846ae4c873, type: 3}
+--- !u!82 &3056068229000933244 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2791523757632318079, guid: c7c856a4f0ff55f4f9da8b846ae4c873, type: 3}
+  m_PrefabInstance: {fileID: 3056068229000933243}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3693471641396129285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -711,6 +721,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicController
       objectReference: {fileID: 0}
+    - target: {fileID: 5574007840467832997, guid: 424bb73621cd3a343a091dbe2ccea088, type: 3}
+      propertyPath: normalMusicAS
+      value: 
+      objectReference: {fileID: 3056068229000933244}
+    - target: {fileID: 5574007840467832997, guid: 424bb73621cd3a343a091dbe2ccea088, type: 3}
+      propertyPath: filteredMusicAS
+      value: 
+      objectReference: {fileID: 2500842206118494088}
     - target: {fileID: 5574007840467832997, guid: 424bb73621cd3a343a091dbe2ccea088, type: 3}
       propertyPath: normalMusicAnimator
       value: 
@@ -971,13 +989,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3229160646374810964, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
-      propertyPath: m_Volume
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 4671291677609990266, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
       propertyPath: m_Name
       value: SoundsController
+      objectReference: {fileID: 0}
+    - target: {fileID: 6168510934725650359, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8087700334618084327, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1018,6 +1036,10 @@ PrefabInstance:
     - target: {fileID: 8087700334618084327, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195877858429372032, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
