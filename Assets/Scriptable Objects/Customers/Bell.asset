@@ -21,9 +21,6 @@ MonoBehaviour:
   customerSprite: {fileID: 21300000, guid: ee9fe724650fde44b853025ce97e4619, type: 3}
   customerCrimes:
   - {fileID: 11400000, guid: bd1fb70ebfa43b541a98b4a9272b9abd, type: 2}
-  - {fileID: 11400000, guid: 05bcdb0d7e07ef04cbd0c41b3a45a32f, type: 2}
-  - {fileID: 11400000, guid: 36509bde0bfb0db4ea1f062a08fa81b9, type: 2}
-  - {fileID: 11400000, guid: 8283bb326942a2a468bf9b27e1268c96, type: 2}
   - {fileID: 11400000, guid: d6fe906a2368b144fbc1105ac516eb46, type: 2}
   - {fileID: 11400000, guid: bbb604621d2af6942a2a9557f3e134a2, type: 2}
   customerDialogLines:

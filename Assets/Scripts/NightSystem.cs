@@ -162,7 +162,7 @@ public class NightSystem : MonoBehaviour
         currentNightNumber++; //endGame?
 
         //Player Goal = 1000€
-        moneyEarnedThisNight = 50 * currentNight.Successes - 10 * currentNight.Fails;
+        moneyEarnedThisNight = 60 * currentNight.Successes - 10 * currentNight.Fails;
         moneyEarned += moneyEarnedThisNight;
         Debug.Log(":::::" + moneyEarnedThisNight + "::::::" + moneyEarned);
 
