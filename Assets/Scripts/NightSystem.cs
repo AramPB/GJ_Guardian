@@ -328,8 +328,9 @@ public class NightSystem : MonoBehaviour
             //city
             if (dialogueTrigger)
             {
-                reflectionDialogLines.Add("Dinero ganado esta noche: " + moneyEarnedThisNight);
-                reflectionDialogLines.Add("Dinero total: " + moneyEarned);
+                int auxMoney = 1000 - moneyEarned;
+                reflectionDialogLines.Add("Bueno, con este dinero estoy un poco más cerca de mi objetivo… solo me faltan " + auxMoney + "€");
+                reflectionDialogLines.Add("Ahora ya tengo: " + moneyEarned + "/1000€");
                 DialogManager.Instance.SetLines(reflectionDialogLines);
                 DialogManager.Instance.startDialogLines();
                 dialogueTrigger = false;
