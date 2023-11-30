@@ -143,6 +143,7 @@ public class NightProgress : MonoBehaviour
     public void StartLoop(int maxCustomers, List<Customer> customersList)
     {
         maxClients = maxCustomers;
+        QueueController.Instance.NewQueue(maxCustomers);
         _currentClientNumber = 1;
         clientsList = customersList;
         if (clientsList.Count <= 0)
@@ -373,7 +374,7 @@ public class NightProgress : MonoBehaviour
             {
                 NightSystem.Instance.ModifyMoneyNight(+currentCustomer.GetMoney);
             }
-            QueueController.Instance.AcceptCustomer();
+            QueueController.Instance.AcceptCustomer(_currentClientNumber - 1, NightSystem.Instance.GetQueueDuration());
         }
         else
         {
@@ -381,7 +382,7 @@ public class NightProgress : MonoBehaviour
             SoundsController.Instance.declineSoundPlay();
             DialogManager.Instance.SetLines(currentCustomer.GetDeclineDialogLines);
             DialogManager.Instance.startDialogLines();
-            QueueController.Instance.DeclineCustomer();
+            QueueController.Instance.DeclineCustomer(_currentClientNumber - 1, NightSystem.Instance.GetQueueDuration());
 
         }
     }
@@ -443,6 +444,7 @@ public class NightProgress : MonoBehaviour
     private void EndTransition()
     {
         inTransition = false;
+
     }
     public void InMiddleTransition()
     {

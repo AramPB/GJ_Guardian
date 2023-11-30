@@ -13,9 +13,10 @@ public class QueueController : MonoBehaviour
     [SerializeField] private Sprite fenceSprite;
     [SerializeField] private Sprite fenceSprite2;
 
-    [SerializeField] private List<GameObject> points;
+    [SerializeField] private List<Transform> points;
     [SerializeField] private GameObject customerContainer;
     [SerializeField] private List<GameObject> customers;
+    [SerializeField] private GameObject customerGO;
 
     public static QueueController Instance { get; private set; }
 
@@ -41,18 +42,66 @@ public class QueueController : MonoBehaviour
     {
         keeper.sprite = keeperSprite;
         fence.sprite = fenceSprite;
+
+        foreach (GameObject customer in customers)
+        {
+            Destroy(customer);
+        }
+        customers.Clear();
     }
 
-    public void AcceptCustomer()
+    public void NewQueue(int numCustomers)
+    {
+        for (int i = 0; i < numCustomers; i++) {
+            GameObject aux = Instantiate(customerGO, customerContainer.transform);
+            customers.Add(aux);
+            customers[i].transform.position = points[i + 1].position;
+        }
+    }
+
+    public void AcceptCustomer(int position, float time)
     {
         keeper.sprite = keeperSprite2;
         fence.sprite = fenceSprite2;
+        Debug.Log("=====" + position + "///" + customers.Count);
+        foreach (GameObject customer in customers)
+        {
+            Debug.Log("=====!!" + customer.gameObject.name);
+
+            customer.SetActive(true);
+        }
+        customers[position].GetComponent<CustomerQueueMovement>().ImFirst(true);
+        customers[position].GetComponent<CustomerQueueMovement>().MoveAccept(points[1], points[0], time);
+        for (int i = position + 1; i < customers.Count; i++)
+        {
+            customers[i].GetComponent<CustomerQueueMovement>().ImFirst(false);
+            customers[i].GetComponent<CustomerQueueMovement>().MoveAccept(points[i + 1], points[i], time);
+        }
+
     }
 
-    public void DeclineCustomer()
+    public void DeclineCustomer(int position, float time)
     {
         keeper.sprite = keeperSprite;
         fence.sprite = fenceSprite;
+        foreach (GameObject customer in customers)
+        {
+            customer.SetActive(true);
+        }
+        customers[position].GetComponent<CustomerQueueMovement>().ImFirst(true);
+        customers[position].GetComponent<CustomerQueueMovement>().MoveDecline(points[1], points[6], time);
+        for (int i = position + 1; i < customers.Count; i++)
+        {
+            customers[i].GetComponent<CustomerQueueMovement>().ImFirst(false);
+            customers[i].GetComponent<CustomerQueueMovement>().MoveAccept(points[i + 1], points[i], time);
+        }
     }
-
+    public void StartMove()
+    {
+        foreach (GameObject customer in customers)
+        {
+            customer.GetComponent<CustomerQueueMovement>().StartMove();
+        }
+        Debug.Log("START MOVE");
+    }
 }

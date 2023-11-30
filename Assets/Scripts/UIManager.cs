@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
 
     //--- CIUTAT ---
     [SerializeField] GameObject dialogBackgroundPanel;
-    [SerializeField] TextMeshProUGUI cityDialog;
+    //[SerializeField] TextMeshProUGUI cityDialog;
 
     // -- INSPECT --
     // --- Night Specification UI ---
@@ -154,7 +154,7 @@ public class UIManager : MonoBehaviour
     public void updateUI()
     {
         //City
-        cityDialog.SetText(cityDialog_String);
+        //cityDialog.SetText(cityDialog_String);
         
         //Night specification
         restriction_Text.SetText(restriction_String);
