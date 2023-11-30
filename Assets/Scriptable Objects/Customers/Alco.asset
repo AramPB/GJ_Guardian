@@ -29,8 +29,8 @@ MonoBehaviour:
     me dejas 15\u20AC me solucionas la vida, quiero darle este detalle."
   - "Hostia la documentaci\xF3n, disculpa. Aqu\xED tienes."
   customerAcceptDialogLines:
-  - "\xA1Bien! Muchas gracias, t\xEDo me salvas la vida. La pr\xF3xima vez de lo
-    devuelvo, 100%. \xA1Hoy ser\xE1 mi gran noche!"
+  - "\xA1Bien! Muchas gracias, t\xEDo me salvas la vida. \xA1La pr\xF3xima vez de
+    lo devuelvo seguro! \xA1Hoy ser\xE1 mi gran noche!"
   customerDeclineDialogLines:
   - "Joder, \xBFahora que hago yo? Es una desgracia, Gracias por nada supongo, tampoco
     costaba nada dejarme."
