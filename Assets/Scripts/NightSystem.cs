@@ -347,6 +347,7 @@ public class NightSystem : MonoBehaviour
                 //nextnight
                 if (endLoopTrigger2)
                 {
+                    MusicController.Instance.ChangeSong(currentNightNumber);
                     transitionStartTime2 = Time.time;
                     endLoopTrigger2 = false;
                     reflectionDialogLines.Clear();
