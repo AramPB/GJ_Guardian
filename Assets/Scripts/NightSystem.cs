@@ -333,11 +333,30 @@ public class NightSystem : MonoBehaviour
             if (dialogueTrigger)
             {
                 int auxMoney = 1000 - moneyEarned;
-                reflectionDialogLines.Add("Bueno, con este dinero estoy un poco más cerca de mi objetivo… solo me faltan " + auxMoney + "€");
-                reflectionDialogLines.Add("Ahora ya tengo: " + moneyEarned + "/1000€");
-                DialogManager.Instance.SetLines(reflectionDialogLines);
-                DialogManager.Instance.startDialogLines();
-                dialogueTrigger = false;
+                if(moneyEarned >= 1000){
+                    reflectionDialogLines.Add("Ya tengo suficiente con los " + moneyEarnedThisNight + "€ que he ganado hoy, aunque todo lo que pueda ganar para Spark no esta de más.");
+                    reflectionDialogLines.Add("Ahora ya tengo " + moneyEarned + "€, más que suficiente.");
+                    DialogManager.Instance.SetLines(reflectionDialogLines);
+                    DialogManager.Instance.startDialogLines();
+                    dialogueTrigger = false;
+                }
+                else if (moneyEarned < 0)
+                {
+                    reflectionDialogLines.Add("Mierda, he perdido práctica, con los fallos de hoy debo " + Math.Abs(moneyEarned) + "€ al dueño del local... ");
+                    reflectionDialogLines.Add("Debo ponerme las pilas mañana. Aún me faltan " + auxMoney + "€ para pagar la universidad y la deuda.");
+                    DialogManager.Instance.SetLines(reflectionDialogLines);
+                    DialogManager.Instance.startDialogLines();
+                    dialogueTrigger = false;
+                }
+                else
+                {
+                    reflectionDialogLines.Add("Bueno, con este dinero estoy un poco más cerca de mi objetivo… solo me faltan " + auxMoney + "€");
+                    reflectionDialogLines.Add("Ahora ya tengo: " + moneyEarned + "/1000€");
+                    DialogManager.Instance.SetLines(reflectionDialogLines);
+                    DialogManager.Instance.startDialogLines();
+                    dialogueTrigger = false;
+                }
+                
             }
 
             if (DialogManager.Instance.hasEnded)
@@ -373,6 +392,12 @@ public class NightSystem : MonoBehaviour
                                 reflectionDialogLines.Add("Al menos espero que que esto le sirva para tener un futuro brillante.");
                                 reflectionDialogLines.Add("Con estos " + moneyEarned + "€ Spark podrá vivir tranquila al menos un tiempo, parece ser que mis días de portero han acabado.");
                                 reflectionDialogLines.Add("Al menos de momento…");
+                            }
+                            else if (moneyEarned <= 0)
+                            {
+                                reflectionDialogLines.Add("Joder, no solo no he conseguido el dinero para Spark...");
+                                reflectionDialogLines.Add("Si no que he creado una deuda a base de multas por hacer mal mi trabajo... Espero no condenar así el futuro de mi hija.");
+                                reflectionDialogLines.Add("Parece que aun no es momento de colgar las botas. Ahora debo " + Math.Abs(moneyEarned) + "€, toca seguir trabajando un tiempo más...");
                             }
                             else
                             {
