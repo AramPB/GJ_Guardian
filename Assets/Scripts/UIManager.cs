@@ -87,6 +87,8 @@ public class UIManager : MonoBehaviour
     //--- Game Over ---
     [SerializeField] string gameOver_String;
 
+    //--- Date ---
+    [SerializeField] TextMeshProUGUI currentDate;
 
     //---- Pages ----
     private int currentPage = 1;
@@ -237,6 +239,11 @@ public class UIManager : MonoBehaviour
         }
         crimes_Serial_Text.SetText(crimes_Serial_String);
         crimes_Text.SetText(crimes_String);
+    }
+
+    public void updateDateUI() 
+    {
+        currentDate.SetText(NightSystem.Instance.CurrentDate);
     }
 
     #region Pages

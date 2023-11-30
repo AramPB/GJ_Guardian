@@ -309,6 +309,7 @@ public class NightSystem : MonoBehaviour
         }
         currentNight.Successes = 0;
         currentNight.Fails = 0;
+        UIManager.Instance.updateDateUI();
         CustomerContol.UpdateCurrentNight(currentNight);
         QueueController.Instance.ResetAll();
         nightProgress.StartLoop(CurrentNight.NightsCustomers.Count, CurrentNight.NightsCustomers);
