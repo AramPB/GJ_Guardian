@@ -22,10 +22,10 @@ MonoBehaviour:
   customerCrimes: []
   customerDialogLines:
   - Buenas noches estimado portero de discoteca.
-  - "\xBFSabe que la gente con implantes tiene un 149% de probabilidades de contraer
+  - "\xBFSabe que la gente con implantes tiene el doble de probabilidades de contraer
     una enfermedad terminal? \xBFEs que quieren morir? A mi parecer les han vaciado
     el cerebro."
-  - "Aparte, la gente con implantes es estad\xEDsticamente mas propensa a cometer
+  - "Aparte, la gente con implantes es estad\xEDsticamente m\xE1s propensa a cometer
     cr\xEDmenes, estaba claro que era una decisi\xF3n solo de desequilibrados mentales."
   - "Bueno aqu\xED tiene mi documentaci\xF3n, por mi podr\xEDan sacar la parte de
     implantes, nunca llevar\xE9 ninguno igualmente."

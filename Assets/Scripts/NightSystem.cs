@@ -105,7 +105,6 @@ public class NightSystem : MonoBehaviour
         CurrentNight = night1;
         currentNightNumber = 0;
         currentDate = "27/11/2076";
-        Debug.Log("START");
         firstTransStartTime = Time.time;
         endLoopTrigger3 = true;
         moveTrigger = true;
@@ -167,7 +166,6 @@ public class NightSystem : MonoBehaviour
         //Player Goal = 1000€
         moneyEarnedThisNight = 60 * currentNight.Successes - 10 * currentNight.Fails;
         moneyEarned += moneyEarnedThisNight;
-        Debug.Log(":::::" + moneyEarnedThisNight + "::::::" + moneyEarned);
 
         if (currentNightNumber >= 6)
         {
@@ -183,7 +181,6 @@ public class NightSystem : MonoBehaviour
     {
         isEndGame = true;
         dialogueTrigger2 = true;
-        Debug.Log("EEENDDDDDD GAMEEEEEEE");
     }
 
     private string mapDistrictName(int districtNumber){
@@ -285,8 +282,6 @@ public class NightSystem : MonoBehaviour
 
     private void NextNight()
     {
-        Debug.Log("NEXT NIGHT");
-
         if (currentNightNumber == 1)
         {
             CurrentDate = "27/11/2076";
@@ -323,7 +318,6 @@ public class NightSystem : MonoBehaviour
     #region NightsTransition
     private void BetweenNightsTransitionController()
     {
-        //Debug.Log("NIGHTS TRANSITION");
         if (endLoopTrigger)
         {
             int a = NightResume();
@@ -337,8 +331,9 @@ public class NightSystem : MonoBehaviour
             //city
             if (dialogueTrigger)
             {
-                reflectionDialogLines.Add("Dinero ganado esta noche: " + moneyEarnedThisNight);
-                reflectionDialogLines.Add("Dinero total: " + moneyEarned);
+                int auxMoney = 1000 - moneyEarned;
+                reflectionDialogLines.Add("Bueno, con este dinero estoy un poco más cerca de mi objetivo… solo me faltan " + auxMoney + "€");
+                reflectionDialogLines.Add("Ahora ya tengo: " + moneyEarned + "/1000€");
                 DialogManager.Instance.SetLines(reflectionDialogLines);
                 DialogManager.Instance.startDialogLines();
                 dialogueTrigger = false;
@@ -478,7 +473,6 @@ public class NightSystem : MonoBehaviour
     #region CustomerTransition
     private void BetweenCustomersTransitionController()
     {
-        //Debug.Log("CUSTOMER TRANSITION");
         CustomerTransition();
         if (Time.time >= transitionClientStartTime + transitionClientTime)
         {

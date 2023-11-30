@@ -171,7 +171,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 25956d9b6cdb1384faddafcecf3e5148, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
@@ -312,6 +312,8 @@ MonoBehaviour:
   declineSound: {fileID: 3229160646374810964}
   criminalSound: {fileID: 3059661667420628895}
   scannSound: {fileID: 6825722059863803175}
+  openDoorSound: {fileID: 9195877858429372032}
+  closeDoorSound: {fileID: 6168510934725650359}
 --- !u!1 &4792503493929074943
 GameObject:
   m_ObjectHideFlags: 0
