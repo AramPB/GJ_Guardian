@@ -304,10 +304,12 @@ public class NightProgress : MonoBehaviour
     }
     public void ObtainCriminalProof()
     {
+
         SoundsController.Instance.criminalSoundPlay();
         buttonCP.SetActive(false);
         UIManager.Instance.ObtainCP();
         SwitchState(State.CriminalProof);
+
     }
     #endregion
 
