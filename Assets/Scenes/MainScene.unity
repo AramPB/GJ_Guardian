@@ -1317,6 +1317,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de1d039ae0b30a745a19ff7b8c8e1172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &2006834898 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2791523757632318079, guid: c7c856a4f0ff55f4f9da8b846ae4c873, type: 3}
+  m_PrefabInstance: {fileID: 3056068229000933243}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2017768056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,6 +1936,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicController
       objectReference: {fileID: 0}
+    - target: {fileID: 5574007840467832997, guid: 424bb73621cd3a343a091dbe2ccea088, type: 3}
+      propertyPath: normalMusicAS
+      value: 
+      objectReference: {fileID: 2006834898}
+    - target: {fileID: 5574007840467832997, guid: 424bb73621cd3a343a091dbe2ccea088, type: 3}
+      propertyPath: filteredMusicAS
+      value: 
+      objectReference: {fileID: 2006834898}
     - target: {fileID: 5574007840467832997, guid: 424bb73621cd3a343a091dbe2ccea088, type: 3}
       propertyPath: normalMusicAnimator
       value: 
@@ -3018,6 +3031,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 753002050135203177, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: Pan2D
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 753002050135203177, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: Priority
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 753002050135203177, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3229160646374810964, guid: 89b78aad10a6e3a4385b9a23c702586c, type: 3}
       propertyPath: m_Volume
       value: 0.1

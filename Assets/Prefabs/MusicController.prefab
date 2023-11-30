@@ -46,3 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   filteredMusicAnimator: {fileID: 0}
   normalMusicAnimator: {fileID: 0}
+  NormalMusics:
+  - {fileID: 8300000, guid: 3d4b9143d9510eb4fb6d1f440bfe6127, type: 3}
+  - {fileID: 8300000, guid: df1ad13d8a36eba4497babf944863104, type: 3}
+  - {fileID: 8300000, guid: f6ce85028c98d2c4db352f7a09a845c1, type: 3}
+  - {fileID: 8300000, guid: 804c06cfc2a967643b67065c156b5f4c, type: 3}
+  - {fileID: 8300000, guid: 3dfc4e8ee8660504aac4a76ec4a2cf63, type: 3}
+  FilteredMusics:
+  - {fileID: 8300000, guid: 4c76cbb597640cf4188d7aec79085c24, type: 3}
+  - {fileID: 8300000, guid: 7cce1ec57c6421047a45d1dcc539e888, type: 3}
+  - {fileID: 8300000, guid: b1d2e1188229e54408bd3a66aaec886f, type: 3}
+  - {fileID: 8300000, guid: a8ffaf90b4031594889718b6783d2437, type: 3}
+  - {fileID: 8300000, guid: 9f6b3823896d6ad48bee1bdcdd8178e8, type: 3}

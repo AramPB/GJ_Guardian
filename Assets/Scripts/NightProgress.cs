@@ -303,6 +303,7 @@ public class NightProgress : MonoBehaviour
     }
     public void ObtainCriminalProof()
     {
+        SoundsController.Instance.criminalSoundPlay();
         buttonCP.SetActive(false);
         UIManager.Instance.ObtainCP();
         SwitchState(State.CriminalProof);
@@ -356,6 +357,7 @@ public class NightProgress : MonoBehaviour
         if (actualPass)
         {
             //Animacion y dialogos de Sí
+            SoundsController.Instance.acceptSoundPlay();
             if (NightSystem.Instance.MusicController.State == "Filtered")
             {
                 NightSystem.Instance.MusicController.startNormalMusic();
@@ -374,6 +376,7 @@ public class NightProgress : MonoBehaviour
         else
         {
             //Animacion y dialogos de No
+            SoundsController.Instance.declineSoundPlay();
             DialogManager.Instance.SetLines(currentCustomer.GetDeclineDialogLines);
             DialogManager.Instance.startDialogLines();
         }

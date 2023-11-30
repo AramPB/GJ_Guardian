@@ -443,6 +443,7 @@ public class NightSystem : MonoBehaviour
             else
             {
                 aux.a = LerpFunction.Lerp(1, 0, transitionStartTime2 + transitionDuration2 / 2, transitionDuration2 / 2);
+                MusicController.Instance.ChangeSong(currentNightNumber);
                 if (!isEndGame) {
                     UIManager.Instance.ActivateInspectUI(true);
                     UIManager.Instance.ActivateCityUI(false);

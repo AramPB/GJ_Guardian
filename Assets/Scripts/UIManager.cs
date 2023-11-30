@@ -257,6 +257,7 @@ public class UIManager : MonoBehaviour
         if (currentPage != 1)
         {
             UpdatePage(currentPage - 1);
+            SoundsController.Instance.buttonSoundPlay();
         }
         else
         {
@@ -268,7 +269,7 @@ public class UIManager : MonoBehaviour
     {
         if (!(currentPage == maxPages || (currentPage == (maxPages-1) && !hasCriminalProof)))
         {
-
+            SoundsController.Instance.buttonSoundPlay();
             UpdatePage(currentPage + 1);
         }
         else
@@ -289,7 +290,6 @@ public class UIManager : MonoBehaviour
 
     private void UpdatePage(int newPage)
     {
-        SoundsController.Instance.buttonSoundPlay();
         switch (currentPage)
         {
             case 1:
