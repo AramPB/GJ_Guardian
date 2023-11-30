@@ -646,6 +646,6 @@ public class NightSystem : MonoBehaviour
 
     public float GetQueueDuration()
     {
-        return queueDuration + transitionClientStartTime2 / 2;
+        return queueDuration;
     }
 }

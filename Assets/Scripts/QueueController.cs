@@ -50,6 +50,12 @@ public class QueueController : MonoBehaviour
         customers.Clear();
     }
 
+    public void ResetCLient()
+    {
+        keeper.sprite = keeperSprite;
+        fence.sprite = fenceSprite;
+    }
+
     public void NewQueue(int numCustomers)
     {
         for (int i = 0; i < numCustomers; i++) {
@@ -63,19 +69,17 @@ public class QueueController : MonoBehaviour
     {
         keeper.sprite = keeperSprite2;
         fence.sprite = fenceSprite2;
-        Debug.Log("=====" + position + "///" + customers.Count);
-        foreach (GameObject customer in customers)
+        Debug.Log("position:" + position);
+        for (int i = position; i < customers.Count; i++)
         {
-            Debug.Log("=====!!" + customer.gameObject.name);
-
-            customer.SetActive(true);
+            customers[i].SetActive(true);
         }
         customers[position].GetComponent<CustomerQueueMovement>().ImFirst(true);
         customers[position].GetComponent<CustomerQueueMovement>().MoveAccept(points[1], points[0], time);
         for (int i = position + 1; i < customers.Count; i++)
         {
             customers[i].GetComponent<CustomerQueueMovement>().ImFirst(false);
-            customers[i].GetComponent<CustomerQueueMovement>().MoveAccept(points[i + 1], points[i], time);
+            customers[i].GetComponent<CustomerQueueMovement>().MoveAccept(points[i - position + 1], points[i - position], time);
         }
 
     }
@@ -84,16 +88,16 @@ public class QueueController : MonoBehaviour
     {
         keeper.sprite = keeperSprite;
         fence.sprite = fenceSprite;
-        foreach (GameObject customer in customers)
+        for (int i = position; i < customers.Count; i++)
         {
-            customer.SetActive(true);
+            customers[i].SetActive(true);
         }
         customers[position].GetComponent<CustomerQueueMovement>().ImFirst(true);
         customers[position].GetComponent<CustomerQueueMovement>().MoveDecline(points[1], points[6], time);
         for (int i = position + 1; i < customers.Count; i++)
         {
             customers[i].GetComponent<CustomerQueueMovement>().ImFirst(false);
-            customers[i].GetComponent<CustomerQueueMovement>().MoveAccept(points[i + 1], points[i], time);
+            customers[i].GetComponent<CustomerQueueMovement>().MoveAccept(points[i - position + 1], points[i - position], time);
         }
     }
     public void StartMove()

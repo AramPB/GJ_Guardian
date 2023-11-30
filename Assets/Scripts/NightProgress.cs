@@ -443,7 +443,7 @@ public class NightProgress : MonoBehaviour
     private void EndTransition()
     {
         inTransition = false;
-
+        QueueController.Instance.ResetCLient();
     }
     public void InMiddleTransition()
     {
