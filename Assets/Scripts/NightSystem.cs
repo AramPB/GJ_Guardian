@@ -60,6 +60,7 @@ public class NightSystem : MonoBehaviour
     private bool dialogueTrigger2 = false;
     private bool isEndGame = false;
     private bool endLoopGame = false;
+    private bool moveTrigger = false;
 
     private string endGameMessage;
 
@@ -107,6 +108,7 @@ public class NightSystem : MonoBehaviour
         Debug.Log("START");
         firstTransStartTime = Time.time;
         endLoopTrigger3 = true;
+        moveTrigger = true;
         moneyEarned = 0;
         isEndGame = false;
         endGameMessage = "";
@@ -131,6 +133,7 @@ public class NightSystem : MonoBehaviour
                     {
                         transitionClientStartTime = Time.time;
                         endLoopTrigger3 = true;
+                        moveTrigger = true;
                     }
                 }
                 else
@@ -312,7 +315,7 @@ public class NightSystem : MonoBehaviour
         currentNight.Successes = 0;
         currentNight.Fails = 0;
         CustomerContol.UpdateCurrentNight(currentNight);
-
+        QueueController.Instance.ResetAll();
         nightProgress.StartLoop(CurrentNight.NightsCustomers.Count, CurrentNight.NightsCustomers);
         formatNightSpecifications();
     }
@@ -479,6 +482,11 @@ public class NightSystem : MonoBehaviour
         CustomerTransition();
         if (Time.time >= transitionClientStartTime + transitionClientTime)
         {
+            if (moveTrigger)
+            {
+                QueueController.Instance.StartMove();
+                moveTrigger = false;
+            }
             //Queue
             if (Time.time >= transitionClientStartTime + transitionClientTime + queueDuration)
             {
@@ -488,6 +496,7 @@ public class NightSystem : MonoBehaviour
                     transitionClientStartTime2 = Time.time;
                     endLoopTrigger3 = false;
                     nightProgress.InMiddleTransition();
+
                 }
                 NextCustomerTransition();
                 if (Time.time >= transitionClientStartTime2 + transitionClientTime2)
@@ -635,4 +644,8 @@ public class NightSystem : MonoBehaviour
 
     #endregion
 
+    public float GetQueueDuration()
+    {
+        return queueDuration + transitionClientStartTime2 / 2;
+    }
 }
