@@ -880,13 +880,64 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 207060764698900665, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_lineSpacing
+      value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 307663529116766312, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -440
+      objectReference: {fileID: 0}
+    - target: {fileID: 973867181226564752, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073520124337065328, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 181
+      objectReference: {fileID: 0}
+    - target: {fileID: 1073520124337065328, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 87
+      objectReference: {fileID: 0}
     - target: {fileID: 1491057735652659359, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1973180650}
+    - target: {fileID: 1635683596992439247, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -667
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830876842895369856, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3230095497884473433, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_text
+      value: "El cliente te debe proporcionar su documento personal.\n- Debes comprobar
+        que su informaci\xF3n sea correcta \n- Debes comprobar que se respeten todas
+        las restricciones de la fiesta. \nEstas restricciones tambi\xE9n las puedes
+        encontrar en este documento."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121564878776795234, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121564878776795234, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5154503091727186733, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -505
+      objectReference: {fileID: 0}
     - target: {fileID: 5180083121036067930, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
       propertyPath: m_Name
       value: UI_Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496496485282746062, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5677370431917231283, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
       propertyPath: m_Pivot.x
@@ -968,6 +1019,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5733057072254585927, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5916480834576738481, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -443
+      objectReference: {fileID: 0}
     - target: {fileID: 6348541206738937281, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -976,6 +1035,39 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1973180650}
+    - target: {fileID: 8051114401492212234, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275843374102058226, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 182.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275843374102058226, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531175159967083988, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_text
+      value: "Para escanear un implante debes:\n- Pulsar en el implante del cliente.\n-
+        Comprara en Num de Fabricante con la lista de impmantes ilegales.\n- Los
+        implantes deben cumplir las reglas de la fiesta.\n- Los implantes registrados
+        deben constar en el Documento Personal.\n En este documento te facilitamos
+        una lista de estos implantes ilegales.            \n\n               Icono
+        de Implante detectado"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553077258350557455, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574005505674463281, guid: 3000c82f90ecf7e4782696ada36b8d18, type: 3}
+      propertyPath: m_text
+      value: "Si el cliente ha cometido crimenes en su pasado, debe tener un justificante,
+        que aparecer\xE1 en el Documento Personal en rojo, justo debajo de su foto.
+        \n- Debes asegurarte que cumpla con las restricciones de la fiesta.\n- Debes
+        comprobar que su informaci\xF3n coincide con el Documento Personal.\nEl Justificante
+        aparecer\xE1 como una p\xE1gina adicional de este documento"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
