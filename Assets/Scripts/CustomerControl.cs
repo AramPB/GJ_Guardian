@@ -71,22 +71,27 @@ public class CustomerControl : MonoBehaviour
 
         if (!isDistrictAllowed(currentCustomerToControl.GetDistrictNumber))
         {
+            Debug.Log("District");
             return false;
         }
         else if (!isImplantAllowed(currentCustomerToControl.GetImplants, currentCustomerToControl.GetImplantsRegistered))
         {
+            Debug.Log("Implants");
             return false;
         }
         else if (!isInAge(currentCustomerToControl.GetAge))
         {
+            Debug.Log("Age");
             return false;
         }
         else if (!isCriminal(currentCustomerToControl.GetCrimes, currentCustomerToControl.CustomerHasJustificant))
         {
+            Debug.Log("Crimes");
             return false;
         }
         else if (isDocumentExpired(currentCustomerToControl.GetDocumentExpiryDate, NightSystem.Instance.CurrentDate))
         {
+            Debug.Log("Date");
             return false;
         }
         else
@@ -98,14 +103,14 @@ public class CustomerControl : MonoBehaviour
 
     private bool isCriminal(List<Crimes> crimes, bool hasJustificant)
     {
-        bool noCrime = false, justifiedCrimes = false, unjustifiedCrimes = false, allowedCrimes = true; 
+        bool noCrime = false, justifiedCrimes = false, unjustifiedCrimes = false, allowedCrimes = false; 
         int count = 0;
 
         foreach (Crimes crime in crimes)
         {
+            count = 0;
             foreach (Crimes allowed in currentNightSpecifications.SpecificationsPermitedCrimes)
             {
-                count = 0;
                 if (crime.CrimeName.Equals(allowed.CrimeName))
                 {
                     count++;
@@ -113,7 +118,7 @@ public class CustomerControl : MonoBehaviour
             }
             if (count == 0)
             {
-                allowedCrimes = false;
+                allowedCrimes = true;
             }
         }
 
@@ -138,7 +143,7 @@ public class CustomerControl : MonoBehaviour
         }
         else if (justifiedCrimes == currentNightSpecifications.SpecificationJustifiedCrime == true)
         {
-            if (allowedCrimes)
+            if (!allowedCrimes)
             {
                 return true;
             }
@@ -149,7 +154,7 @@ public class CustomerControl : MonoBehaviour
         }
         else if (unjustifiedCrimes == currentNightSpecifications.SpecificationUnjustifiedCrime == true)
         {
-            if (allowedCrimes)
+            if (!allowedCrimes)
             {
                 return true;
             }
@@ -198,31 +203,29 @@ public class CustomerControl : MonoBehaviour
         {
             registeredImplant = true;
         }
-
-        if (currentCustomerToControl.GetImplants.Count >= currentCustomerToControl.GetImplantsRegistered.Count && !hasIlegalImplants)
+        if (currentCustomerToControl.GetImplants.Count > currentCustomerToControl.GetImplantsRegistered.Count && !hasIlegalImplants)
         {
             unregisteredImplant = true;
         }
 
-        if (currentCustomerToControl.GetImplants.Count >= currentCustomerToControl.GetImplantsRegistered.Count && hasIlegalImplants)
+        if (currentCustomerToControl.GetImplants.Count > currentCustomerToControl.GetImplantsRegistered.Count && hasIlegalImplants)
         {
             ilegalImplant = true;
         }
 
-
-        if (noImplant == currentNightSpecifications.SpecificationNoImplants == true)
+        if (noImplant && currentNightSpecifications.SpecificationNoImplants)
         {
             return true;
         }
-        else if(registeredImplant == currentNightSpecifications.SpecificationRegisteredImplants == true)
+        else if(registeredImplant && currentNightSpecifications.SpecificationRegisteredImplants)
         {
             return true;
         }
-        else if(unregisteredImplant == currentNightSpecifications.SpecificationUnregisteredImplants == true)
+        else if(unregisteredImplant && currentNightSpecifications.SpecificationUnregisteredImplants)
         {
             return true;
         }
-        else if (ilegalImplant == currentNightSpecifications.SpecificationIlegalImplants == true)
+        else if (ilegalImplant && currentNightSpecifications.SpecificationIlegalImplants)
         {
             return true;
         }
@@ -255,24 +258,20 @@ public class CustomerControl : MonoBehaviour
                 // Compare the expiry date with the current date
                 if (expiryDate < currentDate)
                 {
-                    Debug.Log("Document has expired.");
                     return true;
                 }
                 else
                 {
-                    Debug.Log("Document is still valid.");
                     return false;
                 }
             }
             else
             {
-                Debug.LogError("Invalid date format. Please provide the date in DD/MM/YYYY format.");
                 return false;
             }
         }
         else
         {
-            Debug.LogError("Invalid expiry date format. Please provide the date in DD/MM/YYYY format.");
             return false;
         }
     }

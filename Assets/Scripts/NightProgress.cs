@@ -116,7 +116,6 @@ public class NightProgress : MonoBehaviour
     #region ClientApparition
     private void StartClientApparition()
     {
-        Debug.Log("NEW CLIENT!!");
         if (NightSystem.Instance.MusicController.State == "Normal") {
             NightSystem.Instance.MusicController.startFilteredMusic();
         }
