@@ -34,22 +34,28 @@ public class MusicController : MonoBehaviour
 
     public void ChangeSong(int night)
     {
+        Debug.Log("Changin music, " + state + " to night " + night);
         newNight = night;
-        if (state == "Filtered")
+        if (newNight < 5)
         {
-            filteredMusicAnimator.Play("FilteredMusicFadeOut");
+            if (state == "Filtered")
+            {
+                filteredMusicAnimator.Play("FilteredMusicFadeOut");
+            }
+            else
+            {
+                normalMusicAnimator.Play("NormalMusicFadeOut");
+            }
+            Invoke("StartNewSong", 1.5f);
         }
-        else
-        {
-            normalMusicAnimator.Play("NormalMusicFadeOut");
-        }
-        Invoke("StartNewSong", 1);
     }
 
     private void StartNewSong()
     {
         filteredMusicAS.clip = FilteredMusics[newNight - 1];
         normalMusicAS.clip = NormalMusics[newNight - 1];
+        filteredMusicAS.Play();
+        normalMusicAS.Play();
         filteredMusicAnimator.Play("FilteredMusicFadeIn");
     }
 
