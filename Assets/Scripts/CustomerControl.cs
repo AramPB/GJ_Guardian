@@ -137,11 +137,12 @@ public class CustomerControl : MonoBehaviour
             unjustifiedCrimes = true;
         }
 
-        if (noCrime == currentNightSpecifications.SpecificationNoCrime == true)
+
+        if (noCrime && currentNightSpecifications.SpecificationNoCrime)
         {
             return true;
         }
-        else if (justifiedCrimes == currentNightSpecifications.SpecificationJustifiedCrime == true)
+        else if (justifiedCrimes && currentNightSpecifications.SpecificationJustifiedCrime)
         {
             if (!allowedCrimes)
             {
@@ -152,7 +153,7 @@ public class CustomerControl : MonoBehaviour
                 return false;
             }
         }
-        else if (unjustifiedCrimes == currentNightSpecifications.SpecificationUnjustifiedCrime == true)
+        else if (unjustifiedCrimes && currentNightSpecifications.SpecificationUnjustifiedCrime)
         {
             if (!allowedCrimes)
             {
