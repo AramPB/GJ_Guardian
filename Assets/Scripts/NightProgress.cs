@@ -232,7 +232,7 @@ public class NightProgress : MonoBehaviour
         UIManager.Instance.Dni_District_String = CurrentCustomer.GetDistrictNumber.ToString();
         UIManager.Instance.Dni_Implants_Name_String = "";
         UIManager.Instance.Dni_Implants_number_String = "";
-        foreach (Implant i in CurrentCustomer.GetImplants)
+        foreach (Implant i in CurrentCustomer.GetImplantsRegistered)
         {
             UIManager.Instance.Dni_Implants_Name_String += i.ImplantName + "\n";
             UIManager.Instance.Dni_Implants_number_String += i.ImplantManufacterNumber + "\n";
@@ -302,6 +302,7 @@ public class NightProgress : MonoBehaviour
     }
     public void ObtainCriminalProof()
     {
+        SoundsController.Instance.criminalSoundPlay();
         buttonCP.SetActive(false);
         UIManager.Instance.ObtainCP();
         SwitchState(State.CriminalProof);
@@ -335,12 +336,12 @@ public class NightProgress : MonoBehaviour
 
         if (actualPass == isApt)
         {
-            Debug.Log("Acertaste");
+            //Debug.Log("Acertaste");
             NightSystem.Instance.CurrentNight.Successes++;
         }
         else
         {
-            Debug.Log("Cagaste");
+            //Debug.Log("Cagaste");
             NightSystem.Instance.CurrentNight.Fails++;
         }
         SwitchState(State.EndDialogue);
@@ -351,9 +352,11 @@ public class NightProgress : MonoBehaviour
     #region EndDialogue
     private void StartEndDialogue()
     {
+
         if (actualPass)
         {
             //Animacion y dialogos de Sí
+            SoundsController.Instance.acceptSoundPlay();
             if (NightSystem.Instance.MusicController.State == "Filtered")
             {
                 NightSystem.Instance.MusicController.startNormalMusic();
@@ -368,12 +371,16 @@ public class NightProgress : MonoBehaviour
             {
                 NightSystem.Instance.ModifyMoneyNight(+currentCustomer.GetMoney);
             }
+            QueueController.Instance.AcceptCustomer();
         }
         else
         {
             //Animacion y dialogos de No
+            SoundsController.Instance.declineSoundPlay();
             DialogManager.Instance.SetLines(currentCustomer.GetDeclineDialogLines);
             DialogManager.Instance.startDialogLines();
+            QueueController.Instance.DeclineCustomer();
+
         }
     }
     private void UpdateEndDialogue()

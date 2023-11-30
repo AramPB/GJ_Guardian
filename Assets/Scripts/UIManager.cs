@@ -257,6 +257,11 @@ public class UIManager : MonoBehaviour
         if (currentPage != 1)
         {
             UpdatePage(currentPage - 1);
+            SoundsController.Instance.buttonSoundPlay();
+        }
+        else
+        {
+            SoundsController.Instance.declineSoundPlay();
         }
     }
 
@@ -264,12 +269,13 @@ public class UIManager : MonoBehaviour
     {
         if (!(currentPage == maxPages || (currentPage == (maxPages-1) && !hasCriminalProof)))
         {
-
+            SoundsController.Instance.buttonSoundPlay();
             UpdatePage(currentPage + 1);
         }
         else
         {
             //So de negar passar pagina
+            SoundsController.Instance.declineSoundPlay();
         }
     }
 

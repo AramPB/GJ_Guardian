@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 
 public class NightSystem : MonoBehaviour
@@ -72,6 +73,7 @@ public class NightSystem : MonoBehaviour
     public Night Night2 { get => night2; set => night2 = value; }
     public Night Night3 { get => night3; set => night3 = value; }
     public Night Night4 { get => night4; set => night4 = value; }
+    public Night Night5 { get => night5; set => night5 = value; }
     public TextMeshPro NightDialog1 { get => nightDialog; set => nightDialog = value; }
     public Night CurrentNight { get => currentNight; set => currentNight = value; }
     public string CurrentDate { get => currentDate; set => currentDate = value; }
@@ -108,6 +110,7 @@ public class NightSystem : MonoBehaviour
         isEndGame = false;
         endGameMessage = "";
         endLoopGame = false;
+        goalMoney = 1000;
     }
     private void Update()
     {
@@ -161,7 +164,7 @@ public class NightSystem : MonoBehaviour
         moneyEarnedThisNight = 60 * currentNight.Successes - 10 * currentNight.Fails;
         moneyEarned += moneyEarnedThisNight;
 
-        if (currentNightNumber >= 5)
+        if (currentNightNumber >= 6)
         {
             endGame();
             return 0;
@@ -296,7 +299,7 @@ public class NightSystem : MonoBehaviour
             CurrentDate = "30/11/2076";
             CurrentNight = night4;
         }
-        else
+        else if(currentNightNumber == 5)
         {
             CurrentDate = "1/12/2076";
             CurrentNight = night5;
@@ -317,6 +320,7 @@ public class NightSystem : MonoBehaviour
             int a = NightResume();
             endLoopTrigger = false;
             dialogueTrigger = true;
+            reflectionDialogLines.Clear();
         }
         NightTransition();
         if (Time.time >= transitionStartTime + transitionDuration)
@@ -326,6 +330,7 @@ public class NightSystem : MonoBehaviour
             {
                 reflectionDialogLines.Add("Dinero ganado esta noche: " + moneyEarnedThisNight);
                 reflectionDialogLines.Add("Dinero total: " + moneyEarned);
+                DialogManager.Instance.SetLines(reflectionDialogLines);
                 DialogManager.Instance.startDialogLines();
                 dialogueTrigger = false;
             }
@@ -336,6 +341,7 @@ public class NightSystem : MonoBehaviour
                 //nextnight
                 if (endLoopTrigger2)
                 {
+                    MusicController.Instance.ChangeSong(currentNightNumber);
                     transitionStartTime2 = Time.time;
                     endLoopTrigger2 = false;
                     reflectionDialogLines.Clear();
@@ -350,9 +356,13 @@ public class NightSystem : MonoBehaviour
                     else
                     {
                         //Dialeg final
+                        Debug.Log("!!!FINAL!!!");
                         if (dialogueTrigger2) {
+                            Debug.Log("Trigger");
                             if (moneyEarned >= goalMoney)
                             {
+                                Debug.Log("Good");
+
                                 //Play Good Ending Animation & Return to Menu
                                 reflectionDialogLines.Add("Al final, he conseguido el dinero para enviar a Spark a la universidad...");
                                 reflectionDialogLines.Add("Al menos espero que que esto le sirva para tener un futuro brillante.");
@@ -361,6 +371,8 @@ public class NightSystem : MonoBehaviour
                             }
                             else
                             {
+                                Debug.Log("Bad");
+
                                 //Play Bad Ending Animation & Return to Menu
                                 reflectionDialogLines.Add("Mierda, solo con " + moneyEarned + "€ no me da para pagar la universidad a Spark.");
                                 reflectionDialogLines.Add("Joder solo si hubiera sido mejor, o estado más atento...");
@@ -373,6 +385,8 @@ public class NightSystem : MonoBehaviour
                         }
                         if (DialogManager.Instance.hasEnded)
                         {
+                            Debug.Log("Scene");
+                            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
                             endLoopGame = true;
                         }
                     }
