@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: I-Torso-Ilegal
   m_EditorClassIdentifier: 
   implantName: Chunky
-  implantImage: {fileID: 21300000, guid: 6585d238fbebaf5418b2f37f9927eb06, type: 3}
+  implantImage: {fileID: 21300000, guid: 6e887c762a48231449314f6eaf95a9c4, type: 3}
   implantManufacterNumber: 1K-4V
   isLegal: 0
   implantType: 7
